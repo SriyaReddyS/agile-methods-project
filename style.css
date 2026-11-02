@@ -1,92 +1,259 @@
 
+
+/* ==================================
+   Global Styles
+================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f5f7f4;
     color: #26382d;
+    line-height: 1.6;
 }
 
-/* Header Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* ==================================
+   Header and Navigation
+================================== */
+
+.site-header {
     background-color: #214d38;
-    padding: 20px 50px;
+    position: relative;
+    z-index: 100;
 }
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Website Logo */
 
 .logo {
+    color: white;
     font-size: 24px;
     font-weight: bold;
-    color: white;
     text-decoration: none;
 }
 
+.logo:hover {
+    color: #b6e2bd;
+}
+
+/* Desktop Navigation */
+
 .nav-links {
     display: flex;
+    align-items: center;
     gap: 30px;
     list-style: none;
 }
 
 .nav-links a {
     color: white;
-    text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
     color: #b6e2bd;
 }
 
-/* Homepage placeholder */
+.nav-links a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* Mobile Menu Button */
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Keyboard Accessibility */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #f8d66d;
+    outline-offset: 4px;
+}
+
+/* ==================================
+   Homepage Placeholder
+================================== */
+
 .hero {
+    min-height: 420px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
+}
+
+.hero-content {
+    max-width: 750px;
 }
 
 .hero h1 {
-    font-size: 42px;
+    font-size: 44px;
     margin-bottom: 20px;
 }
 
 .hero p {
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
+/* Explore Button */
+
 .button {
     display: inline-block;
-    padding: 12px 24px;
     background-color: #214d38;
     color: white;
-    text-decoration: none;
+    padding: 12px 26px;
     border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+.button:hover {
+    background-color: #347452;
+}
+
+/* ==================================
+   About Section
+================================== */
+
 .about {
+    background-color: white;
     text-align: center;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
 .about h2 {
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
-/* Responsive Navigation */
+.about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+/* ==================================
+   Footer
+================================== */
+
+.site-footer {
+    background-color: #214d38;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* ==================================
+   Mobile Responsive Navigation
+================================== */
+
 @media (max-width: 650px) {
+
     .navbar {
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
+        padding: 15px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
     }
 
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Show Hamburger Button */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide Navigation by Default */
+
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+
+        background-color: #214d38;
+        padding: 10px 20px 20px;
+
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Open Navigation Menu */
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    /* Mobile Homepage */
+
+    .hero {
+        min-height: 350px;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .about {
+        padding: 50px 20px;
+    }
+
+    .about h2 {
+        font-size: 25px;
     }
 }

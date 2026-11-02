@@ -6,26 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Animals | Wildlife Guardian</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
+
+    <!-- Shared Header -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+
             <a href="index.html" class="logo">
                 Wildlife Guardian
             </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="animals.html">Explore Animals</a></li>
-                <li><a href="index.html#about">About Us</a></li>
+            <!-- Mobile Menu Button -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="primary-navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="animals.html" aria-current="page">
+                        Explore Animals
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#about">
+                        About Us
+                    </a>
+                </li>
             </ul>
+
         </nav>
     </header>
 
-    <main class="about">
-        <h1>Explore Endangered Animals</h1>
-        <p>Animal profiles coming soon.</p>
+    <!-- Animal Listing Placeholder -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+
+                <h1>Explore Endangered Animals</h1>
+
+                <p>
+                    Discover endangered species
+                    and learn about their habitats,
+                    threats, and conservation status.
+                </p>
+
+                <p>
+                    Animal profiles coming soon.
+                </p>
+
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Wildlife Guardian | Team 1</p>
+    </footer>
+
 </body>
 </html>
