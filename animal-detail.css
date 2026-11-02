@@ -1,0 +1,262 @@
+
+/* ==================================
+   Animal Detail Page
+   Loaded after style.css on animal.html.
+   Reuses site colours from style.css.
+================================== */
+
+.animal-profile {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 40px 60px;
+}
+
+.profile-message {
+    text-align: center;
+    padding: 60px 0;
+}
+
+/* Breadcrumb */
+
+.breadcrumb {
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+.breadcrumb a {
+    color: #214d38;
+    font-weight: bold;
+}
+
+.breadcrumb-current::before {
+    content: "/";
+    margin: 0 8px;
+    color: #5b6b60;
+}
+
+/* Header: photo + intro */
+
+.profile-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.profile-media {
+    margin: 0;
+}
+
+.profile-photo,
+.profile-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+}
+
+.profile-photo {
+    display: block;
+    object-fit: cover;
+}
+
+.profile-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dfe8e1;
+    border: 2px dashed #8aa595;
+    color: #3d5546;
+    font-weight: bold;
+}
+
+.profile-photo-credit {
+    font-size: 13px;
+    color: #4a5c50;
+    margin-top: 8px;
+}
+
+.profile-photo-credit a {
+    color: inherit;
+}
+
+.profile-intro h1 {
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.scientific-name {
+    font-size: 20px;
+    color: #4a5c50;
+    margin-bottom: 20px;
+}
+
+.profile-description {
+    font-size: 17px;
+}
+
+/* Conservation status */
+
+.profile-status {
+    margin-bottom: 20px;
+}
+
+.status-authority {
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #4a5c50;
+}
+
+.status-badge {
+    display: inline-block;
+    margin: 6px 0;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-weight: bold;
+    background-color: #214d38;
+    color: white;
+}
+
+.status-badge.status-cr {
+    background-color: #a3201c;
+}
+
+.status-badge.status-en {
+    background-color: #b4470f;
+}
+
+.status-badge.status-vu {
+    background-color: #7a5a00;
+}
+
+.status-code {
+    display: inline-block;
+    padding: 0 6px;
+    margin-right: 4px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.status-note {
+    font-size: 15px;
+}
+
+/* Sections */
+
+.profile-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.profile-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+}
+
+.profile-section h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.threat-list {
+    padding-left: 22px;
+}
+
+.threat-list li {
+    margin-bottom: 6px;
+}
+
+.population-date {
+    font-size: 14px;
+    font-style: italic;
+    color: #4a5c50;
+    margin-bottom: 8px;
+}
+
+/* Citations and sources */
+
+.citation {
+    font-size: 12px;
+    line-height: 0;
+    margin-left: 2px;
+}
+
+.citation a {
+    color: #214d38;
+}
+
+.source-list {
+    padding-left: 22px;
+    font-size: 15px;
+}
+
+.source-list li {
+    margin-bottom: 8px;
+    scroll-margin-top: 20px;
+}
+
+.source-list li:target {
+    background-color: #fdf3c9;
+}
+
+.source-list a,
+.profile-choices a {
+    color: #214d38;
+    overflow-wrap: anywhere;
+}
+
+/* Not found */
+
+.profile-not-found h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.profile-not-found p {
+    margin-bottom: 12px;
+}
+
+.profile-choices {
+    padding-left: 22px;
+}
+
+/* ==================================
+   Mobile
+================================== */
+
+@media (max-width: 800px) {
+
+    .profile-header,
+    .profile-facts {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .profile-facts {
+        gap: 0;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .animal-profile {
+        padding: 24px 20px 40px;
+    }
+
+    .profile-intro h1 {
+        font-size: 30px;
+    }
+
+    .scientific-name {
+        font-size: 18px;
+    }
+
+    .profile-section {
+        padding: 20px;
+    }
+}
