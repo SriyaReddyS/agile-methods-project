@@ -1,0 +1,92 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7f4;
+    color: #26382d;
+}
+
+/* Header Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #214d38;
+    padding: 20px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #b6e2bd;
+}
+
+/* Homepage placeholder */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #214d38;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.about h2 {
+    margin-bottom: 15px;
+}
+
+/* Responsive Navigation */
+@media (max-width: 650px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
