@@ -7,6 +7,8 @@
     <title>Explore Animals | Wildlife Guardian</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="animal-data.js" defer></script>
+    <script src="animal-cards.js" defer></script>
 </head>
 
 <body>
@@ -49,9 +51,9 @@
         </nav>
     </header>
 
-    <!-- Animal Listing Placeholder -->
+    <!-- Animal Listing -->
     <main>
-        <section class="hero">
+        <section class="hero hero-compact">
             <div class="hero-content">
 
                 <h1>Explore Endangered Animals</h1>
@@ -62,10 +64,16 @@
                     threats, and conservation status.
                 </p>
 
-                <p>
-                    Animal profiles coming soon.
-                </p>
+            </div>
+        </section>
 
+        <!-- Cards built by animal-cards.js from ANIMALS in animal-data.js -->
+        <section class="animals animals-directory">
+            <h2 class="visually-hidden">Animal list</h2>
+            <div class="animal-grid" data-animal-cards>
+                <noscript>
+                    <p>Please enable JavaScript to view the animal list.</p>
+                </noscript>
             </div>
         </section>
     </main>
