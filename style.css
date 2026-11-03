@@ -1,3 +1,166 @@
+homepage
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #173b2a;
+    background: #fafaf6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background: white;
+}
+
+nav a {
+    margin-left: 25px;
+    color: #173b2a;
+    text-decoration: none;
+}
+
+
+.hero {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    padding: 70px 7%;
+    color: white;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 42, 24, 0.95),
+            rgba(10, 42, 24, 0.55),
+            rgba(10, 42, 24, 0.05)
+        ),
+        url("images/hero-tiger.jpg") center/cover;
+}
+
+.hero-content {
+    max-width: 560px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #80ac46;
+    color: white;
+    text-decoration: none;
+}
+
+.button:hover {
+    background: #669039;
+}
+
+.animals {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+
+.animal-card {
+    display: block;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 10px #00000012;
+    transition: transform 0.2s;
+}
+
+
+.animal-card:hover {
+    transform: translateY(-5px);
+}
+
+.animal-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+}
+
+.status {
+    display: inline-block;
+    background: #ffded3;
+    color: #a83220;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.mission {
+    background: #e4efdc;
+    padding: 45px 7%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.mission p {
+    flex: 1;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .animal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+.animal-card:focus-visible {
+    outline: 3px solid #80ac46;
+    outline-offset: 4px;
+}
+=======
 
 
 /* ==================================
@@ -257,3 +420,4 @@ button:focus-visible {
         font-size: 25px;
     }
 }
+main
