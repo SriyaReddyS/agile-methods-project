@@ -1,166 +1,3 @@
-homepage
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #173b2a;
-    background: #fafaf6;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 7%;
-    background: white;
-}
-
-nav a {
-    margin-left: 25px;
-    color: #173b2a;
-    text-decoration: none;
-}
-
-
-.hero {
-    min-height: 440px;
-    display: flex;
-    align-items: center;
-    padding: 70px 7%;
-    color: white;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(10, 42, 24, 0.95),
-            rgba(10, 42, 24, 0.55),
-            rgba(10, 42, 24, 0.05)
-        ),
-        url("images/hero-tiger.jpg") center/cover;
-}
-
-.hero-content {
-    max-width: 560px;
-}
-
-.hero h1 {
-    font-size: 52px;
-    line-height: 1.1;
-}
-
-.hero p {
-    font-size: 17px;
-    line-height: 1.6;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 30px;
-    border-radius: 30px;
-    background: #80ac46;
-    color: white;
-    text-decoration: none;
-}
-
-.button:hover {
-    background: #669039;
-}
-
-.animals {
-    padding: 55px 7%;
-    text-align: center;
-}
-
-.animal-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 30px;
-}
-
-
-.animal-card {
-    display: block;
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    text-align: left;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 2px 10px #00000012;
-    transition: transform 0.2s;
-}
-
-
-.animal-card:hover {
-    transform: translateY(-5px);
-}
-
-.animal-card img {
-    width: 100%;
-    height: 210px;
-    object-fit: cover;
-    display: block;
-}
-
-.card-content {
-    padding: 20px;
-}
-
-.card-content h3 {
-    margin-top: 0;
-}
-
-.status {
-    display: inline-block;
-    background: #ffded3;
-    color: #a83220;
-    padding: 7px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-}
-
-.mission {
-    background: #e4efdc;
-    padding: 45px 7%;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-.mission p {
-    flex: 1;
-    line-height: 1.6;
-}
-
-@media (max-width: 650px) {
-    header {
-        flex-direction: column;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .animal-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .mission {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-}
-
-.animal-card:focus-visible {
-    outline: 3px solid #80ac46;
-    outline-offset: 4px;
-}
-=======
 
 
 /* ==================================
@@ -420,4 +257,259 @@ button:focus-visible {
         font-size: 25px;
     }
 }
-main
+
+/* ==================================
+   Homepage
+================================== */
+
+/* Hero with photo; .hero-home keeps other pages' plain .hero unchanged */
+
+.hero.hero-home {
+    min-height: 440px;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 70px 7%;
+    color: white;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 42, 24, 0.95),
+            rgba(10, 42, 24, 0.55),
+            rgba(10, 42, 24, 0.05)
+        ),
+        url("images/hero-tiger.jpg") center/cover;
+}
+
+.hero-home .hero-content {
+    max-width: 560px;
+}
+
+.hero-home h1 {
+    font-size: 52px;
+    line-height: 1.1;
+}
+
+.hero-home p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.hero-home .button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #80ac46;
+    font-weight: normal;
+}
+
+.hero-home .button:hover {
+    background: #669039;
+}
+
+/* Featured Animals */
+
+.animals {
+    padding: 55px 7%;
+    text-align: center;
+}
+
+.animals h2 {
+    font-size: 30px;
+}
+
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.animal-card {
+    display: block;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 10px #00000012;
+    transition: transform 0.2s;
+}
+
+/* Lift only cards that are links as a whole (homepage) */
+a.animal-card:hover {
+    transform: translateY(-5px);
+}
+
+.animal-card:focus-visible {
+    outline: 3px solid #80ac46;
+    outline-offset: 4px;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+}
+
+.status {
+    display: inline-block;
+    background: #ffded3;
+    color: #a83220;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.photo-credits {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #4a5c50;
+}
+
+.photo-credits a {
+    color: inherit;
+}
+
+/* ==================================
+   Animal Directory (animals.html)
+   Cards built by animal-cards.js
+================================== */
+
+.hero.hero-compact {
+    min-height: 0;
+    padding: 60px 20px 10px;
+}
+
+.animals-directory {
+    padding-top: 10px;
+}
+
+.animals-directory .animal-grid {
+    margin-top: 0;
+}
+
+/* Stack card content so "Learn More" lines up across a row */
+.animals-directory .animal-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.animals-directory .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.animal-card-placeholder {
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dfe8e1;
+    border-bottom: 2px dashed #8aa595;
+    color: #3d5546;
+    font-weight: bold;
+}
+
+.card-content .animal-card-scientific {
+    font-style: italic;
+    color: #4a5c50;
+    margin: -6px 0 10px;
+}
+
+.animal-card-description {
+    margin: 14px 0 18px;
+    line-height: 1.6;
+}
+
+.animal-card-link {
+    margin-top: auto;
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 30px;
+    background: #214d38;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.animal-card-link:hover {
+    background: #347452;
+}
+
+.animal-card-credit {
+    margin-top: 14px;
+    font-size: 12px;
+    color: #4a5c50;
+}
+
+.animal-card-credit a {
+    color: inherit;
+}
+
+@media (max-width: 900px) {
+    .animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Hidden visually, still read by screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Mission (anchor for the "About Us" link) */
+
+.mission {
+    background: #e4efdc;
+    padding: 45px 7%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.mission p {
+    flex: 1;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+
+    .hero.hero-home {
+        padding: 60px 7%;
+    }
+
+    .hero-home h1 {
+        font-size: 34px;
+    }
+
+    .animal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Profile | Wildlife Guardian</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animal-detail.css">
+    <script src="script.js" defer></script>
+    <script src="animal-data.js" defer></script>
+    <script src="animal-detail.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Shared Header -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="index.html" class="logo">
+                Wildlife Guardian
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="primary-navigation">
+                ☰
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="primary-navigation">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="animals.html">
+                        Explore Animals
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html#about">
+                        About Us
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- Animal Profile: filled in by animal-detail.js from ?id=<species-id> -->
+    <main id="animal-profile" class="animal-profile">
+        <noscript>
+            <p class="profile-message">
+                Please enable JavaScript to view animal profiles.
+            </p>
+        </noscript>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Wildlife Guardian | Team 5</p>
+    </footer>
+
+</body>
+</html>
