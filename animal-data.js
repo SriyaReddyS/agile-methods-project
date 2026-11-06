@@ -69,7 +69,41 @@ const ANIMALS = [
         population: {
             text: "About 84 adults and subadults were estimated in 2014–2015 (published 2018). Surveys on both sides of the border suggest numbers are rising, but no newer total has been verified for this site.",
             asOf: "2014–2015",
-            sources: ["wcs-amur-leopard"]
+            localActions: [
+                  {
+                            "title": "Learn about global wildlife protection locally",
+                            "text": "Explore conservation education and everyday wildlife-friendly choices through Pittsburgh Zoo & Aquarium. This is a general way to support conservation awareness, not an Amur leopard-specific local program.",
+                            "url": "https://www.pittsburghzoo.org/conservation/",
+                            "label": "Pittsburgh Zoo & Aquarium",
+                            "sources": [
+                                      "pgh-zoo-conservation"
+                            ]
+                  },
+                  {
+                            "title": "Care for Pittsburgh's green spaces",
+                            "text": "Look for local habitat stewardship and cleanup opportunities through Pittsburgh Parks Conservancy. These activities benefit Pittsburgh ecosystems rather than the leopard's overseas habitat.",
+                            "url": "https://pittsburghparks.org/",
+                            "label": "Pittsburgh Parks Conservancy",
+                            "sources": [
+                                      "pgh-parks"
+                            ]
+                  }
+        ],
+        sources: ["            {
+                "id": "pgh-zoo-conservation",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-06"
+            },
+            {
+                "id": "pgh-parks",
+                "title": "Pittsburgh Parks Conservancy",
+                "publisher": "Pittsburgh Parks Conservancy",
+                "url": "https://pittsburghparks.org/",
+                "accessed": "2026-11-06"
+            },
+wcs-amur-leopard"]
         },
         sources: [
             {
@@ -134,7 +168,41 @@ const ANIMALS = [
             { text: "Support coral reef and nesting-beach protection, including turtle-friendly coastal lighting.", sources: ["noaa-hawksbill", "fws-hawksbill"] }
         ],
         population: null,
+        localActions: [
+                  {
+                            "title": "Support sea turtle conservation education and rehabilitation",
+                            "text": "Learn about Pittsburgh Zoo & Aquarium's Sea Turtle Second Chance rehabilitation program. It supports sea turtles generally and is not presented as a hawksbill-specific program.",
+                            "url": "https://www.pittsburghzoo.org/initiative/sea-turtles/",
+                            "label": "Sea Turtle Second Chance",
+                            "sources": [
+                                      "pgh-zoo-turtles"
+                            ]
+                  },
+                  {
+                            "title": "Volunteer for local river and litter cleanups",
+                            "text": "Join Allegheny CleanWays cleanups to reduce litter in Pittsburgh waterways. This helps local rivers and builds habits that reduce pollution, but it is not a direct hawksbill habitat project.",
+                            "url": "https://www.alleghenycleanways.org/getinvolved.html",
+                            "label": "Allegheny CleanWays volunteer opportunities",
+                            "sources": [
+                                      "pgh-cleanways"
+                            ]
+                  }
+        ],
         sources: [
+            {
+                "id": "pgh-zoo-turtles",
+                "title": "Sea Turtle Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/initiative/sea-turtles/",
+                "accessed": "2026-11-06"
+            },
+            {
+                "id": "pgh-cleanways",
+                "title": "Get Involved",
+                "publisher": "Allegheny CleanWays",
+                "url": "https://www.alleghenycleanways.org/getinvolved.html",
+                "accessed": "2026-11-06"
+            },
             {
                 id: "noaa-hawksbill",
                 title: "Hawksbill Turtle",
@@ -212,7 +280,34 @@ const ANIMALS = [
         population: {
             text: "About 13,846 individuals were estimated in 2016 (Wich et al. 2016). This was higher than an earlier estimate of about 6,600 because of better survey methods, not population growth. The IUCN assessment (Singleton et al. 2023) reports that overall numbers continue to decline.",
             asOf: "2016",
-            sources: ["apes-atlas-orangutan"]
+            localActions: [
+                  {
+                            "title": "Make rainforest-conscious purchasing choices",
+                            "text": "Use Pittsburgh Zoo & Aquarium's conservation guidance to learn about reducing palm oil use and considering rainforest impacts when shopping locally. Product sourcing choices can matter for tropical forests.",
+                            "url": "https://www.pittsburghzoo.org/conservation/",
+                            "label": "Pittsburgh Zoo conservation actions",
+                            "sources": [
+                                      "pgh-zoo-conservation"
+                            ]
+                  },
+                  {
+                            "title": "Take part in local conservation education",
+                            "text": "Explore Pittsburgh Zoo & Aquarium conservation programs and share what you learn about habitat loss. Local education is an indirect way to support awareness of threatened species such as the Sumatran orangutan.",
+                            "url": "https://www.pittsburghzoo.org/conservation/",
+                            "label": "Pittsburgh Zoo & Aquarium",
+                            "sources": [
+                                      "pgh-zoo-conservation"
+                            ]
+                  }
+        ],
+        sources: ["            {
+                "id": "pgh-zoo-conservation",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-06"
+            },
+apes-atlas-orangutan"]
         },
         sources: [
             {
