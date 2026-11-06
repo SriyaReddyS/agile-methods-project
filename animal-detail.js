@@ -338,6 +338,31 @@ function renderAnimalProfile(animal, container) {
         article.appendChild(conservation);
     }
 
+    // Optional Pittsburgh actions: local participation, not species habitat claims.
+    if (animal.localActions && animal.localActions.length) {
+        const local = createSection(animal.id, "local", "How You Can Help in Pittsburgh");
+        local.appendChild(createTextElement(
+            "p", "local-intro",
+            "These are Pittsburgh-based ways to learn or take action. They do not mean this species lives locally or that every program directly protects it."
+        ));
+        const cards = createTextElement("div", "local-action-grid");
+        animal.localActions.forEach(function (action) {
+            const card = createTextElement("div", "local-action-card");
+            card.appendChild(createTextElement("h3", null, action.title));
+            card.appendChild(createCitedParagraph(action, null, citationTools));
+            if (action.url) {
+                const link = createTextElement("a", "local-action-link", action.label || "Explore local action");
+                link.href = action.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                card.appendChild(link);
+            }
+            cards.appendChild(card);
+        });
+        local.appendChild(cards);
+        article.appendChild(local);
+    }
+
     // Population (optional, always dated)
     if (animal.population) {
         const population = createSection(animal.id, "population", "Population Estimate");
