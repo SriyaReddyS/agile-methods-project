@@ -305,7 +305,7 @@ function renderAnimalProfile(animal, container) {
     article.appendChild(factsGrid);
 
     // Major threats
-    const threats = createSection(animal.id, "threats", "Major Threats");
+    const threats = createSection(animal.id, "threats", "Conservation Challenges");
     const threatList = createTextElement("ul", "threat-list");
 
     animal.threats.forEach(function (threat) {
@@ -318,6 +318,50 @@ function renderAnimalProfile(animal, container) {
 
     threats.appendChild(threatList);
     article.appendChild(threats);
+
+    // Ecological role and practical conservation actions
+    if (animal.ecologicalImportance) {
+        const ecology = createSection(animal.id, "ecology", "Ecological Importance");
+        ecology.appendChild(createCitedParagraph(animal.ecologicalImportance, null, citationTools));
+        article.appendChild(ecology);
+    }
+
+    if (animal.conservationMethods && animal.conservationMethods.length) {
+        const conservation = createSection(animal.id, "conservation", "Methods to Help Protect");
+        const methodsList = createTextElement("ul", "conservation-list");
+        animal.conservationMethods.forEach(function (method) {
+            const item = createTextElement("li", null, method.text);
+            item.appendChild(createCitations(method.sources, citationTools.numbers, citationTools.lookup));
+            methodsList.appendChild(item);
+        });
+        conservation.appendChild(methodsList);
+        article.appendChild(conservation);
+    }
+
+    // Optional Pittsburgh actions: local participation, not species habitat claims.
+    if (animal.localActions && animal.localActions.length) {
+        const local = createSection(animal.id, "local", "How You Can Help in Pittsburgh");
+        local.appendChild(createTextElement(
+            "p", "local-intro",
+            "These are Pittsburgh-based ways to learn or take action. They do not mean this species lives locally or that every program directly protects it."
+        ));
+        const cards = createTextElement("div", "local-action-grid");
+        animal.localActions.forEach(function (action) {
+            const card = createTextElement("div", "local-action-card");
+            card.appendChild(createTextElement("h3", null, action.title));
+            card.appendChild(createCitedParagraph(action, null, citationTools));
+            if (action.url) {
+                const link = createTextElement("a", "local-action-link", action.label || "Explore local action");
+                link.href = action.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                card.appendChild(link);
+            }
+            cards.appendChild(card);
+        });
+        local.appendChild(cards);
+        article.appendChild(local);
+    }
 
     // Population (optional, always dated)
     if (animal.population) {

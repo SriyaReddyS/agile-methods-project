@@ -260,3 +260,12 @@
         padding: 20px;
     }
 }
+
+/* Pittsburgh-specific action cards, distinct from global methods */
+.local-intro { color: #4a5c50; margin-bottom: 16px; }
+.local-action-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.local-action-card { background: #f3f7f3; border: 1px solid #dce8dd; border-radius: 10px; padding: 18px; }
+.local-action-card h3 { font-size: 18px; margin: 0 0 10px; }
+.local-action-card p { margin: 0 0 12px; }
+.local-action-link { display: inline-block; color: #214d38; font-weight: bold; text-decoration: underline; }
+@media (max-width: 650px) { .local-action-grid { grid-template-columns: 1fr; } }
