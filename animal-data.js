@@ -60,6 +60,12 @@ const ANIMALS = [
             { text: "Disease, such as canine distemper virus", sources: ["wcs-amur-leopard"] },
             { text: "Inbreeding depression in a very small population", sources: ["wcs-amur-leopard"] }
         ],
+        ecologicalImportance: { text: "As a large predator, the Amur leopard helps shape prey populations and is part of the balance of temperate forest food webs.", sources: ["wcs-amur-leopard"] },
+        conservationMethods: [
+            { text: "Support habitat protection and wildlife corridors in the Russian Far East and Northeast China.", sources: ["wcs-amur-leopard"] },
+            { text: "Support efforts to protect natural prey populations and reduce poaching.", sources: ["wcs-amur-leopard"] },
+            { text: "Learn about conservation programs that monitor leopard populations and disease risks.", sources: ["wcs-amur-leopard"] }
+        ],
         population: {
             text: "About 84 adults and subadults were estimated in 2014–2015 (published 2018). Surveys on both sides of the border suggest numbers are rising, but no newer total has been verified for this site.",
             asOf: "2014–2015",
@@ -120,6 +126,12 @@ const ANIMALS = [
             { text: "Beachfront lighting that disorients hatchlings", sources: ["fws-hawksbill"] },
             { text: "Predation of eggs and hatchlings, including by introduced dogs, cats, and pigs", sources: ["noaa-hawksbill"] },
             { text: "Vessel strikes and marine debris", sources: ["noaa-hawksbill"] }
+        ],
+        ecologicalImportance: { text: "Hawksbill turtles eat sponges on coral reefs. Their feeding helps influence sponge communities and contributes to reef ecosystem dynamics.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
+        conservationMethods: [
+            { text: "Never buy tortoiseshell jewelry or other products made from sea turtles.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
+            { text: "Reduce plastic waste and support responsible fishing practices that lower turtle bycatch.", sources: ["noaa-hawksbill"] },
+            { text: "Support coral reef and nesting-beach protection, including turtle-friendly coastal lighting.", sources: ["noaa-hawksbill", "fws-hawksbill"] }
         ],
         population: null,
         sources: [
@@ -190,6 +202,12 @@ const ANIMALS = [
             { text: "Illegal pet trade and deliberate killing", sources: ["apes-atlas-orangutan"] },
             { text: "Conflict with people, such as crop raiding", sources: ["apes-atlas-orangutan"] },
             { text: "Land-use planning that opens habitat to plantations, timber, and mining", sources: ["apes-atlas-orangutan"] }
+        ],
+        ecologicalImportance: { text: "Sumatran orangutans help tropical forests regenerate by moving through the canopy and dispersing seeds from the fruit they eat.", sources: ["apes-atlas-orangutan"] },
+        conservationMethods: [
+            { text: "Choose products from companies with credible deforestation-free sourcing commitments.", sources: ["apes-atlas-orangutan"] },
+            { text: "Support organizations protecting Sumatran forests and restoring fragmented habitats.", sources: ["apes-atlas-orangutan"] },
+            { text: "Avoid wildlife-pet trade and support responsible protection of wild orangutans.", sources: ["apes-atlas-orangutan"] }
         ],
         population: {
             text: "About 13,846 individuals were estimated in 2016 (Wich et al. 2016). This was higher than an earlier estimate of about 6,600 because of better survey methods, not population growth. The IUCN assessment (Singleton et al. 2023) reports that overall numbers continue to decline.",
