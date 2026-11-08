@@ -513,3 +513,248 @@ a.animal-card:hover {
         text-align: center;
     }
 }
+
+/* Animal Search & Filters */
+
+.animal-filter-panel {
+    background: #f3f7f3;
+    border: 1px solid #dce8dd;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 28px 0;
+}
+
+.animal-filter-panel h2 {
+    margin: 0 0 20px;
+    color: #214d38;
+    font-size: 24px;
+}
+
+.animal-filter-controls {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.animal-search,
+.animal-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.animal-filter-panel label {
+    font-weight: bold;
+    color: #214d38;
+    font-size: 14px;
+}
+
+.animal-filter-panel input,
+.animal-filter-panel select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #b9cbbd;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+.animal-filter-panel button {
+    padding: 10px 18px;
+    border: 1px solid #214d38;
+    border-radius: 8px;
+    background: white;
+    color: #214d38;
+    cursor: pointer;
+}
+
+.animal-filter-panel button:hover {
+    background: #e1ebe2;
+}
+
+#reset-filters {
+    margin-top: 20px;
+    background: #214d38;
+    color: white;
+}
+
+#reset-filters:hover {
+    background: #163b2a;
+}
+
+@media (max-width: 750px) {
+    .animal-filter-controls {
+        grid-template-columns: 1fr;
+    }
+}
+
+.animal-filter-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.animal-filter-actions button {
+    width: auto;
+    margin-top: 0;
+}
+
+#reset-filters {
+    margin-top: 0;
+}
+
+/* Help Animals Near You */
+
+.local-help {
+    padding: 48px 32px;
+    background: #f3f7f3;
+    border-radius: 12px;
+    margin: 40px auto;
+}
+
+.local-help h2 {
+    text-align: center;
+    color: #214d38;
+    margin-bottom: 12px;
+}
+
+.local-help > p {
+    text-align: center;
+    color: #4a5c50;
+    margin-bottom: 28px;
+}
+
+/* Search and category controls */
+
+.local-help-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    margin-bottom: 28px;
+}
+
+.local-help-controls label {
+    font-weight: bold;
+    color: #214d38;
+}
+
+.local-help-controls input,
+.local-help-controls select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #b9cbbd;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+#reset-organization-filters {
+    grid-column: 1 / -1;
+    justify-self: end;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #214d38;
+    color: white;
+    cursor: pointer;
+}
+
+#reset-organization-filters:hover {
+    background: #163b2a;
+}
+
+/* Organization cards */
+
+.organization-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.organization-card {
+    background: white;
+    border: 1px solid #dce8dd;
+    border-radius: 10px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.organization-card h3 {
+    color: #214d38;
+    font-size: 19px;
+    margin: 0;
+}
+
+.organization-card p {
+    color: #4a5c50;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.organization-card a {
+    display: inline-block;
+    margin-top: auto;
+    color: #214d38;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.organization-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 30px;
+    color: #4a5c50;
+}
+
+/* Responsive layout */
+
+@media (max-width: 750px) {
+    .local-help {
+        padding: 28px 18px;
+    }
+
+    .local-help-controls,
+    .organization-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.organization-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* Organization Card Details */
+
+.organization-category {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #e1ebe2;
+    color: #214d38;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.organization-address,
+.organization-phone {
+    font-size: 14px;
+    color: #4a5c50;
+}
+
+.organization-notes {
+    background: #f3f7f3;
+    border-left: 3px solid #56836c;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.5;
+}

@@ -69,6 +69,54 @@
 
         <!-- Cards built by animal-cards.js from ANIMALS in animal-data.js -->
         <section class="animals animals-directory">
+            <div class="animal-filter-panel">
+                <h2>Find Your Animal</h2>
+
+                <div class="animal-filter-controls">
+
+                    <div class="animal-search">
+                        <label for="animal-search-input">Search Animals</label>
+                        <input
+                            type="text"
+                            id="animal-search-input"
+                            placeholder="Search by animal name..."
+                        >
+                        <!--<button type="button" id="clear-animal-search">
+                            Clear
+                        </button> -->
+                    </div>
+
+                    <div class="animal-filter">
+                        <label for="status-filter">Conservation Status</label>
+
+                        <select id="status-filter">
+                            <option value="all">All Statuses</option>
+                            <option value="Critically Endangered">Critically Endangered</option>
+                            <option value="Endangered">Endangered</option>
+                            <option value="Vulnerable">Vulnerable</option>
+                        </select>
+                    </div>
+
+                    <div class="animal-filter">
+                        <label for="habitat-filter">Habitat</label>
+
+                        <select id="habitat-filter">
+                            <option value="all">All Habitats</option>
+                            <option value="temperate">Temperate Forest</option>
+                            <option value="marine">Marine & Coastal</option>
+                            <option value="tropical">Tropical Rainforest</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="animal-filter-actions">
+                    <button type="button" id="clear-animal-search">Clear Search</button>
+                    <button type="button" id="reset-filters">Reset Filters</button>
+                </div>
+            
+            </div>
+
             <h2 class="visually-hidden">Animal list</h2>
             <div class="animal-grid" data-animal-cards>
                 <noscript>

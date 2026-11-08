@@ -6,6 +6,10 @@
     <title>Wildlife Guardian | Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
+    <script src="organization-data.js" defer></script>
+    <script src="organization-cards.js" defer></script>
+
 </head>
 
 <body>
@@ -110,6 +114,47 @@
                 <a href="https://commons.wikimedia.org/wiki/File:Tortuga_carey_(Eretmochelys_imbricata),_parque_nacional_Ras_Muhammad,_Egipto,_2022-03-28,_DD_56.jpg">Diego Delso</a>
                 (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
             </p>
+        </section>
+
+        <!-- Help Animals Near You -->
+        <section class="local-help" id="local-help">
+            <h2>Help Animals Near You</h2>
+
+            <p>
+                Discover wildlife rescue centers, animal shelters,
+                and conservation organizations in Pittsburgh.
+            </p>
+
+            <div class="local-help-controls">
+                <div class="organization-filter">
+                    <label for="organization-search">Search Organizations</label>
+                    <input
+                        type="text"
+                        id="organization-search"
+                        placeholder="Search by name or service..."
+                    >
+                </div>
+
+                <div class="organization-filter">
+                    <label for="organization-category">Category</label>
+                    <select id="organization-category">
+                        <option value="all">All Categories</option>
+                        <option value="wildlife_rehabilitation">Wildlife Rehabilitation</option>
+                        <option value="animal_shelter">Animal Shelters</option>
+                        <option value="municipal_animal_services">Animal Services</option>
+                        <option value="conservation_education">Conservation Education</option>
+                        <option value="habitat_conservation">Habitat Conservation</option>
+                    </select>
+                </div>
+
+                <button type="button" id="reset-organization-filters">
+                    Reset Filters
+                </button>
+            </div>
+
+            <div class="organization-grid" id="organization-grid">
+                <!-- Organization cards will appear here -->
+            </div>
         </section>
 
         <!-- Mission: target of the "About Us" nav link -->
