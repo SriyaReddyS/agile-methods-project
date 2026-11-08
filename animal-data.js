@@ -60,12 +60,40 @@ const ANIMALS = [
             { text: "Disease, such as canine distemper virus", sources: ["wcs-amur-leopard"] },
             { text: "Inbreeding depression in a very small population", sources: ["wcs-amur-leopard"] }
         ],
+        ecologicalImportance: { text: "As a large predator, the Amur leopard helps shape prey populations and is part of the balance of temperate forest food webs.", sources: ["wcs-amur-leopard"] },
+        conservationMethods: [
+            { text: "Support habitat protection and wildlife corridors in the Russian Far East and Northeast China.", sources: ["wcs-amur-leopard"] },
+            { text: "Support efforts to protect natural prey populations and reduce poaching.", sources: ["wcs-amur-leopard"] },
+            { text: "Learn about conservation programs that monitor leopard populations and disease risks.", sources: ["wcs-amur-leopard"] }
+        ],
         population: {
             text: "About 84 adults and subadults were estimated in 2014–2015 (published 2018). Surveys on both sides of the border suggest numbers are rising, but no newer total has been verified for this site.",
             asOf: "2014–2015",
             sources: ["wcs-amur-leopard"]
         },
+        localActions: [
+            {
+                "title": "Learn about global wildlife protection locally",
+                "text": "Explore conservation education and everyday wildlife-friendly choices through Pittsburgh Zoo & Aquarium. This is a general way to support conservation awareness, not an Amur leopard-specific local program.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-conservation"
+                ]
+            },
+            {
+                "title": "Care for Pittsburgh's green spaces",
+                "text": "Look for local habitat stewardship and cleanup opportunities through Pittsburgh Parks Conservancy. These activities benefit Pittsburgh ecosystems rather than the leopard's overseas habitat.",
+                "url": "https://pittsburghparks.org/",
+                "label": "Pittsburgh Parks Conservancy",
+                "sources": [
+                    "pgh-parks"
+                ]
+            }
+        ],
         sources: [
+            {"id":"pgh-zoo-conservation","title":"Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/conservation/","accessed":"2026-11-06"},
+            {"id":"pgh-parks","title":"Pittsburgh Parks Conservancy","publisher":"Pittsburgh Parks Conservancy","url":"https://pittsburghparks.org/","accessed":"2026-11-06"},
             {
                 id: "wcs-amur-leopard",
                 title: "Amur Leopard",
@@ -121,8 +149,36 @@ const ANIMALS = [
             { text: "Predation of eggs and hatchlings, including by introduced dogs, cats, and pigs", sources: ["noaa-hawksbill"] },
             { text: "Vessel strikes and marine debris", sources: ["noaa-hawksbill"] }
         ],
+        ecologicalImportance: { text: "Hawksbill turtles eat sponges on coral reefs. Their feeding helps influence sponge communities and contributes to reef ecosystem dynamics.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
+        conservationMethods: [
+            { text: "Never buy tortoiseshell jewelry or other products made from sea turtles.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
+            { text: "Reduce plastic waste and support responsible fishing practices that lower turtle bycatch.", sources: ["noaa-hawksbill"] },
+            { text: "Support coral reef and nesting-beach protection, including turtle-friendly coastal lighting.", sources: ["noaa-hawksbill", "fws-hawksbill"] }
+        ],
         population: null,
+        localActions: [
+            {
+                "title": "Support sea turtle rehabilitation",
+                "text": "Learn about Pittsburgh Zoo & Aquarium's Sea Turtle Second Chance program. It supports sea turtles generally, not specifically hawksbills.",
+                "url": "https://www.pittsburghzoo.org/initiative/sea-turtles/",
+                "label": "Sea Turtle Second Chance",
+                "sources": [
+                    "pgh-zoo-turtles"
+                ]
+            },
+            {
+                "title": "Volunteer for river cleanups",
+                "text": "Join Allegheny CleanWays to reduce litter in Pittsburgh waterways. This helps local rivers, not directly hawksbill habitats.",
+                "url": "https://www.alleghenycleanways.org/getinvolved.html",
+                "label": "Allegheny CleanWays",
+                "sources": [
+                    "pgh-cleanways"
+                ]
+            }
+        ],
         sources: [
+            {"id":"pgh-zoo-turtles","title":"Sea Turtle Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/initiative/sea-turtles/","accessed":"2026-11-06"},
+            {"id":"pgh-cleanways","title":"Get Involved","publisher":"Allegheny CleanWays","url":"https://www.alleghenycleanways.org/getinvolved.html","accessed":"2026-11-06"},
             {
                 id: "noaa-hawksbill",
                 title: "Hawksbill Turtle",
@@ -191,12 +247,39 @@ const ANIMALS = [
             { text: "Conflict with people, such as crop raiding", sources: ["apes-atlas-orangutan"] },
             { text: "Land-use planning that opens habitat to plantations, timber, and mining", sources: ["apes-atlas-orangutan"] }
         ],
+        ecologicalImportance: { text: "Sumatran orangutans help tropical forests regenerate by moving through the canopy and dispersing seeds from the fruit they eat.", sources: ["apes-atlas-orangutan"] },
+        conservationMethods: [
+            { text: "Choose products from companies with credible deforestation-free sourcing commitments.", sources: ["apes-atlas-orangutan"] },
+            { text: "Support organizations protecting Sumatran forests and restoring fragmented habitats.", sources: ["apes-atlas-orangutan"] },
+            { text: "Avoid wildlife-pet trade and support responsible protection of wild orangutans.", sources: ["apes-atlas-orangutan"] }
+        ],
         population: {
             text: "About 13,846 individuals were estimated in 2016 (Wich et al. 2016). This was higher than an earlier estimate of about 6,600 because of better survey methods, not population growth. The IUCN assessment (Singleton et al. 2023) reports that overall numbers continue to decline.",
             asOf: "2016",
             sources: ["apes-atlas-orangutan"]
         },
+        localActions: [
+            {
+                "title": "Make rainforest-conscious purchasing choices",
+                "text": "Use Pittsburgh Zoo & Aquarium conservation guidance to consider palm oil and rainforest impacts when shopping locally.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo conservation actions",
+                "sources": [
+                    "pgh-zoo-conservation"
+                ]
+            },
+            {
+                "title": "Explore local conservation education",
+                "text": "Explore Pittsburgh Zoo & Aquarium conservation programs and share what you learn about habitat loss. This indirectly supports awareness of threatened wildlife.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-conservation"
+                ]
+            }
+        ],
         sources: [
+            {"id":"pgh-zoo-conservation","title":"Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/conservation/","accessed":"2026-11-06"},
             {
                 id: "apes-atlas-orangutan",
                 title: "Sumatran Orangutan",
