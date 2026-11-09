@@ -145,8 +145,80 @@ function renderAnimalCards(animals, container) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const container = document.querySelector("[data-animal-cards]");
+    const searchInput = document.getElementById("animal-search-input");
+    const clearButton = document.getElementById("clear-animal-search");
+    const statusFilter = document.getElementById("status-filter");
+    const habitatFilter = document.getElementById("habitat-filter");
+    const resetButton = document.getElementById("reset-filters");
 
     if (container && typeof ANIMALS !== "undefined") {
-        renderAnimalCards(ANIMALS, container);
+
+        function updateAnimalCards() {
+            const keyword = searchInput ? searchInput.value.toLowerCase().trim() : "";
+            const selectedStatus = statusFilter ? statusFilter.value : "all";
+            const selectedHabitat = habitatFilter ? habitatFilter.value : "all";
+
+            const filteredAnimals = ANIMALS.filter(function (animal) {
+                const matchesName = animal.commonName.toLowerCase().includes(keyword);
+
+                const matchesStatus = selectedStatus === "all" ||
+                    (animal.status && animal.status.label === selectedStatus);
+
+                const habitatText = animal.habitat.text.toLowerCase();
+
+                let matchesHabitat = selectedHabitat === "all";
+
+                if (selectedHabitat === "temperate") {
+                    matchesHabitat = habitatText.includes("temperate");
+                } else if (selectedHabitat === "marine") {
+                    matchesHabitat = habitatText.includes("coral reefs");
+                } else if (selectedHabitat === "tropical") {
+                    matchesHabitat = habitatText.includes("tropical");
+                }
+
+                return matchesName && matchesStatus && matchesHabitat;
+            });
+
+            renderAnimalCards(filteredAnimals, container);
+        }
+
+        updateAnimalCards();
+
+        if (searchInput) {
+            searchInput.addEventListener("input", updateAnimalCards);
+        }
+
+        if (statusFilter) {
+            statusFilter.addEventListener("change", updateAnimalCards);
+        }
+
+        if (habitatFilter) {
+            habitatFilter.addEventListener("change", updateAnimalCards);
+        }
+
+        if (clearButton && searchInput) {
+            clearButton.addEventListener("click", function () {
+                searchInput.value = "";
+                updateAnimalCards();
+            });
+        }
+
+        if (resetButton) {
+            resetButton.addEventListener("click", function () {
+                if (searchInput) {
+                    searchInput.value = "";
+                }
+
+                if (statusFilter) {
+                    statusFilter.value = "all";
+                }
+
+                if (habitatFilter) {
+                    habitatFilter.value = "all";
+                }
+
+                updateAnimalCards();
+            });
+        }
     }
 });
