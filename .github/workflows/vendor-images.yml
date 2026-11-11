@@ -1,0 +1,31 @@
+name: Vendor licensed animal images
+on:
+  push:
+    branches:
+      - feature/expand-to-20-animal-profiles
+    paths:
+      - scripts/vendor-images.cjs
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  vendor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/expand-to-20-animal-profiles
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Download Wikimedia Commons licensed images
+        run: node scripts/vendor-images.cjs
+      - name: Commit local images and updated references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/ animal-data.js
+          if ! git diff --cached --quiet; then
+            git commit -m "assets: vendor licensed animal photos for reliable page loading"
+            git push
+          fi
