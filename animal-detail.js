@@ -175,7 +175,7 @@ function createImageCredit(image) {
     const caption = createTextElement("figcaption", "profile-photo-credit");
 
     if (image.credit) {
-        caption.appendChild(document.createTextNode("Photo: "));
+        caption.appendChild(document.createTextNode(image.mediaType === "illustration" ? "Illustration: " : image.mediaType === "historical" ? "Historical photo: " : "Photo: "));
         caption.appendChild(createOptionalLink(image.credit, image.sourceUrl));
         caption.appendChild(document.createTextNode(". "));
     }
