@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (animal.image && animal.image.src && animal.image.credit) {
             const credit = document.createElement("p");
             credit.className = "home-photo-credit";
-            credit.append("Photo: ");
+            credit.append(animal.image.mediaType === "illustration" ? "Illustration: " : animal.image.mediaType === "historical" ? "Historical photo: " : "Photo: ");
             const author = document.createElement("a");
             author.href = animal.image.sourceUrl;
             author.textContent = animal.image.credit;
