@@ -29,12 +29,12 @@ async function fetchRetry(url, attempts = 5) {
   for (const a of animals) {
     try {
     const title = decodeURIComponent(a.image.sourceUrl.split("/wiki/File:")[1]).replaceAll("_", " ");
-    const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=" + encodeURIComponent("File:" + title);
+    const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&iiurlwidth=640&titles=" + encodeURIComponent("File:" + title);
     const info = await (await fetchRetry(api)).json();
     const page = Object.values(info.query.pages)[0];
-    const url = page.imageinfo?.[0]?.url;
+    const url = page.imageinfo?.[0]?.thumburl || page.imageinfo?.[0]?.url;
     if (!url) throw new Error("No image found on Commons: " + title);
-    const ext = path.extname(new URL(url).pathname).toLowerCase();
+    const ext = path.extname(title).toLowerCase();
     if (![".jpg", ".jpeg", ".png", ".webp"].includes(ext)) throw new Error("Unexpected format: " + url);
     const local = "images/" + a.id + ext;
     const response = await fetchRetry(url);
@@ -52,7 +52,7 @@ async function fetchRetry(url, attempts = 5) {
       failed.push(a.id + ": " + error.message);
       console.warn("Deferred: " + a.id + " (" + error.message + ")");
     }
-    await delay(2000);
+    await delay(3500);
   }
   fs.writeFileSync(dataPath, source);
   console.log("Downloaded " + completed + " licensed images. Deferred " + failed.length + " due to remote failures.");
