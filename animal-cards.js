@@ -63,7 +63,7 @@ function createAnimalCardMedia(animal) {
 
 // "Photo: <credit> (<license>)" with links. Required by CC licences.
 function createAnimalCardCredit(image) {
-    const credit = createCardElement("p", "animal-card-credit", "Photo: ");
+    const credit = createCardElement("p", "animal-card-credit", image.mediaType === "illustration" ? "Illustration: " : image.mediaType === "historical" ? "Historical photo: " : "Photo: ");
 
     function appendLinkOrText(text, url) {
         if (url) {
