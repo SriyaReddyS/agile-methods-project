@@ -817,12 +817,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Philippine Eagle in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine%20Eagle.jpg",
+            "alt": "Philippine eagle photographed in the Philippines",
+            "credit": "Teddybear41422",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Eagle.jpg"
         },
         "description": {
             "text": "A large forest eagle endemic to the Philippines This profile summarizes key conservation information and links to a specialist source.",
@@ -1043,12 +1043,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Cross River Gorilla in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cross-river-gorilla.jpg",
+            "alt": "Cross River gorilla Nyango at Limbe Wildlife Centre, Cameroon",
+            "credit": "Julielangford",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cross-river-gorilla.jpg"
         },
         "description": {
             "text": "A rare western gorilla subspecies in the Nigeria-Cameroon border region This profile summarizes key conservation information and links to a specialist source.",
@@ -1382,12 +1382,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Asian Elephant in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Asian%20Elephant.jpg",
+            "alt": "Asian elephant in Mudumalai Tiger Reserve, India",
+            "credit": "EstherAbi3",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Asian_Elephant.jpg"
         },
         "description": {
             "text": "A large social herbivore that travels through Asian forests and grasslands This profile summarizes key conservation information and links to a specialist source.",
@@ -1608,12 +1608,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Whale Shark in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Whale%20Shark.jpg",
+            "alt": "Whale shark swimming in the Arabian Sea",
+            "credit": "Akasmita",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_Shark.jpg"
         },
         "description": {
             "text": "The world's largest fish, a gentle filter-feeding shark This profile summarizes key conservation information and links to a specialist source.",
@@ -1721,12 +1721,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Kemp's Ridley Sea Turtle in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kemp's%20ridley%20release.JPG",
+            "alt": "Kemp's ridley sea turtle release at Padre Island National Seashore",
+            "credit": "Adam Webb (Esoxid)",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kemp's_ridley_release.JPG"
         },
         "description": {
             "text": "A small sea turtle known for mass nesting events called arribadas This profile summarizes key conservation information and links to a specialist source.",
@@ -2060,12 +2060,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Polar Bear in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Polar%20Bears.jpg",
+            "alt": "Polar bear photographed at North Carolina Zoo",
+            "credit": "MelissaC2022",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_Bears.jpg"
         },
         "description": {
             "text": "A large Arctic marine mammal that relies on sea ice to hunt seals This profile summarizes key conservation information and links to a specialist source.",
