@@ -1,0 +1,17 @@
+name: Validate wildlife profiles
+on:
+  push:
+    branches:
+      - feature/expand-to-20-animal-profiles
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check profile data and page dependencies
+        run: node scripts/validate-profiles.cjs
