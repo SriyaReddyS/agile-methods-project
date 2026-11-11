@@ -1156,12 +1156,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Red Panda in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Red_Panda_c.jpg",
+            "alt": "Red panda resting among branches, with reddish fur and a ringed tail",
+            "credit": "schani",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Panda_c.jpg"
         },
         "description": {
             "text": "A tree-dwelling mammal adapted to cool Himalayan forests This profile summarizes key conservation information and links to a specialist source.",
@@ -1495,12 +1495,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Blue Whale in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blue_Whale_(Balaenoptera_musculus)_(16108163937).jpg",
+            "alt": "Blue whale photographed in the ocean",
+            "credit": "Gregory \"Slobirdr\" Smith",
+            "license": "CC BY-SA 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Whale_(Balaenoptera_musculus)_(16108163937).jpg"
         },
         "description": {
             "text": "The largest known animal, a baleen whale that feeds mainly on krill This profile summarizes key conservation information and links to a specialist source.",
@@ -1834,12 +1834,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Snow Leopard in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Snow_leopard_(3757699685).jpg",
+            "alt": "Snow leopard resting on rocks at Marwell Wildlife",
+            "credit": "Marie Hale",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snow_leopard_(3757699685).jpg"
         },
         "description": {
             "text": "A mountain cat adapted to cold, steep landscapes This profile summarizes key conservation information and links to a specialist source.",
