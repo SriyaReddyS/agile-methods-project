@@ -24,7 +24,10 @@ async function fetchRetry(url, attempts = 5) {
   }
 }
 (async () => {
+  let completed = 0;
+  const failed = [];
   for (const a of animals) {
+    try {
     const title = decodeURIComponent(a.image.sourceUrl.split("/wiki/File:")[1]).replaceAll("_", " ");
     const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=" + encodeURIComponent("File:" + title);
     const info = await (await fetchRetry(api)).json();
@@ -43,9 +46,14 @@ async function fetchRetry(url, attempts = 5) {
     const oldValue = JSON.stringify(a.image.src);
     if (!source.includes(oldValue)) throw new Error("Source image URL missing from data: " + a.id);
     source = source.replace(oldValue, JSON.stringify(local));
+    completed++;
     console.log(a.id + ": " + bytes.length + " bytes");
-    await delay(700);
+    } catch (error) {
+      failed.push(a.id + ": " + error.message);
+      console.warn("Deferred: " + a.id + " (" + error.message + ")");
+    }
+    await delay(2000);
   }
   fs.writeFileSync(dataPath, source);
-  console.log("Downloaded " + animals.length + " licensed images. Retained original credit and license metadata.");
+  console.log("Downloaded " + completed + " licensed images. Deferred " + failed.length + " due to remote failures.");
 })().catch(e => { console.error(e); process.exitCode = 1; });
