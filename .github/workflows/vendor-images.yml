@@ -5,6 +5,7 @@ on:
       - feature/expand-to-20-animal-profiles
     paths:
       - scripts/vendor-images.cjs
+      - .github/workflows/vendor-images.yml
   workflow_dispatch:
 permissions:
   contents: write
