@@ -66,12 +66,22 @@ const ANIMALS = [
             { text: "Support anti-poaching efforts and the recovery of wild prey populations.", sources: ["wcs-amur-leopard"] },
             { text: "Learn about monitoring and disease prevention for small leopard populations.", sources: ["wcs-amur-leopard"] }
         ],
+        localActions: [
+            {
+                title: "Support wildlife conservation from Pittsburgh",
+                text: "Explore conservation education and opportunities to support wildlife protection through Pittsburgh Zoo & Aquarium. This is a general local action, not a claim that this species lives in Pittsburgh.",
+                url: "https://www.pittsburghzoo.org/conservation/",
+                label: "Pittsburgh Zoo conservation",
+                sources: ["pgh-zoo-general"]
+            }
+        ],
         population: {
             text: "About 84 adults and subadults were estimated in 2014–2015 (published 2018). Surveys on both sides of the border suggest numbers are rising, but no newer total has been verified for this site.",
             asOf: "2014–2015",
             sources: ["wcs-amur-leopard"]
         },
         sources: [
+            { id: "pgh-zoo-general", title: "Conservation", publisher: "Pittsburgh Zoo & Aquarium", url: "https://www.pittsburghzoo.org/conservation/", accessed: "2026-11-10" },
             {
                 id: "wcs-amur-leopard",
                 title: "Amur Leopard",
@@ -133,8 +143,18 @@ const ANIMALS = [
             { text: "Reduce plastic waste and support turtle-safe fishing practices.", sources: ["noaa-hawksbill"] },
             { text: "Support protection of coral reefs and nesting beaches.", sources: ["noaa-hawksbill"] }
         ],
+        localActions: [
+            {
+                title: "Support wildlife conservation from Pittsburgh",
+                text: "Explore conservation education and opportunities to support wildlife protection through Pittsburgh Zoo & Aquarium. This is a general local action, not a claim that this species lives in Pittsburgh.",
+                url: "https://www.pittsburghzoo.org/conservation/",
+                label: "Pittsburgh Zoo conservation",
+                sources: ["pgh-zoo-general"]
+            }
+        ],
         population: null,
         sources: [
+            { id: "pgh-zoo-general", title: "Conservation", publisher: "Pittsburgh Zoo & Aquarium", url: "https://www.pittsburghzoo.org/conservation/", accessed: "2026-11-10" },
             {
                 id: "noaa-hawksbill",
                 title: "Hawksbill Turtle",
@@ -209,12 +229,22 @@ const ANIMALS = [
             { text: "Support protection and restoration of Sumatran forest habitat.", sources: ["apes-atlas-orangutan"] },
             { text: "Avoid the illegal wildlife pet trade.", sources: ["apes-atlas-orangutan"] }
         ],
+        localActions: [
+            {
+                title: "Support wildlife conservation from Pittsburgh",
+                text: "Explore conservation education and opportunities to support wildlife protection through Pittsburgh Zoo & Aquarium. This is a general local action, not a claim that this species lives in Pittsburgh.",
+                url: "https://www.pittsburghzoo.org/conservation/",
+                label: "Pittsburgh Zoo conservation",
+                sources: ["pgh-zoo-general"]
+            }
+        ],
         population: {
             text: "About 13,846 individuals were estimated in 2016 (Wich et al. 2016). This was higher than an earlier estimate of about 6,600 because of better survey methods, not population growth. The IUCN assessment (Singleton et al. 2023) reports that overall numbers continue to decline.",
             asOf: "2016",
             sources: ["apes-atlas-orangutan"]
         },
         sources: [
+            { id: "pgh-zoo-general", title: "Conservation", publisher: "Pittsburgh Zoo & Aquarium", url: "https://www.pittsburghzoo.org/conservation/", accessed: "2026-11-10" },
             {
                 id: "apes-atlas-orangutan",
                 title: "Sumatran Orangutan",
