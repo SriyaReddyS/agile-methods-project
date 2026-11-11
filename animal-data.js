@@ -282,7 +282,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/African%20Forest%20Elephant.jpg",
+            "src": "images/african-forest-elephant.jpg",
             "alt": "African forest elephant",
             "credit": "VIGNA christian",
             "license": "CC BY-SA 4.0",
@@ -736,7 +736,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pseudoryx_nghetinhensis_318199.jpg",
+            "src": "images/saola.jpg",
             "alt": "Saola photographed in Vietnam",
             "credit": "Dao Nguyen and James Hardcastle",
             "license": "CC BY 4.0",
@@ -849,7 +849,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine%20Eagle%20at%20the%20Philippine%20Eagle%20Center%20001.jpg",
+            "src": "images/philippine-eagle.jpg",
             "alt": "Philippine eagle at the Philippine Eagle Center in Davao",
             "credit": "RoyKabanlit",
             "license": "CC BY-SA 4.0",
@@ -962,7 +962,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunda%20Pangolin%20Trenggiling%20jawa.jpg",
+            "src": "images/sunda-pangolin.jpg",
             "alt": "Sunda pangolin (Manis javanica)",
             "credit": "Ari hidayat99",
             "license": "CC BY-SA 4.0",
@@ -1075,7 +1075,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cross-river-gorilla.jpg",
+            "src": "images/cross-river-gorilla.jpg",
             "alt": "Cross River gorilla Nyango at Limbe Wildlife Centre, Cameroon",
             "credit": "Julielangford",
             "license": "CC BY-SA 3.0",
@@ -1188,7 +1188,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Red_Panda_c.jpg",
+            "src": "images/red-panda.jpg",
             "alt": "Red panda resting among branches, with reddish fur and a ringed tail",
             "credit": "schani",
             "license": "CC BY-SA 2.0",
@@ -1301,7 +1301,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Panthera%20tigris%20tigris%2045151794.jpg",
+            "src": "images/tiger.jpg",
             "alt": "Bengal tiger photographed in India",
             "credit": "Suhel Quader",
             "license": "CC BY 4.0",
@@ -1414,7 +1414,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian%20Elephant%20(Elephas%20Maximus).jpg",
+            "src": "images/asian-elephant.jpg",
             "alt": "Asian elephant (Elephas maximus)",
             "credit": "Amal Balasooriya",
             "license": "CC BY-SA 4.0",
@@ -1527,7 +1527,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blue_Whale_(Balaenoptera_musculus)_(16108163937).jpg",
+            "src": "images/blue-whale.jpg",
             "alt": "Blue whale photographed in the ocean",
             "credit": "Gregory \"Slobirdr\" Smith",
             "license": "CC BY-SA 2.0",
@@ -1640,7 +1640,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Whale%20Shark%20(Rhincodon%20typus).jpg",
+            "src": "images/whale-shark.jpg",
             "alt": "Whale shark (Rhincodon typus)",
             "credit": "Akasmita",
             "license": "CC BY-SA 4.0",
@@ -1753,7 +1753,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lepidochelys%20kempii.jpg",
+            "src": "images/kemps-ridley-sea-turtle.jpg",
             "alt": "Kemp's ridley sea turtle on a beach in Alabama",
             "credit": "U.S. Fish and Wildlife Service Southeast Region",
             "license": "CC BY 2.0",
@@ -1866,7 +1866,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Snow_leopard_(3757699685).jpg",
+            "src": "images/snow-leopard.jpg",
             "alt": "Snow leopard resting on rocks at Marwell Wildlife",
             "credit": "Marie Hale",
             "license": "CC BY 2.0",
@@ -1979,7 +1979,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giant%20panda.jpg",
+            "src": "images/giant-panda.jpg",
             "alt": "Giant panda at San Diego Zoo",
             "credit": "Wikimedia Commons photographer (see source)",
             "license": "CC BY-SA 3.0",
@@ -2092,7 +2092,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Polar%20Bears.jpg",
+            "src": "images/polar-bear.jpg",
             "alt": "Polar bear photographed at North Carolina Zoo",
             "credit": "MelissaC2022",
             "license": "CC BY-SA 4.0",
