@@ -56,6 +56,9 @@ function createAnimalCardMedia(animal) {
     // Swap in the placeholder if the file is missing or fails to load.
     img.addEventListener("error", function () {
         img.replaceWith(createPlaceholder());
+        const card = img.closest(".animal-card");
+        const credit = card && card.querySelector(".animal-card-credit");
+        if (credit) credit.remove();
     });
 
     return img;
