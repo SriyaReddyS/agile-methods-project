@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 placeholder.className = "home-photo-placeholder";
                 placeholder.textContent = "Photo coming soon";
                 media.replaceChildren(placeholder);
+                const credit = card.querySelector(".home-photo-credit");
+                if (credit) credit.remove();
             });
             media.appendChild(img);
         } else {
