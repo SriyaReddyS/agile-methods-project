@@ -220,6 +220,1927 @@ const ANIMALS = [
                 accessed: "2026-11-02"
             }
         ]
+    },
+    {
+        "id": "african-forest-elephant",
+        "commonName": "African Forest Elephant",
+        "scientificName": "Loxodonta cyclotis",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-african-forest-elephant"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "African Forest Elephant in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "Central and West African tropical forests This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-african-forest-elephant"
+            ]
+        },
+        "habitat": {
+            "text": "Humid lowland rainforest, forest clearings, and connected woodland habitats.",
+            "sources": [
+                "primary-african-forest-elephant"
+            ]
+        },
+        "range": {
+            "text": "Central and West Africa, especially the Congo Basin.",
+            "sources": [
+                "primary-african-forest-elephant"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Ivory poaching",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            },
+            {
+                "text": "Forest conversion and fragmentation",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            },
+            {
+                "text": "Conflict with people",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Forest elephants disperse large seeds over long distances and help maintain tropical forest diversity.",
+            "sources": [
+                "primary-african-forest-elephant"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support forest habitat protection",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            },
+            {
+                "text": "Reject ivory products and wildlife trafficking",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            },
+            {
+                "text": "Support locally led anti-poaching efforts",
+                "sources": [
+                    "primary-african-forest-elephant"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-african-forest-elephant",
+                "title": "IUCN Red List: African Forest Elephant",
+                "publisher": "IUCN Red List",
+                "url": "https://doi.org/10.2305/IUCN.UK.2026-1.RLTS.T181007989A292481365.en",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "vaquita",
+        "commonName": "Vaquita",
+        "scientificName": "Phocoena sinus",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-vaquita"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Vaquita in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A rare porpoise restricted to Mexico's Gulf of California This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-vaquita"
+            ]
+        },
+        "habitat": {
+            "text": "Shallow, productive coastal waters of the upper Gulf of California.",
+            "sources": [
+                "primary-vaquita"
+            ]
+        },
+        "range": {
+            "text": "Only the northern Gulf of California, Mexico.",
+            "sources": [
+                "primary-vaquita"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Entanglement and drowning in gillnets",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            },
+            {
+                "text": "Illegal totoaba fishing",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            },
+            {
+                "text": "Extremely small surviving population",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Vaquitas are native marine predators in a highly productive coastal food web.",
+            "sources": [
+                "primary-vaquita"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support gillnet-free fisheries",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            },
+            {
+                "text": "Support enforcement against illegal fishing",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            },
+            {
+                "text": "Learn about responsible seafood choices",
+                "sources": [
+                    "primary-vaquita"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-vaquita",
+                "title": "Vaquita",
+                "publisher": "NOAA Fisheries",
+                "url": "https://www.fisheries.noaa.gov/species/vaquita",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "javan-rhino",
+        "commonName": "Javan Rhino",
+        "scientificName": "Rhinoceros sondaicus",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-javan-rhino"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Javan Rhino in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A rare one-horned rhinoceros surviving in one Indonesian national park This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-javan-rhino"
+            ]
+        },
+        "habitat": {
+            "text": "Dense tropical lowland forest, wet clearings, and freshwater habitats.",
+            "sources": [
+                "primary-javan-rhino"
+            ]
+        },
+        "range": {
+            "text": "Ujung Kulon National Park on Java, Indonesia.",
+            "sources": [
+                "primary-javan-rhino"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Single-site population vulnerable to disasters",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            },
+            {
+                "text": "Poaching risk",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            },
+            {
+                "text": "Invasive plants reducing food habitat",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "As a large browser, this rhinoceros influences vegetation and forest dynamics.",
+            "sources": [
+                "primary-javan-rhino"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support protection of Ujung Kulon",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            },
+            {
+                "text": "Support invasive plant removal and habitat restoration",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            },
+            {
+                "text": "Reject rhino horn products",
+                "sources": [
+                    "primary-javan-rhino"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-javan-rhino",
+                "title": "Javan Rhinos",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/rhino/javan-rhino/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "sumatran-rhino",
+        "commonName": "Sumatran Rhino",
+        "scientificName": "Dicerorhinus sumatrensis",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-sumatran-rhino"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Sumatran Rhino in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "The smallest living rhinoceros, with two horns and a hairy coat This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-sumatran-rhino"
+            ]
+        },
+        "habitat": {
+            "text": "Dense tropical lowland and montane forests.",
+            "sources": [
+                "primary-sumatran-rhino"
+            ]
+        },
+        "range": {
+            "text": "Remaining isolated populations in Indonesia, principally Sumatra and Borneo.",
+            "sources": [
+                "primary-sumatran-rhino"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Severely fragmented populations",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            },
+            {
+                "text": "Limited breeding opportunities",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            },
+            {
+                "text": "Poaching and forest loss",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "This forest browser helps shape vegetation and its protection also safeguards diverse forest habitats.",
+            "sources": [
+                "primary-sumatran-rhino"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support connected forest habitat",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            },
+            {
+                "text": "Support science-led breeding and recovery programs",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            },
+            {
+                "text": "Reject illegal rhino horn trade",
+                "sources": [
+                    "primary-sumatran-rhino"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-sumatran-rhino",
+                "title": "Sumatran Rhinos",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/rhino/sumatran-rhino/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "saola",
+        "commonName": "Saola",
+        "scientificName": "Pseudoryx nghetinhensis",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-saola"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Saola in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-saola"
+            ]
+        },
+        "habitat": {
+            "text": "Evergreen forests and stream valleys in the Annamite Mountains.",
+            "sources": [
+                "primary-saola"
+            ]
+        },
+        "range": {
+            "text": "Annamite Mountains of Laos and Vietnam.",
+            "sources": [
+                "primary-saola"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Wire snares set for other wildlife",
+                "sources": [
+                    "primary-saola"
+                ]
+            },
+            {
+                "text": "Forest degradation",
+                "sources": [
+                    "primary-saola"
+                ]
+            },
+            {
+                "text": "Extremely rare and poorly documented populations",
+                "sources": [
+                    "primary-saola"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Protecting saola habitat benefits many other threatened Annamite forest species.",
+            "sources": [
+                "primary-saola"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support snare removal programs",
+                "sources": [
+                    "primary-saola"
+                ]
+            },
+            {
+                "text": "Support community-based forest protection",
+                "sources": [
+                    "primary-saola"
+                ]
+            },
+            {
+                "text": "Avoid products linked to illegal wildlife trade",
+                "sources": [
+                    "primary-saola"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-saola",
+                "title": "Saola Status",
+                "publisher": "Saola Working Group",
+                "url": "https://www.savethesaola.org/the-saola/status/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "philippine-eagle",
+        "commonName": "Philippine Eagle",
+        "scientificName": "Pithecophaga jefferyi",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-philippine-eagle"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Philippine Eagle in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A large forest eagle endemic to the Philippines This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-philippine-eagle"
+            ]
+        },
+        "habitat": {
+            "text": "Old-growth and mature tropical forest with tall nesting trees.",
+            "sources": [
+                "primary-philippine-eagle"
+            ]
+        },
+        "range": {
+            "text": "Several Philippine islands, especially Mindanao and Luzon.",
+            "sources": [
+                "primary-philippine-eagle"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Deforestation",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            },
+            {
+                "text": "Hunting and persecution",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            },
+            {
+                "text": "Small isolated breeding populations",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "As a top predator, this eagle contributes to the balance of forest food webs.",
+            "sources": [
+                "primary-philippine-eagle"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support forest restoration",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            },
+            {
+                "text": "Protect nesting trees and breeding territories",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            },
+            {
+                "text": "Support Philippine conservation organizations",
+                "sources": [
+                    "primary-philippine-eagle"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-philippine-eagle",
+                "title": "Philippine Eagle Conservation",
+                "publisher": "Philippine Eagle Foundation",
+                "url": "https://www.philippineeaglefoundation.org/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "sunda-pangolin",
+        "commonName": "Sunda Pangolin",
+        "scientificName": "Manis javanica",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-sunda-pangolin"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Sunda Pangolin in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A nocturnal, scale-covered mammal that feeds on ants and termites This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-sunda-pangolin"
+            ]
+        },
+        "habitat": {
+            "text": "Tropical forests, secondary woodland, and some modified landscapes.",
+            "sources": [
+                "primary-sunda-pangolin"
+            ]
+        },
+        "range": {
+            "text": "Mainland and island Southeast Asia, including parts of Malaysia and Indonesia.",
+            "sources": [
+                "primary-sunda-pangolin"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Illegal trade in scales and meat",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            },
+            {
+                "text": "Habitat loss",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            },
+            {
+                "text": "Hunting and trafficking",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Pangolins consume ants and termites and are part of forest insect-control food webs.",
+            "sources": [
+                "primary-sunda-pangolin"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Never buy pangolin products",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            },
+            {
+                "text": "Report suspected illegal wildlife sales",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            },
+            {
+                "text": "Support anti-trafficking and habitat programs",
+                "sources": [
+                    "primary-sunda-pangolin"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-sunda-pangolin",
+                "title": "Pangolins",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/pangolin/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "cross-river-gorilla",
+        "commonName": "Cross River Gorilla",
+        "scientificName": "Gorilla gorilla diehli",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-cross-river-gorilla"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Cross River Gorilla in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A rare western gorilla subspecies in the Nigeria-Cameroon border region This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-cross-river-gorilla"
+            ]
+        },
+        "habitat": {
+            "text": "Rugged forested hills and montane tropical forest.",
+            "sources": [
+                "primary-cross-river-gorilla"
+            ]
+        },
+        "range": {
+            "text": "Small fragmented forests along the Nigeria-Cameroon border.",
+            "sources": [
+                "primary-cross-river-gorilla"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Habitat fragmentation",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            },
+            {
+                "text": "Hunting pressure",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            },
+            {
+                "text": "Small isolated groups",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Gorillas disperse seeds and influence the regeneration of tropical forests.",
+            "sources": [
+                "primary-cross-river-gorilla"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support protected forest corridors",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            },
+            {
+                "text": "Support community conservation",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            },
+            {
+                "text": "Reject bushmeat from protected wildlife",
+                "sources": [
+                    "primary-cross-river-gorilla"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-cross-river-gorilla",
+                "title": "Cross River Gorillas",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/gorilla/cross-river-gorilla/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "red-panda",
+        "commonName": "Red Panda",
+        "scientificName": "Ailurus fulgens",
+        "status": {
+            "code": "EN",
+            "label": "Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-red-panda"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Red Panda in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A tree-dwelling mammal adapted to cool Himalayan forests This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-red-panda"
+            ]
+        },
+        "habitat": {
+            "text": "Temperate mountain forests with bamboo understory and suitable nesting trees.",
+            "sources": [
+                "primary-red-panda"
+            ]
+        },
+        "range": {
+            "text": "Eastern Himalayas and adjacent mountain forests in Asia.",
+            "sources": [
+                "primary-red-panda"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Loss of forest and bamboo habitat",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            },
+            {
+                "text": "Poaching and accidental trapping",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            },
+            {
+                "text": "Habitat fragmentation",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Red pandas are part of Himalayan forest food webs, and protecting them preserves bamboo-rich forests.",
+            "sources": [
+                "primary-red-panda"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support forest corridors",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            },
+            {
+                "text": "Avoid wildlife-fur products",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            },
+            {
+                "text": "Support community-based forest protection",
+                "sources": [
+                    "primary-red-panda"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-red-panda",
+                "title": "Red Pandas",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/red-panda/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "tiger",
+        "commonName": "Tiger",
+        "scientificName": "Panthera tigris",
+        "status": {
+            "code": "EN",
+            "label": "Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-tiger"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Tiger in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "The largest wild cat and a major predator in Asian ecosystems This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-tiger"
+            ]
+        },
+        "habitat": {
+            "text": "Forests, grasslands, and mangroves with enough prey and cover.",
+            "sources": [
+                "primary-tiger"
+            ]
+        },
+        "range": {
+            "text": "Fragmented habitats across parts of South, Southeast, and East Asia.",
+            "sources": [
+                "primary-tiger"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Poaching and illegal wildlife trade",
+                "sources": [
+                    "primary-tiger"
+                ]
+            },
+            {
+                "text": "Prey depletion",
+                "sources": [
+                    "primary-tiger"
+                ]
+            },
+            {
+                "text": "Habitat fragmentation and conflict",
+                "sources": [
+                    "primary-tiger"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Tigers regulate prey populations and their conservation protects extensive habitats.",
+            "sources": [
+                "primary-tiger"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Reject tiger products",
+                "sources": [
+                    "primary-tiger"
+                ]
+            },
+            {
+                "text": "Support protected landscapes and prey recovery",
+                "sources": [
+                    "primary-tiger"
+                ]
+            },
+            {
+                "text": "Support coexistence programs for local communities",
+                "sources": [
+                    "primary-tiger"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-tiger",
+                "title": "Tigers",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/tiger/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "asian-elephant",
+        "commonName": "Asian Elephant",
+        "scientificName": "Elephas maximus",
+        "status": {
+            "code": "EN",
+            "label": "Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-asian-elephant"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Asian Elephant in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A large social herbivore that travels through Asian forests and grasslands This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-asian-elephant"
+            ]
+        },
+        "habitat": {
+            "text": "Tropical and subtropical forests, grasslands, and forest edges.",
+            "sources": [
+                "primary-asian-elephant"
+            ]
+        },
+        "range": {
+            "text": "Fragmented regions of South and Southeast Asia.",
+            "sources": [
+                "primary-asian-elephant"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Habitat loss and blocked migration routes",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            },
+            {
+                "text": "Human-elephant conflict",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            },
+            {
+                "text": "Poaching and infrastructure",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Elephants spread seeds and open pathways, helping shape habitats for other species.",
+            "sources": [
+                "primary-asian-elephant"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support wildlife corridors",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            },
+            {
+                "text": "Support nonviolent coexistence measures",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            },
+            {
+                "text": "Avoid ivory and wildlife products",
+                "sources": [
+                    "primary-asian-elephant"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-asian-elephant",
+                "title": "Asian Elephants",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/elephant/asian-elephant/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "blue-whale",
+        "commonName": "Blue Whale",
+        "scientificName": "Balaenoptera musculus",
+        "status": {
+            "code": "EN",
+            "label": "Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-blue-whale"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Blue Whale in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "The largest known animal, a baleen whale that feeds mainly on krill This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-blue-whale"
+            ]
+        },
+        "habitat": {
+            "text": "Open-ocean and productive feeding waters, including seasonal high-latitude areas.",
+            "sources": [
+                "primary-blue-whale"
+            ]
+        },
+        "range": {
+            "text": "Across the world's major oceans.",
+            "sources": [
+                "primary-blue-whale"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Ship strikes",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            },
+            {
+                "text": "Entanglement in fishing gear",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            },
+            {
+                "text": "Underwater noise and changing ocean conditions",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Blue whales move nutrients through marine food webs and contribute to ocean nutrient cycling.",
+            "sources": [
+                "primary-blue-whale"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support ship-speed measures in whale habitat",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            },
+            {
+                "text": "Support whale-safe fishing gear",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            },
+            {
+                "text": "Support ocean conservation research",
+                "sources": [
+                    "primary-blue-whale"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-blue-whale",
+                "title": "Blue Whale",
+                "publisher": "NOAA Fisheries",
+                "url": "https://www.fisheries.noaa.gov/species/blue-whale",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "whale-shark",
+        "commonName": "Whale Shark",
+        "scientificName": "Rhincodon typus",
+        "status": {
+            "code": "EN",
+            "label": "Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-whale-shark"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Whale Shark in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "The world's largest fish, a gentle filter-feeding shark This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-whale-shark"
+            ]
+        },
+        "habitat": {
+            "text": "Warm tropical and subtropical seas, including coastal feeding aggregations.",
+            "sources": [
+                "primary-whale-shark"
+            ]
+        },
+        "range": {
+            "text": "Tropical and warm-temperate oceans worldwide.",
+            "sources": [
+                "primary-whale-shark"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Fishing and accidental capture",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            },
+            {
+                "text": "Vessel strikes",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            },
+            {
+                "text": "Disturbance at feeding sites",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Whale sharks feed on plankton and small organisms, connecting marine food-web processes.",
+            "sources": [
+                "primary-whale-shark"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Choose responsible wildlife tourism",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            },
+            {
+                "text": "Support marine protected areas",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            },
+            {
+                "text": "Support bycatch reduction",
+                "sources": [
+                    "primary-whale-shark"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-whale-shark",
+                "title": "Whale Sharks",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/whale-shark/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "kemps-ridley-sea-turtle",
+        "commonName": "Kemp's Ridley Sea Turtle",
+        "scientificName": "Lepidochelys kempii",
+        "status": {
+            "code": "CR",
+            "label": "Critically Endangered",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-kemps-ridley-sea-turtle"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Kemp's Ridley Sea Turtle in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A small sea turtle known for mass nesting events called arribadas This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-kemps-ridley-sea-turtle"
+            ]
+        },
+        "habitat": {
+            "text": "Coastal waters, shallow bays, and sandy nesting beaches.",
+            "sources": [
+                "primary-kemps-ridley-sea-turtle"
+            ]
+        },
+        "range": {
+            "text": "Mainly the Gulf of Mexico and western North Atlantic.",
+            "sources": [
+                "primary-kemps-ridley-sea-turtle"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Fishing-gear bycatch",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            },
+            {
+                "text": "Marine debris and pollution",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            },
+            {
+                "text": "Damage to nesting beaches",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Kemp's ridley turtles feed on crabs and other invertebrates in coastal ecosystems.",
+            "sources": [
+                "primary-kemps-ridley-sea-turtle"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support turtle-safe fishing gear",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            },
+            {
+                "text": "Reduce marine litter",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            },
+            {
+                "text": "Protect nesting beaches and respect nesting restrictions",
+                "sources": [
+                    "primary-kemps-ridley-sea-turtle"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-kemps-ridley-sea-turtle",
+                "title": "Kemp's Ridley Turtle",
+                "publisher": "NOAA Fisheries",
+                "url": "https://www.fisheries.noaa.gov/species/kemps-ridley-turtle",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "snow-leopard",
+        "commonName": "Snow Leopard",
+        "scientificName": "Panthera uncia",
+        "status": {
+            "code": "VU",
+            "label": "Vulnerable",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-snow-leopard"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Snow Leopard in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A mountain cat adapted to cold, steep landscapes This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-snow-leopard"
+            ]
+        },
+        "habitat": {
+            "text": "Rocky alpine and subalpine mountain slopes.",
+            "sources": [
+                "primary-snow-leopard"
+            ]
+        },
+        "range": {
+            "text": "High mountains of Central and South Asia.",
+            "sources": [
+                "primary-snow-leopard"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Retaliatory killing after livestock losses",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            },
+            {
+                "text": "Declining wild prey",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            },
+            {
+                "text": "Habitat fragmentation and climate change",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Snow leopards are high-altitude predators that help maintain mountain food webs.",
+            "sources": [
+                "primary-snow-leopard"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support predator-proof livestock enclosures",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            },
+            {
+                "text": "Support mountain habitat conservation",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            },
+            {
+                "text": "Reject illegal wildlife products",
+                "sources": [
+                    "primary-snow-leopard"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-snow-leopard",
+                "title": "Snow Leopards",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/snow-leopard/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "giant-panda",
+        "commonName": "Giant Panda",
+        "scientificName": "Ailuropoda melanoleuca",
+        "status": {
+            "code": "VU",
+            "label": "Vulnerable",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-giant-panda"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Giant Panda in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A bamboo-eating bear native to China's mountain forests This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-giant-panda"
+            ]
+        },
+        "habitat": {
+            "text": "Temperate mountain forests with abundant bamboo.",
+            "sources": [
+                "primary-giant-panda"
+            ]
+        },
+        "range": {
+            "text": "Mountain ranges of central China, especially Sichuan, Shaanxi, and Gansu.",
+            "sources": [
+                "primary-giant-panda"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Forest fragmentation",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            },
+            {
+                "text": "Infrastructure development",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            },
+            {
+                "text": "Climate-driven changes to bamboo habitat",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Protecting giant panda habitat also protects other forest wildlife and watersheds.",
+            "sources": [
+                "primary-giant-panda"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support connected forest reserves",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            },
+            {
+                "text": "Support habitat restoration",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            },
+            {
+                "text": "Choose forest-friendly products",
+                "sources": [
+                    "primary-giant-panda"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-giant-panda",
+                "title": "Giant Pandas",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/giant-panda/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
+    },
+    {
+        "id": "polar-bear",
+        "commonName": "Polar Bear",
+        "scientificName": "Ursus maritimus",
+        "status": {
+            "code": "VU",
+            "label": "Vulnerable",
+            "authority": "IUCN Red List (see supporting conservation source)",
+            "sources": [
+                "primary-polar-bear"
+            ]
+        },
+        "image": {
+            "src": null,
+            "alt": "Polar Bear in its natural habitat; licensed photograph pending verification",
+            "credit": null,
+            "license": null,
+            "licenseUrl": null,
+            "sourceUrl": null
+        },
+        "description": {
+            "text": "A large Arctic marine mammal that relies on sea ice to hunt seals This profile summarizes key conservation information and links to a specialist source.",
+            "sources": [
+                "primary-polar-bear"
+            ]
+        },
+        "habitat": {
+            "text": "Arctic sea ice and adjacent coastal areas.",
+            "sources": [
+                "primary-polar-bear"
+            ]
+        },
+        "range": {
+            "text": "Circumpolar Arctic across five range countries.",
+            "sources": [
+                "primary-polar-bear"
+            ]
+        },
+        "threats": [
+            {
+                "text": "Loss of sea ice from climate warming",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            },
+            {
+                "text": "Human-bear conflict",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            },
+            {
+                "text": "Industrial disturbance and pollution",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            }
+        ],
+        "ecologicalImportance": {
+            "text": "Polar bears are top predators in Arctic marine food webs.",
+            "sources": [
+                "primary-polar-bear"
+            ]
+        },
+        "conservationMethods": [
+            {
+                "text": "Support evidence-based climate action",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            },
+            {
+                "text": "Support Arctic habitat research",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            },
+            {
+                "text": "Promote safe human-wildlife coexistence",
+                "sources": [
+                    "primary-polar-bear"
+                ]
+            }
+        ],
+        "population": null,
+        "localActions": [
+            {
+                "title": "Learn about wildlife conservation in Pittsburgh",
+                "text": "Explore conservation education and local participation opportunities through Pittsburgh Zoo & Aquarium. This is general conservation engagement, not a species-specific local project.",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "label": "Pittsburgh Zoo & Aquarium",
+                "sources": [
+                    "pgh-zoo-general"
+                ]
+            }
+        ],
+        "sources": [
+            {
+                "id": "primary-polar-bear",
+                "title": "Polar Bears",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/polar-bear/",
+                "accessed": "2026-11-10"
+            },
+            {
+                "id": "pgh-zoo-general",
+                "title": "Conservation",
+                "publisher": "Pittsburgh Zoo & Aquarium",
+                "url": "https://www.pittsburghzoo.org/conservation/",
+                "accessed": "2026-11-10"
+            }
+        ]
     }
 ];
 
