@@ -736,12 +736,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pseudoryx%20nghetinhensis%20318200.jpg",
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pseudoryx_nghetinhensis_318199.jpg",
             "alt": "Saola photographed in Vietnam",
             "credit": "Dao Nguyen and James Hardcastle",
             "license": "CC BY 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pseudoryx_nghetinhensis_318200.jpg"
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pseudoryx_nghetinhensis_318199.jpg"
         },
         "description": {
             "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn.",
