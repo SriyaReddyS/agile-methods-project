@@ -260,3 +260,16 @@
         padding: 20px;
     }
 }
+
+/* Conservation actions, Pittsburgh opportunities, and accessible navigation */
+.conservation-list { padding-left: 22px; }
+.conservation-list li { margin-bottom: 10px; }
+.local-intro { margin-bottom: 16px; color: #4a5c50; }
+.local-action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 16px; }
+.local-action-card { padding: 18px; border: 1px solid #d5e4d8; border-radius: 10px; background: #f5faf6; }
+.local-action-card h3 { font-size: 18px; margin-bottom: 8px; }
+.local-action-link { display: inline-block; margin-top: 8px; color: #214d38; font-weight: 700; }
+.profile-pagination { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; margin-top: 24px; }
+.profile-pagination a { padding: 12px 16px; background: #e8f3eb; color: #214d38; border-radius: 8px; font-weight: 700; text-decoration: none; }
+.profile-pagination a:hover, .profile-pagination a:focus-visible { background: #cde5d4; text-decoration: underline; outline-offset: 3px; }
+@media (max-width: 650px) { .profile-pagination { flex-direction: column; } .profile-pagination a { text-align: center; } }
