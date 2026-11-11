@@ -30,6 +30,7 @@ for (const a of animals) {
   const facts = [a.description, a.habitat, a.range, a.ecologicalImportance, a.population, a.status, ...a.threats, ...a.conservationMethods, ...(a.localActions || [])].filter(Boolean);
   for (const fact of facts) for (const id of (fact.sources || [])) assert.ok(sourceIds.has(id), a.id + " references missing source " + id);
   assert.ok(a.image?.src, a.id + " missing image");
+  assert.ok(a.image.src.startsWith("images/"), a.id + " must use a local image");
   assert.ok(a.image?.alt && a.image?.credit && a.image?.license && a.image?.licenseUrl && a.image?.sourceUrl, a.id + " incomplete image attribution");
   if (!a.image.src.startsWith("https://")) assert.ok(fs.existsSync(path.join(root, a.image.src)), a.id + " missing local image");
   assert.match(a.image.licenseUrl, /^https:\/\//);
