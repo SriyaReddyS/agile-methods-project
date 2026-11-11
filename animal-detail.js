@@ -319,6 +319,47 @@ function renderAnimalProfile(animal, container) {
     threats.appendChild(threatList);
     article.appendChild(threats);
 
+    // Ecological role and actions, each with inline source citations.
+    if (animal.ecologicalImportance) {
+        const ecology = createSection(animal.id, "ecology", "Ecological Importance");
+        ecology.appendChild(createCitedParagraph(animal.ecologicalImportance, null, citationTools));
+        article.appendChild(ecology);
+    }
+
+    if (animal.conservationMethods && animal.conservationMethods.length) {
+        const conservation = createSection(animal.id, "conservation", "Methods to Help Protect");
+        const methods = createTextElement("ul", "conservation-list");
+        animal.conservationMethods.forEach(function (method) {
+            const item = createTextElement("li", null, method.text);
+            item.appendChild(createCitations(method.sources, citationTools.numbers, citationTools.lookup));
+            methods.appendChild(item);
+        });
+        conservation.appendChild(methods);
+        article.appendChild(conservation);
+    }
+
+    if (animal.localActions && animal.localActions.length) {
+        const local = createSection(animal.id, "local", "How You Can Help in Pittsburgh");
+        local.appendChild(createTextElement("p", "local-intro",
+            "These are Pittsburgh-based opportunities for conservation learning and action. They do not imply that this species lives in Pittsburgh."));
+        const cards = createTextElement("div", "local-action-grid");
+        animal.localActions.forEach(function (action) {
+            const card = createTextElement("div", "local-action-card");
+            card.appendChild(createTextElement("h3", null, action.title));
+            card.appendChild(createCitedParagraph(action, null, citationTools));
+            if (action.url) {
+                const link = createTextElement("a", "local-action-link", action.label || "Explore local action");
+                link.href = action.url;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                card.appendChild(link);
+            }
+            cards.appendChild(card);
+        });
+        local.appendChild(cards);
+        article.appendChild(local);
+    }
+
     // Population (optional, always dated)
     if (animal.population) {
         const population = createSection(animal.id, "population", "Population Estimate");
@@ -338,6 +379,24 @@ function renderAnimalProfile(animal, container) {
     }
 
     article.appendChild(createSourceList(animal));
+
+    // Navigation between the twenty profiles and back to the directory.
+    const index = ANIMALS.findIndex(function (item) { return item.id === animal.id; });
+    const pagination = createTextElement("nav", "profile-pagination");
+    pagination.setAttribute("aria-label", "Animal profile navigation");
+    function addProfileLink(target, label) {
+        const link = createTextElement("a", null, label);
+        link.href = getAnimalProfileUrl(target);
+        pagination.appendChild(link);
+    }
+    if (index > 0) addProfileLink(ANIMALS[index - 1], "← Previous Animal");
+    const directoryLink = createTextElement("a", null, "All Animals");
+    directoryLink.href = "animals.html";
+    pagination.appendChild(directoryLink);
+    if (index >= 0 && index < ANIMALS.length - 1) {
+        addProfileLink(ANIMALS[index + 1], "Next Animal →");
+    }
+    article.appendChild(pagination);
 
     container.replaceChildren(article);
 }
