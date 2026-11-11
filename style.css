@@ -513,3 +513,27 @@ a.animal-card:hover {
         text-align: center;
     }
 }
+
+/* Homepage refresh: dynamic featured species and conservation CTA */
+.home-featured { max-width: 1250px; margin: 0 auto; }
+.home-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; text-align: left; }
+.home-section-heading p:not(.home-eyebrow) { margin-top: 8px; color: #52695a; }
+.home-eyebrow { color: #5c853d; font-size: 12px; font-weight: 800; letter-spacing: .14em; margin-bottom: 10px; }
+.home-text-link { color: #214d38; font-weight: 700; white-space: nowrap; }
+.home-featured-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-species-card { display: flex; flex-direction: column; }
+.home-species-link { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; }
+.home-species-link:hover .home-species-explore { text-decoration: underline; }
+.home-species-link .card-content { flex: 1; }
+.home-species-media { width: 100%; height: 220px; overflow: hidden; background: #dfe8e1; }
+.home-species-media img { width: 100%; height: 100%; object-fit: cover; }
+.home-photo-placeholder { display: flex; width: 100%; height: 100%; align-items: center; justify-content: center; color: #3d5546; font-weight: 700; }
+.home-species-explore { display: block; margin-top: 18px; color: #214d38; font-weight: 700; }
+.home-photo-credit { padding: 0 20px 15px; font-size: 12px; color: #4a5c50; }
+.home-photo-credit a { color: inherit; }
+.home-action { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 55px 7%; background: #e4efdc; }
+.home-action > div { max-width: 680px; }
+.home-action h2 { font-size: 30px; margin-bottom: 12px; }
+.home-action .button { flex-shrink: 0; }
+@media (max-width: 900px) { .home-featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .home-action { flex-direction: column; align-items: flex-start; } }
+@media (max-width: 650px) { .home-featured-grid { grid-template-columns: 1fr; } .home-section-heading { align-items: flex-start; flex-direction: column; } .home-action h2 { font-size: 25px; } }
