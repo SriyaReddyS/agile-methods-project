@@ -252,12 +252,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "African Forest Elephant in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Loxodonta%20cyclotis%2029048930.jpg",
+            "alt": "Forest elephant in Central African forest",
+            "credit": "Matt Muir",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Loxodonta_cyclotis_29048930.jpg"
         },
         "description": {
             "text": "Central and West African tropical forests This profile summarizes key conservation information and links to a specialist source.",
@@ -591,12 +591,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Sumatran Rhino in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SumatranRhino2%20CincinnatiZoo.jpg",
+            "alt": "Sumatran rhinoceros photographed at Cincinnati Zoo",
+            "credit": "Ltshears",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:SumatranRhino2_CincinnatiZoo.jpg"
         },
         "description": {
             "text": "The smallest living rhinoceros, with two horns and a hairy coat This profile summarizes key conservation information and links to a specialist source.",
@@ -704,12 +704,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Saola in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pseudoryx%20nghetinhensis%20318200.jpg",
+            "alt": "Saola photographed in Vietnam",
+            "credit": "Dao Nguyen and James Hardcastle",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pseudoryx_nghetinhensis_318200.jpg"
         },
         "description": {
             "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn This profile summarizes key conservation information and links to a specialist source.",
@@ -930,12 +930,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Sunda Pangolin in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Manis%20javanica%20101596.jpg",
+            "alt": "Sunda pangolin photographed in Indonesia",
+            "credit": "Firman",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manis_javanica_101596.jpg"
         },
         "description": {
             "text": "A nocturnal, scale-covered mammal that feeds on ants and termites This profile summarizes key conservation information and links to a specialist source.",
@@ -1269,12 +1269,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Tiger in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Panthera%20tigris%20tigris%2045151794.jpg",
+            "alt": "Bengal tiger photographed in India",
+            "credit": "Suhel Quader",
+            "license": "CC BY 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_tigris_45151794.jpg"
         },
         "description": {
             "text": "The largest wild cat and a major predator in Asian ecosystems This profile summarizes key conservation information and links to a specialist source.",
@@ -1947,12 +1947,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Giant Panda in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Panda%20g%C3%A9ant-4.jpg",
+            "alt": "Giant panda resting at ZooParc de Beauval, France",
+            "credit": "Wity42",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panda_géant-4.jpg"
         },
         "description": {
             "text": "A bamboo-eating bear native to China's mountain forests This profile summarizes key conservation information and links to a specialist source.",
