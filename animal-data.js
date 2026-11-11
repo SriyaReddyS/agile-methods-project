@@ -260,7 +260,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Loxodonta_cyclotis_29048930.jpg"
         },
         "description": {
-            "text": "Central and West African tropical forests This profile summarizes key conservation information and links to a specialist source.",
+            "text": "Central and West African tropical forests.",
             "sources": [
                 "primary-african-forest-elephant"
             ]
@@ -366,14 +366,15 @@ const ANIMALS = [
         },
         "image": {
             "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vaquita%20swimming%20through%20the%20void.%20(Phocoena%20Sinus).png",
-            "alt": "Artist's illustration of a vaquita porpoise swimming; not a wildlife photograph",
+            "alt": "Artist’s illustration of a vaquita porpoise swimming; not a wildlife photograph",
+            "mediaType": "illustration",
             "credit": "좀비 브렌다",
             "license": "CC BY-SA 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vaquita_swimming_through_the_void._(Phocoena_Sinus).png"
         },
         "description": {
-            "text": "A rare porpoise restricted to Mexico's Gulf of California This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A rare porpoise restricted to Mexico's Gulf of California.",
             "sources": [
                 "primary-vaquita"
             ]
@@ -480,13 +481,14 @@ const ANIMALS = [
         "image": {
             "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Javan%20Rhino%201900.jpg",
             "alt": "Historical circa-1900 postcard showing a Javan rhinoceros, not a contemporary wildlife photograph",
+            "mediaType": "historical",
             "credit": "Unknown photographer (historical postcard, circa 1900)",
             "license": "Public domain",
             "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Javan_Rhino_1900.jpg"
         },
         "description": {
-            "text": "A rare one-horned rhinoceros surviving in one Indonesian national park This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A rare one-horned rhinoceros surviving in one Indonesian national park.",
             "sources": [
                 "primary-javan-rhino"
             ]
@@ -599,7 +601,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:SumatranRhino2_CincinnatiZoo.jpg"
         },
         "description": {
-            "text": "The smallest living rhinoceros, with two horns and a hairy coat This profile summarizes key conservation information and links to a specialist source.",
+            "text": "The smallest living rhinoceros, with two horns and a hairy coat.",
             "sources": [
                 "primary-sumatran-rhino"
             ]
@@ -712,7 +714,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pseudoryx_nghetinhensis_318200.jpg"
         },
         "description": {
-            "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn This profile summarizes key conservation information and links to a specialist source.",
+            "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn.",
             "sources": [
                 "primary-saola"
             ]
@@ -825,7 +827,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Eagle.jpg"
         },
         "description": {
-            "text": "A large forest eagle endemic to the Philippines This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A large forest eagle endemic to the Philippines.",
             "sources": [
                 "primary-philippine-eagle"
             ]
@@ -938,7 +940,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manis_javanica_101596.jpg"
         },
         "description": {
-            "text": "A nocturnal, scale-covered mammal that feeds on ants and termites This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A nocturnal, scale-covered mammal that feeds on ants and termites.",
             "sources": [
                 "primary-sunda-pangolin"
             ]
@@ -1051,7 +1053,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cross-river-gorilla.jpg"
         },
         "description": {
-            "text": "A rare western gorilla subspecies in the Nigeria-Cameroon border region This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A rare western gorilla subspecies in the Nigeria-Cameroon border region.",
             "sources": [
                 "primary-cross-river-gorilla"
             ]
@@ -1164,7 +1166,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Red_Panda_c.jpg"
         },
         "description": {
-            "text": "A tree-dwelling mammal adapted to cool Himalayan forests This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A tree-dwelling mammal adapted to cool Himalayan forests.",
             "sources": [
                 "primary-red-panda"
             ]
@@ -1277,7 +1279,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panthera_tigris_tigris_45151794.jpg"
         },
         "description": {
-            "text": "The largest wild cat and a major predator in Asian ecosystems This profile summarizes key conservation information and links to a specialist source.",
+            "text": "The largest wild cat and a major predator in Asian ecosystems.",
             "sources": [
                 "primary-tiger"
             ]
@@ -1390,7 +1392,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Asian_Elephant.jpg"
         },
         "description": {
-            "text": "A large social herbivore that travels through Asian forests and grasslands This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A large social herbivore that travels through Asian forests and grasslands.",
             "sources": [
                 "primary-asian-elephant"
             ]
@@ -1503,7 +1505,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blue_Whale_(Balaenoptera_musculus)_(16108163937).jpg"
         },
         "description": {
-            "text": "The largest known animal, a baleen whale that feeds mainly on krill This profile summarizes key conservation information and links to a specialist source.",
+            "text": "The largest known animal, a baleen whale that feeds mainly on krill.",
             "sources": [
                 "primary-blue-whale"
             ]
@@ -1616,7 +1618,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_Shark.jpg"
         },
         "description": {
-            "text": "The world's largest fish, a gentle filter-feeding shark This profile summarizes key conservation information and links to a specialist source.",
+            "text": "The world's largest fish, a gentle filter-feeding shark.",
             "sources": [
                 "primary-whale-shark"
             ]
@@ -1729,7 +1731,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kemp's_ridley_release.JPG"
         },
         "description": {
-            "text": "A small sea turtle known for mass nesting events called arribadas This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A small sea turtle known for mass nesting events called arribadas.",
             "sources": [
                 "primary-kemps-ridley-sea-turtle"
             ]
@@ -1842,7 +1844,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Snow_leopard_(3757699685).jpg"
         },
         "description": {
-            "text": "A mountain cat adapted to cold, steep landscapes This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A mountain cat adapted to cold, steep landscapes.",
             "sources": [
                 "primary-snow-leopard"
             ]
@@ -1955,7 +1957,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panda_géant-4.jpg"
         },
         "description": {
-            "text": "A bamboo-eating bear native to China's mountain forests This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A bamboo-eating bear native to China's mountain forests.",
             "sources": [
                 "primary-giant-panda"
             ]
@@ -2068,7 +2070,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Polar_Bears.jpg"
         },
         "description": {
-            "text": "A large Arctic marine mammal that relies on sea ice to hunt seals This profile summarizes key conservation information and links to a specialist source.",
+            "text": "A large Arctic marine mammal that relies on sea ice to hunt seals.",
             "sources": [
                 "primary-polar-bear"
             ]
