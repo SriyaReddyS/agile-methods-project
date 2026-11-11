@@ -282,12 +282,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "images/african-forest-elephant.jpg",
-            "alt": "Forest elephant in Central African forest",
-            "credit": "Matt Muir",
-            "license": "CC BY 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Loxodonta_cyclotis_29048930.jpg"
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/African%20Forest%20Elephant.jpg",
+            "alt": "African forest elephant",
+            "credit": "VIGNA christian",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_Forest_Elephant.jpg"
         },
         "description": {
             "text": "Central and West African tropical forests.",
@@ -849,12 +849,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine%20Eagle.jpg",
-            "alt": "Philippine eagle photographed in the Philippines",
-            "credit": "Teddybear41422",
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Philippine%20Eagle%20at%20the%20Philippine%20Eagle%20Center%20001.jpg",
+            "alt": "Philippine eagle at the Philippine Eagle Center in Davao",
+            "credit": "RoyKabanlit",
             "license": "CC BY-SA 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Eagle.jpg"
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippine_Eagle_at_the_Philippine_Eagle_Center_001.jpg"
         },
         "description": {
             "text": "A large forest eagle endemic to the Philippines.",
@@ -962,12 +962,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Manis%20javanica%20101596.jpg",
-            "alt": "Sunda pangolin photographed in Indonesia",
-            "credit": "Firman",
-            "license": "CC BY 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manis_javanica_101596.jpg"
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunda%20Pangolin%20Trenggiling%20jawa.jpg",
+            "alt": "Sunda pangolin (Manis javanica)",
+            "credit": "Ari hidayat99",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sunda_Pangolin_Trenggiling_jawa.jpg"
         },
         "description": {
             "text": "A nocturnal, scale-covered mammal that feeds on ants and termites.",
@@ -1414,12 +1414,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Asian%20Elephant.jpg",
-            "alt": "Asian elephant in Mudumalai Tiger Reserve, India",
-            "credit": "EstherAbi3",
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Asian%20Elephant%20(Elephas%20Maximus).jpg",
+            "alt": "Asian elephant (Elephas maximus)",
+            "credit": "Amal Balasooriya",
             "license": "CC BY-SA 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Asian_Elephant.jpg"
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asian_Elephant_(Elephas_Maximus).jpg"
         },
         "description": {
             "text": "A large social herbivore that travels through Asian forests and grasslands.",
@@ -1640,12 +1640,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Whale%20Shark.jpg",
-            "alt": "Whale shark swimming in the Arabian Sea",
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Whale%20Shark%20(Rhincodon%20typus).jpg",
+            "alt": "Whale shark (Rhincodon typus)",
             "credit": "Akasmita",
             "license": "CC BY-SA 4.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_Shark.jpg"
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Whale_Shark_(Rhincodon_typus).jpg"
         },
         "description": {
             "text": "The world's largest fish, a gentle filter-feeding shark.",
@@ -1753,12 +1753,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kemp's%20ridley%20release.JPG",
-            "alt": "Kemp's ridley sea turtle release at Padre Island National Seashore",
-            "credit": "Adam Webb (Esoxid)",
-            "license": "CC BY-SA 3.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kemp's_ridley_release.JPG"
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Lepidochelys%20kempii.jpg",
+            "alt": "Kemp's ridley sea turtle on a beach in Alabama",
+            "credit": "U.S. Fish and Wildlife Service Southeast Region",
+            "license": "CC BY 2.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lepidochelys_kempii.jpg"
         },
         "description": {
             "text": "A small sea turtle known for mass nesting events called arribadas.",
@@ -1979,12 +1979,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Panda%20g%C3%A9ant-4.jpg",
-            "alt": "Giant panda resting at ZooParc de Beauval, France",
-            "credit": "Wity42",
-            "license": "CC BY-SA 4.0",
-            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panda_géant-4.jpg"
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Giant%20panda.jpg",
+            "alt": "Giant panda at San Diego Zoo",
+            "credit": "Wikimedia Commons photographer (see source)",
+            "license": "CC BY-SA 3.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_panda.jpg"
         },
         "description": {
             "text": "A bamboo-eating bear native to China's mountain forests.",
