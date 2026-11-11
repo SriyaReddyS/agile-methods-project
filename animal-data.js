@@ -282,7 +282,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Loxodonta%20cyclotis%2029048930.jpg",
+            "src": "images/african-forest-elephant.jpg",
             "alt": "Forest elephant in Central African forest",
             "credit": "Matt Muir",
             "license": "CC BY 4.0",
@@ -395,7 +395,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vaquita%20swimming%20through%20the%20void.%20(Phocoena%20Sinus).png",
+            "src": "images/vaquita.png",
             "alt": "Artist’s illustration of a vaquita porpoise swimming; not a wildlife photograph",
             "mediaType": "illustration",
             "credit": "좀비 브렌다",
@@ -509,7 +509,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Javan%20Rhino%201900.jpg",
+            "src": "images/javan-rhino.jpg",
             "alt": "Historical circa-1900 postcard showing a Javan rhinoceros, not a contemporary wildlife photograph",
             "mediaType": "historical",
             "credit": "Unknown photographer (historical postcard, circa 1900)",
@@ -623,7 +623,7 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/SumatranRhino2%20CincinnatiZoo.jpg",
+            "src": "images/sumatran-rhino.jpg",
             "alt": "Sumatran rhinoceros photographed at Cincinnati Zoo",
             "credit": "Ltshears",
             "license": "CC BY-SA 3.0",
