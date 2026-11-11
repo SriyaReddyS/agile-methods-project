@@ -6,6 +6,8 @@
     <title>Wildlife Guardian | Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="animal-data.js" defer></script>
+    <script src="home-animals.js" defer></script>
 </head>
 
 <body>
@@ -58,58 +60,36 @@
             <div class="hero-content">
                 <h1>Protect Endangered Wildlife</h1>
                 <p>
-                    Discover threatened species, understand
-                    the threats they face, and learn how to help.
+                    Explore 20 threatened species, discover their habitats and challenges, and find meaningful ways to support wildlife conservation.
                 </p>
-                <a class="button" href="#animals">
+                <a class="button" href="animals.html">
                     Explore Animals →
                 </a>
             </div>
         </section>
 
-        <!-- Featured Animals: each card links to animal.html?id=<species-id> -->
-        <section class="animals" id="animals">
-            <h2>Featured Endangered Animals</h2>
-
-            <div class="animal-grid">
-                <a class="animal-card" href="animal.html?id=amur-leopard">
-                    <img src="images/amur-leopard.jpg"
-                         alt="Amur leopard with a pale spotted coat standing on mossy rocks in front of bamboo, mouth open">
-                    <div class="card-content">
-                        <h3>Amur Leopard</h3>
-                        <span class="status">Critically Endangered</span>
-                    </div>
-                </a>
-
-                <a class="animal-card" href="animal.html?id=sumatran-orangutan">
-                    <img src="images/sumatran-orangutan.jpg"
-                         alt="Close-up of a Sumatran orangutan with long reddish-brown hair and a pale beard, arms raised and holding a rope">
-                    <div class="card-content">
-                        <h3>Sumatran Orangutan</h3>
-                        <span class="status">Critically Endangered</span>
-                    </div>
-                </a>
-
-                <a class="animal-card" href="animal.html?id=hawksbill-sea-turtle">
-                    <img src="images/hawksbill-sea-turtle.jpg"
-                         alt="Hawksbill sea turtle with a narrow, pointed beak swimming in blue water above a coral reef">
-                    <div class="card-content">
-                        <h3>Hawksbill Sea Turtle</h3>
-                        <span class="status">Critically Endangered</span>
-                    </div>
-                </a>
+        <!-- Featured profiles use the same shared data as the directory. -->
+        <section class="animals home-featured" id="animals">
+            <div class="home-section-heading">
+                <div>
+                    <p class="home-eyebrow">DISCOVER THE WILD</p>
+                    <h2>Meet the Animals</h2>
+                    <p>Start with six remarkable species, then explore all twenty conservation profiles.</p>
+                </div>
+                <a class="home-text-link" href="animals.html">View all 20 animals →</a>
             </div>
+            <div class="animal-grid home-featured-grid" data-home-animals>
+                <p>Loading featured animals...</p>
+            </div>
+        </section>
 
-            <!-- Required by the photos' Creative Commons licences; keep in sync with animal-data.js -->
-            <p class="photo-credits">
-                Photos:
-                <a href="https://commons.wikimedia.org/wiki/File:Panthera_pardus_orientalis_Colchester_Zoo_(1).jpg">William Warby</a>
-                (<a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>);
-                <a href="https://commons.wikimedia.org/wiki/File:2025-05-11_Zoo_Dresden_STP_3563-2.jpg">Steffen Prößdorf</a>
-                (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>);
-                <a href="https://commons.wikimedia.org/wiki/File:Tortuga_carey_(Eretmochelys_imbricata),_parque_nacional_Ras_Muhammad,_Egipto,_2022-03-28,_DD_56.jpg">Diego Delso</a>
-                (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).
-            </p>
+        <section class="home-action">
+            <div>
+                <p class="home-eyebrow">MAKE A DIFFERENCE</p>
+                <h2>Small actions can support wildlife protection</h2>
+                <p>Explore the threats animals face, learn about conservation solutions, and discover opportunities to get involved from Pittsburgh.</p>
+            </div>
+            <a class="button" href="animals.html">Explore conservation profiles →</a>
         </section>
 
         <!-- Mission: target of the "About Us" nav link -->
