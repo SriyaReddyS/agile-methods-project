@@ -365,12 +365,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Vaquita in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vaquita%20swimming%20through%20the%20void.%20(Phocoena%20Sinus).png",
+            "alt": "Artist's illustration of a vaquita porpoise swimming; not a wildlife photograph",
+            "credit": "좀비 브렌다",
+            "license": "CC BY-SA 4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vaquita_swimming_through_the_void._(Phocoena_Sinus).png"
         },
         "description": {
             "text": "A rare porpoise restricted to Mexico's Gulf of California This profile summarizes key conservation information and links to a specialist source.",
@@ -478,12 +478,12 @@ const ANIMALS = [
             ]
         },
         "image": {
-            "src": null,
-            "alt": "Javan Rhino in its natural habitat; licensed photograph pending verification",
-            "credit": null,
-            "license": null,
-            "licenseUrl": null,
-            "sourceUrl": null
+            "src": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Javan%20Rhino%201900.jpg",
+            "alt": "Historical circa-1900 postcard showing a Javan rhinoceros, not a contemporary wildlife photograph",
+            "credit": "Unknown photographer (historical postcard, circa 1900)",
+            "license": "Public domain",
+            "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+            "sourceUrl": "https://commons.wikimedia.org/wiki/File:Javan_Rhino_1900.jpg"
         },
         "description": {
             "text": "A rare one-horned rhinoceros surviving in one Indonesian national park This profile summarizes key conservation information and links to a specialist source.",
