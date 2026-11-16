@@ -131,6 +131,45 @@
     font-style: italic;
 }
 
+
+/* Animated typing indicator */
+.chatbot-message--loading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chatbot-message--loading::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #56836c;
+    box-shadow: 12px 0 #56836c, 24px 0 #56836c;
+    margin-right: 24px;
+    animation: chatbot-typing 1.2s ease-in-out infinite;
+}
+
+@keyframes chatbot-typing {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chatbot-message--loading::after {
+        animation: none;
+    }
+}
+
+
 .chatbot-message--error {
     align-self: stretch;
     max-width: none;
@@ -227,9 +266,10 @@
 }
 
 .chatbot-input:focus-visible {
-    outline: 3px solid #f8d66d;
+    outline: 2px solid #6b9478;
     outline-offset: 1px;
 }
+
 
 .chatbot-send {
     background-color: #214d38;
@@ -285,5 +325,94 @@
 
     .chatbot-message {
         max-width: 94%;
+    }
+}
+
+
+/* Chatbot opening animation */
+@keyframes chatbot-pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.94);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .chatbot-panel:not([hidden]) {
+        animation: chatbot-pop-in 320ms ease-out both;
+        transform-origin: bottom right;
+    }
+}
+
+
+/* Minimal scrollbar for chatbot */
+
+/* Firefox */
+.chatbot-log {
+    scrollbar-width: thin;
+    scrollbar-color: #c4c4c4 transparent;
+}
+
+/* Chrome, Edge, Safari */
+.chatbot-log::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbot-log::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chatbot-log::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-radius: 999px;
+}
+
+.chatbot-log::-webkit-scrollbar-thumb:hover {
+    background-color: #999999;
+}
+
+
+/* Message fade-in-bottom animation */
+@keyframes chatbot-fade-in-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .chatbot-message {
+        animation: chatbot-fade-in-bottom 300ms ease-out both;
+    }
+}
+
+
+/* Floating chatbot button hover effect */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .chatbot-toggle {
+        transition:
+            transform 220ms ease-out,
+            box-shadow 220ms ease-out,
+            background-color 220ms ease-out;
+    }
+
+    .chatbot-toggle:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
     }
 }
