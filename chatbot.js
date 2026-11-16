@@ -27,6 +27,7 @@
         not_configured: "The chatbot is not set up on this server yet.",
         rate_limited: "Too many questions in a short time. Please wait a minute and try again.",
         provider_busy: "The chatbot is busy right now. Please try again in a minute.",
+        provider_quota: "The chatbot is unavailable right now. Please tell the site team.",
         provider_timeout: "The chatbot took too long to answer. Please try again.",
         provider_unavailable: "The chatbot could not reach its AI service. Please try again later.",
         offline: "The chatbot server could not be reached. If you opened this page as a file, start the site with `npm start` and visit http://localhost:8000/."

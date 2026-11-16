@@ -240,3 +240,53 @@ test("missing responder gives a safe configuration error", async function () {
         }
     );
 });
+
+test("OpenAI responder sends grounded, cost-limited requests", async function () {
+    let captured = null;
+    const fakeClient = {
+        chat: {
+            completions: {
+                create: async function (params) {
+                    captured = params;
+                    return { model: params.model, choices: [{ finish_reason: "stop", message: { role: "assistant", content: "Grounded answer.", refusal: null } }] };
+                }
+            }
+        }
+    };
+
+    const result = await chat.handleChat(
+        { messages: [user("Where do Amur leopards live?")] },
+        { animals: animals, responder: chat.createOpenAIResponder(fakeClient, {}) }
+    );
+
+    assert.equal(result.mode, "live");
+    assert.equal(result.reply, "Grounded answer.");
+    assert.equal(captured.model, chat.DEFAULT_MODELS.openai);
+    assert.equal(captured.reasoning_effort, "low");
+    assert.ok(captured.max_completion_tokens <= 2048);
+    assert.equal(captured.messages[0].role, "developer");
+    const amur = animals.find(function (a) { return a.id === "amur-leopard"; });
+    assert.ok(captured.messages[1].content.includes(amur.habitat.text), "species data is passed as context");
+    assert.equal(captured.messages[captured.messages.length - 1].content, "Where do Amur leopards live?");
+});
+
+test("OpenAI responder handles refusals, truncation and empty output", async function () {
+    function clientReturning(choice) {
+        return { chat: { completions: { create: async function () { return { model: "m", choices: [choice] }; } } } };
+    }
+    const ask = function (choice) {
+        return chat.handleChat(
+            { messages: [user("Where do Amur leopards live?")] },
+            { animals: animals, responder: chat.createOpenAIResponder(clientReturning(choice)) }
+        );
+    };
+
+    const refused = await ask({ finish_reason: "stop", message: { content: null, refusal: "I can't help with that." } });
+    assert.match(refused.reply, /can't help with that request/);
+    assert.deepEqual(refused.sources, []);
+
+    const truncated = await ask({ finish_reason: "length", message: { content: "Partial", refusal: null } });
+    assert.match(truncated.reply, /Answer shortened/);
+
+    await assert.rejects(ask({ finish_reason: "length", message: { content: "", refusal: null } }), { code: "provider_error" });
+});

@@ -3,11 +3,12 @@
    Local web server + chatbot API
    ----------------------------------
    Serves the static site from the repo root
-   and handles POST /api/chat. The Claude API
-   key stays on the server (environment
-   variable) and is never sent to browsers.
+   and handles POST /api/chat. The AI API key
+   (OpenAI or Anthropic) stays on the server
+   (environment variable) and is never sent
+   to browsers.
 
-   Run:  npm start          (live, needs ANTHROPIC_API_KEY)
+   Run:  npm start          (live, needs OPENAI_API_KEY or ANTHROPIC_API_KEY)
          npm run start:mock (demo answers, no key)
 ================================== */
 
@@ -193,7 +194,7 @@ function serveStatic(req, res, urlPath) {
    Server
 ================================== */
 
-// deps: { animals, responder, Anthropic, rateLimit }
+// deps: { animals, responder, sdk, rateLimit }
 function createServer(deps) {
     const isAllowed = createRateLimiter(deps.rateLimit || RATE_LIMIT);
 
@@ -222,10 +223,10 @@ function createServer(deps) {
                 const result = await chat.handleChat(body, deps);
                 sendJson(res, 200, result);
             } catch (error) {
-                const chatError = chat.toChatError(error, deps.Anthropic);
+                const chatError = chat.toChatError(error, deps.sdk || deps.Anthropic);
                 if (chatError.status >= 500) {
                     // Log the class/status only; never log request headers or keys.
-                    console.error("[chat]", chatError.code, error && error.name, error && error.status);
+                    console.error("[chat]", chatError.code, error && error.name, error && error.status, error && error.code);
                 }
                 sendError(res, chatError.status, chatError.code, chatError.message);
             }
@@ -234,6 +235,38 @@ function createServer(deps) {
 
         serveStatic(req, res, url.pathname);
     });
+}
+
+// Treat empty values and .env.example placeholders ("your-...") as unset.
+function readKey(value) {
+    const key = String(value || "").trim();
+    return key && !/^your-/i.test(key) ? key : null;
+}
+
+// Pick the provider: CHATBOT_PROVIDER if set, otherwise whichever key exists
+// (OpenAI first).
+function chooseProvider(env) {
+    const keys = {
+        // OPEN_AI_API_KEY is accepted as an alias of the standard name.
+        openai: readKey(env.OPENAI_API_KEY) || readKey(env.OPEN_AI_API_KEY),
+        anthropic: readKey(env.ANTHROPIC_API_KEY)
+    };
+    const requested = String(env.CHATBOT_PROVIDER || "").toLowerCase();
+
+    if (requested === "openai" || requested === "anthropic") {
+        return { provider: requested, key: keys[requested] };
+    }
+
+    if (keys.openai) {
+        return { provider: "openai", key: keys.openai };
+    }
+
+    return { provider: "anthropic", key: keys.anthropic };
+}
+
+function loadSdk(provider) {
+    const sdk = require(provider === "openai" ? "openai" : "@anthropic-ai/sdk");
+    return sdk.default || sdk;
 }
 
 // Build dependencies from environment variables.
@@ -245,25 +278,19 @@ function createDepsFromEnv(env) {
         return { animals: animals, responder: chat.createMockResponder(), mode: "mock" };
     }
 
-    const sdk = require("@anthropic-ai/sdk");
-    const Anthropic = sdk.default || sdk;
+    const choice = chooseProvider(env);
+    const SDK = loadSdk(choice.provider);
 
-    if (!env.ANTHROPIC_API_KEY) {
-        return { animals: animals, responder: null, Anthropic: Anthropic, mode: "unconfigured" };
+    if (!choice.key) {
+        return { animals: animals, responder: null, sdk: SDK, mode: "unconfigured", provider: choice.provider };
     }
 
-    const client = new Anthropic({
-        apiKey: env.ANTHROPIC_API_KEY,
-        timeout: 20 * 1000,
-        maxRetries: 1
-    });
+    const clientOptions = { apiKey: choice.key, timeout: 20 * 1000, maxRetries: 1 };
+    const responder = choice.provider === "openai"
+        ? chat.createOpenAIResponder(new SDK(clientOptions), { model: env.OPENAI_MODEL || chat.DEFAULT_MODELS.openai })
+        : chat.createLiveResponder(new SDK(clientOptions), { model: env.ANTHROPIC_MODEL || chat.DEFAULT_MODELS.anthropic });
 
-    return {
-        animals: animals,
-        responder: chat.createLiveResponder(client, { model: env.CHATBOT_MODEL || chat.DEFAULT_MODEL }),
-        Anthropic: Anthropic,
-        mode: "live"
-    };
+    return { animals: animals, responder: responder, sdk: SDK, mode: "live", provider: choice.provider };
 }
 
 if (require.main === module) {
@@ -273,14 +300,14 @@ if (require.main === module) {
     createServer(deps).listen(port, function () {
         console.log("Wildlife Guardian running at http://localhost:" + port + "/");
         console.log("Chatbot mode: " + deps.mode +
-            (deps.mode === "live" ? " (model " + deps.responder.model + ")" : "") +
+            (deps.mode === "live" ? " (" + deps.provider + ", model " + deps.responder.model + ")" : "") +
             " | species loaded: " + deps.animals.length);
 
         if (deps.mode === "unconfigured") {
-            console.log("ANTHROPIC_API_KEY is not set: /api/chat will return a configuration error.");
+            console.log("No AI API key set (OPENAI_API_KEY or ANTHROPIC_API_KEY): /api/chat will return a configuration error.");
             console.log("Copy .env.example to .env and add a key, or run `npm run start:mock`.");
         }
     });
 }
 
-module.exports = { createServer, createDepsFromEnv, resolveStaticPath };
+module.exports = { createServer, createDepsFromEnv, chooseProvider, resolveStaticPath };

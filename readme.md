@@ -13,7 +13,7 @@ Requires Node.js 22 or newer.
 ```sh
 npm install
 npm run start:mock   # demo mode: answers built from animal-data.js, no API key needed
-npm start            # live mode: calls the Claude API (needs ANTHROPIC_API_KEY)
+npm start            # live mode: calls OpenAI or Claude (needs OPENAI_API_KEY or ANTHROPIC_API_KEY)
 ```
 
 Then visit http://localhost:8000/animal.html?id=amur-leopard and select **Ask Wildlife Guardian**.
@@ -29,8 +29,9 @@ How it works:
 1. The browser sends the question and recent chat history to `POST /api/chat`.
 2. `server/chat.js` works out which species the question is about, using names from the
    shared `ANIMALS` data in `animal-data.js` (loaded by `server/animals.js`).
-3. The server sends the species' profile data to Claude (`claude-sonnet-5-5`) with rules to
-   answer only from that data and to say when information is missing.
+3. The server sends the species' profile data to the configured AI provider (OpenAI
+   `gpt-5.4-mini` by default, or Anthropic Claude `claude-sonnet-5-5`) with rules to answer
+   only from that data and to say when information is missing.
 4. Source links shown under each answer come from the species record, never from the model.
 
 ### Configuration
@@ -39,16 +40,20 @@ Copy `.env.example` to `.env` and fill in values. `.env` is git-ignored: never c
 
 | Variable | Required | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | Live mode | Claude API key. Server-side only, never sent to browsers. |
+| `OPENAI_API_KEY` | Live mode (one key) | OpenAI API key (`OPEN_AI_API_KEY` also accepted). Server-side only. |
+| `ANTHROPIC_API_KEY` | Live mode (one key) | Anthropic Claude API key. Server-side only. |
+| `CHATBOT_PROVIDER` | No | `openai` or `anthropic`. Default: OpenAI if its key is set, otherwise Anthropic. |
 | `CHATBOT_MODE` | No | `live` (default) or `mock`. |
-| `CHATBOT_MODEL` | No | Claude model id. Default `claude-sonnet-5-5`. |
+| `OPENAI_MODEL` | No | Default `gpt-5.4-mini`. |
+| `ANTHROPIC_MODEL` | No | Default `claude-sonnet-5-5`. |
 | `PORT` | No | Server port. Default `8000`. |
 
-If `ANTHROPIC_API_KEY` is missing in live mode, the chatbot shows a configuration error and
+If no key is set in live mode, the chatbot shows a configuration error and
 the rest of the site keeps working.
 
 Cost and safety limits: questions up to 500 characters, the last 12 messages of history,
-replies up to 1,024 output tokens at low effort, request bodies up to 32 KB, and
+replies up to 1,024 output tokens on Claude or 2,048 completion tokens (including
+reasoning) on OpenAI, at low reasoning effort, request bodies up to 32 KB, and
 20 chat requests per minute per visitor IP.
 
 ### Adding a species
@@ -69,5 +74,5 @@ network calls.
 ### Deployment
 
 Static hosting alone (for example GitHub Pages) cannot run `/api/chat`. To deploy the
-chatbot, run `npm start` on a Node host and set `ANTHROPIC_API_KEY` as an environment
+chatbot, run `npm start` on a Node host and set `OPENAI_API_KEY` (or `ANTHROPIC_API_KEY`) as an environment
 variable in that host's settings.

@@ -9,8 +9,9 @@
    - Builds structured species context for the
      LLM from the shared dataset.
    - Answers with either the live Claude API
-     responder or a deterministic mock
-     responder for local testing.
+     responder (OpenAI or Claude API) or a
+     deterministic mock responder for local
+     testing.
    Source links in replies always come from
    the dataset, never from the model.
 ================================== */
@@ -22,7 +23,20 @@ const LIMITS = {
     maxOutputTokens: 1024
 };
 
-const DEFAULT_MODEL = "claude-sonnet-5-5";
+const DEFAULT_MODELS = {
+    openai: "gpt-5.4-mini",
+    anthropic: "claude-sonnet-5-5"
+};
+
+// Default for the Claude responder (kept for existing callers).
+const DEFAULT_MODEL = DEFAULT_MODELS.anthropic;
+
+// OpenAI reasoning models count reasoning tokens toward this cap, so it is
+// higher than the visible-answer budget.
+const OPENAI_MAX_COMPLETION_TOKENS = 2048;
+
+const REFUSAL_REPLY = "Sorry, I can't help with that request. Try asking about an animal's habitat, threats, conservation status, or how to help.";
+const SHORTENED_NOTE = "\n\n(Answer shortened. Ask a narrower question for more detail.)";
 
 // Words in common names that are too generic to identify a species alone.
 const GENERIC_NAME_WORDS = new Set([
@@ -578,6 +592,54 @@ function createMockResponder() {
 }
 
 /* ==================================
+   Live responder (OpenAI API)
+================================== */
+
+function createOpenAIResponder(client, options) {
+    const model = (options && options.model) || DEFAULT_MODELS.openai;
+
+    return {
+        mode: "live",
+        provider: "openai",
+        model: model,
+        respond: async function (request) {
+            const response = await client.chat.completions.create({
+                model: model,
+                max_completion_tokens: OPENAI_MAX_COMPLETION_TOKENS,
+                // Short grounded answers do not need deep reasoning; keeps cost down.
+                reasoning_effort: "low",
+                messages: [
+                    { role: "developer", content: buildSystemPrompt(request.allAnimals) },
+                    { role: "developer", content: buildSpeciesDataBlock(request.animals) }
+                ].concat(request.messages)
+            });
+
+            const choice = response.choices && response.choices[0];
+            const message = choice && choice.message;
+
+            if (!message || message.refusal || choice.finish_reason === "content_filter") {
+                if (message && (message.refusal || choice.finish_reason === "content_filter")) {
+                    return { text: REFUSAL_REPLY, refused: true };
+                }
+                throw new ChatError("provider_error", 502, "The assistant returned an empty answer. Please try again.");
+            }
+
+            let text = String(message.content || "").trim();
+
+            if (!text) {
+                throw new ChatError("provider_error", 502, "The assistant returned an empty answer. Please try again.");
+            }
+
+            if (choice.finish_reason === "length") {
+                text += SHORTENED_NOTE;
+            }
+
+            return { text: text, model: response.model };
+        }
+    };
+}
+
+/* ==================================
    Live responder (Claude API)
 ================================== */
 
@@ -586,6 +648,7 @@ function createLiveResponder(client, options) {
 
     return {
         mode: "live",
+        provider: "anthropic",
         model: model,
         respond: async function (request) {
             const response = await client.beta.messages.create({
@@ -604,10 +667,7 @@ function createLiveResponder(client, options) {
             });
 
             if (response.stop_reason === "refusal") {
-                return {
-                    text: "Sorry, I can't help with that request. Try asking about an animal's habitat, threats, conservation status, or how to help.",
-                    refused: true
-                };
+                return { text: REFUSAL_REPLY, refused: true };
             }
 
             let text = (response.content || [])
@@ -621,7 +681,7 @@ function createLiveResponder(client, options) {
             }
 
             if (response.stop_reason === "max_tokens") {
-                text += "\n\n(Answer shortened. Ask a narrower question for more detail.)";
+                text += SHORTENED_NOTE;
             }
 
             return { text: text, model: response.model };
@@ -630,25 +690,31 @@ function createLiveResponder(client, options) {
 }
 
 // Map SDK errors to safe, user-facing errors. Never expose provider details.
-function toChatError(error, Anthropic) {
+// `sdk` is the provider SDK namespace (OpenAI or Anthropic); both export the
+// same error class names.
+function toChatError(error, sdk) {
     if (error instanceof ChatError) {
         return error;
     }
 
-    if (Anthropic) {
-        if (error instanceof Anthropic.AuthenticationError || error instanceof Anthropic.PermissionDeniedError) {
+    if (sdk) {
+        if (error instanceof sdk.AuthenticationError || error instanceof sdk.PermissionDeniedError) {
             return new ChatError("not_configured", 503, "The chatbot is not configured correctly. Please tell the site team.");
         }
-        if (error instanceof Anthropic.RateLimitError) {
+        // OpenAI uses 429 for an empty credit balance too; retrying won't help.
+        if (error instanceof sdk.RateLimitError && (error.code === "insufficient_quota" || error.type === "insufficient_quota")) {
+            return new ChatError("provider_quota", 503, "The chatbot is unavailable right now because its AI service account is out of credits. Please tell the site team.");
+        }
+        if (error instanceof sdk.RateLimitError) {
             return new ChatError("provider_busy", 503, "The chatbot is busy right now. Please try again in a minute.");
         }
-        if (error instanceof Anthropic.APIConnectionTimeoutError) {
+        if (error instanceof sdk.APIConnectionTimeoutError) {
             return new ChatError("provider_timeout", 504, "The chatbot took too long to answer. Please try again.");
         }
-        if (error instanceof Anthropic.APIConnectionError) {
+        if (error instanceof sdk.APIConnectionError) {
             return new ChatError("provider_unavailable", 502, "The chatbot could not reach its AI service. Please try again later.");
         }
-        if (error instanceof Anthropic.APIError) {
+        if (error instanceof sdk.APIError) {
             return new ChatError("provider_error", 502, "The chatbot's AI service returned an error. Please try again later.");
         }
     }
@@ -714,7 +780,7 @@ async function handleChat(body, deps) {
         throw new ChatError(
             "not_configured",
             503,
-            "The chatbot is not configured yet. The site team needs to set ANTHROPIC_API_KEY on the server (or run it in mock mode)."
+            "The chatbot is not configured yet. The site team needs to set an AI API key on the server (or run it in mock mode)."
         );
     }
 
@@ -727,7 +793,7 @@ async function handleChat(body, deps) {
             allAnimals: animals
         });
     } catch (error) {
-        throw toChatError(error, deps.Anthropic);
+        throw toChatError(error, deps.sdk || deps.Anthropic);
     }
 
     // Sources shown to the visitor come from the dataset only.
@@ -755,6 +821,7 @@ async function handleChat(body, deps) {
 module.exports = {
     LIMITS,
     DEFAULT_MODEL,
+    DEFAULT_MODELS,
     ChatError,
     validateChatRequest,
     resolveSpecies,
@@ -763,6 +830,7 @@ module.exports = {
     buildSpeciesDataBlock,
     createMockResponder,
     createLiveResponder,
+    createOpenAIResponder,
     toChatError,
     handleChat
 };

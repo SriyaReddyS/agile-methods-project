@@ -4,8 +4,10 @@ const assert = require("node:assert/strict");
 
 const sdk = require("@anthropic-ai/sdk");
 const Anthropic = sdk.default || sdk;
+const openaiSdk = require("openai");
+const OpenAI = openaiSdk.default || openaiSdk;
 
-const { createServer } = require("../server/server");
+const { createServer, chooseProvider } = require("../server/server");
 const { loadAnimals } = require("../server/animals");
 const chat = require("../server/chat");
 
@@ -139,4 +141,34 @@ test("static server serves site files but not secrets or server code", async fun
         assert.equal(res.status, 404, blocked);
         await res.arrayBuffer();
     }
+});
+
+test("OpenAI provider failures, including an empty credit balance, become friendly errors", async function () {
+    const quota = OpenAI.APIError.generate(429, { error: { code: "insufficient_quota", type: "insufficient_quota", message: "no credits" } }, "no credits", new Headers());
+    const rate = OpenAI.APIError.generate(429, { error: { code: "rate_limit_exceeded", type: "requests", message: "slow down" } }, "slow down", new Headers());
+    const cases = [
+        [quota, 503, "provider_quota"],
+        [rate, 503, "provider_busy"],
+        [new OpenAI.APIConnectionError({ message: "network down" }), 502, "provider_unavailable"]
+    ];
+
+    for (const [error, status, code] of cases) {
+        const failingClient = { chat: { completions: { create: async function () { throw error; } } } };
+        const { server, base } = await startServer({ sdk: OpenAI, responder: chat.createOpenAIResponder(failingClient) });
+        const res = await postChat(base, { messages: [{ role: "user", content: "Where do Amur leopards live?" }] });
+        const data = await res.json();
+        server.close();
+
+        assert.equal(res.status, status, code);
+        assert.equal(data.error, code);
+        assert.doesNotMatch(data.message, /no credits|slow down|network down/);
+    }
+});
+
+test("provider is chosen from real keys, ignoring placeholders", function () {
+    assert.equal(chooseProvider({ OPEN_AI_API_KEY: "sk-test", ANTHROPIC_API_KEY: "your-anthropic-api-key-here" }).provider, "openai");
+    assert.equal(chooseProvider({ OPENAI_API_KEY: "sk-test" }).key, "sk-test");
+    assert.equal(chooseProvider({ ANTHROPIC_API_KEY: "sk-ant-test" }).provider, "anthropic");
+    assert.equal(chooseProvider({ ANTHROPIC_API_KEY: "your-anthropic-api-key-here" }).key, null);
+    assert.equal(chooseProvider({ CHATBOT_PROVIDER: "anthropic", OPENAI_API_KEY: "sk-test" }).key, null);
 });
