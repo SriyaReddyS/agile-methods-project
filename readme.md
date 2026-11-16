@@ -18,6 +18,32 @@ npm start            # live mode: calls OpenAI or Claude (needs OPENAI_API_KEY o
 
 Then visit http://localhost:8000/animal.html?id=amur-leopard and select **Ask Wildlife Guardian**.
 
+## Using the chatbot in the browser
+
+The chatbot only works when the site is served by the Node server. If you open the HTML
+files directly (`file://`), the chat shows a "start the server" message instead.
+
+1. Start the server from the project folder:
+
+   ```sh
+   npm install        # first time only
+   npm start
+   ```
+
+   The terminal should show `Chatbot mode: live (openai, model gpt-5.4-mini)`. If it says
+   `unconfigured`, add your key to `.env` (see [Configuration](#configuration)).
+
+2. Open http://localhost:8000/animal.html?id=amur-leopard in your browser.
+3. Click the green **Ask Wildlife Guardian** button in the bottom-right corner.
+4. Type a question and press Enter, for example "Where does it live?", then ask a
+   follow-up such as "What threatens them?"
+
+The chat button also appears on **Explore Animals** (`animals.html`) and on every animal
+profile page. It does not appear on the homepage.
+
+Press `Ctrl+C` in the terminal to stop the server. To try the chat without using API
+credits, run `npm run start:mock` instead. Mock answers are labelled "Demo mode".
+
 ## AI chatbot
 
 The chat widget (`chatbot.js`, `chatbot.css`) is on `animal.html` and `animals.html`.
