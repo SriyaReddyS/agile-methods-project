@@ -35,6 +35,10 @@ const DEFAULT_MODEL = DEFAULT_MODELS.anthropic;
 // higher than the visible-answer budget.
 const OPENAI_MAX_COMPLETION_TOKENS = 2048;
 
+// The model starts its reply with this marker when the question is about a
+// species it has no supplied data for, so no unrelated sources are shown.
+const NO_DATA_MARKER = "[NO_DATA]";
+
 const REFUSAL_REPLY = "Sorry, I can't help with that request. Try asking about an animal's habitat, threats, conservation status, or how to help.";
 const SHORTENED_NOTE = "\n\n(Answer shortened. Ask a narrower question for more detail.)";
 
@@ -412,7 +416,7 @@ function buildSystemPrompt(animals) {
         "- Do not invent or estimate population numbers, statistics, habitats, ranges, threats, conservation statuses, dates or citations. Do not add facts from general knowledge.",
         "- If the supplied data does not answer the question, say plainly that Wildlife Guardian's profile does not include that information yet, and suggest checking the profile's listed sources.",
         "- Population figures are dated estimates. Always say the year of the estimate and do not present it as current.",
-        "- If the visitor asks about a species that is not in the list above (including other subspecies or relatives, such as a different leopard or orangutan), say that Wildlife Guardian does not have verified information for that species yet, and list the species it does cover. Do not answer from general knowledge.",
+        "- If the visitor asks about a species that is not in the list above (including other subspecies or relatives, such as a different leopard or orangutan), say that Wildlife Guardian does not have verified information for that species yet, and list the species it does cover. Do not answer from general knowledge. Begin that reply with the exact text " + NO_DATA_MARKER + " (it is removed before the visitor sees it).",
         "- If no species data is supplied and it is unclear which animal the visitor means, ask which of the listed species they want to learn about.",
         "- For ways to help, use the conservation actions and local Pittsburgh actions in the data. Never say an organization is a Wildlife Guardian partner.",
         "- Do not write source names, URLs or reference numbers yourself; the website shows the sources under your reply.",
@@ -796,6 +800,20 @@ async function handleChat(body, deps) {
         throw toChatError(error, deps.sdk || deps.Anthropic);
     }
 
+    // Model said the question is about a species we have no data for.
+    const noData = typeof answer.text === "string" && answer.text.trim().startsWith(NO_DATA_MARKER);
+
+    if (noData) {
+        return {
+            reply: answer.text.trim().slice(NO_DATA_MARKER.length).trim(),
+            mode: deps.responder.mode,
+            kind: "limitation",
+            speciesId: request.speciesId,
+            species: [],
+            sources: []
+        };
+    }
+
     // Sources shown to the visitor come from the dataset only.
     const sources = [];
     matchedAnimals.forEach(function (animal) {
@@ -820,6 +838,7 @@ async function handleChat(body, deps) {
 
 module.exports = {
     LIMITS,
+    NO_DATA_MARKER,
     DEFAULT_MODEL,
     DEFAULT_MODELS,
     ChatError,

@@ -290,3 +290,26 @@ test("OpenAI responder handles refusals, truncation and empty output", async fun
 
     await assert.rejects(ask({ finish_reason: "length", message: { content: "", refusal: null } }), { code: "provider_error" });
 });
+
+test("a model reply marked as no-data drops the page species' sources", async function () {
+    const fakeClient = {
+        chat: {
+            completions: {
+                create: async function () {
+                    return { model: "m", choices: [{ finish_reason: "stop", message: { content: chat.NO_DATA_MARKER + " Wildlife Guardian does not have verified information for giant pandas yet.", refusal: null } }] };
+                }
+            }
+        }
+    };
+
+    const result = await chat.handleChat(
+        { messages: [user("Where do giant pandas live?")], speciesId: "amur-leopard" },
+        { animals: animals, responder: chat.createOpenAIResponder(fakeClient) }
+    );
+
+    assert.equal(result.kind, "limitation");
+    assert.equal(result.reply, "Wildlife Guardian does not have verified information for giant pandas yet.");
+    assert.deepEqual(result.sources, []);
+    assert.deepEqual(result.species, []);
+    assert.equal(result.speciesId, "amur-leopard", "page species is kept for later follow-ups");
+});
