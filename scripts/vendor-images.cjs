@@ -11,7 +11,7 @@ const dataPath = path.join(root, "animal-data.js");
 let source = fs.readFileSync(dataPath, "utf8");
 const context = vm.createContext({});
 vm.runInContext(source + "\nthis.animals = ANIMALS;", context);
-const animals = context.animals.filter(a => a.image.src.startsWith("https://commons.wikimedia.org/"));
+const animals = context.animals.filter(a => typeof a.image?.src === "string" && a.image.src.startsWith("https://commons.wikimedia.org/"));
 const agent = { "User-Agent": "WildlifeGuardianStudentProject/1.0 (licensed Wikimedia Commons photo download)" };
 async function fetchRetry(url, attempts = 5) {
   for (let i = 0; i < attempts; i++) {
@@ -29,7 +29,7 @@ async function fetchRetry(url, attempts = 5) {
   for (const a of animals) {
     try {
     const title = decodeURIComponent(a.image.sourceUrl.split("/wiki/File:")[1]).replaceAll("_", " ");
-    const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&iiurlwidth=640&titles=" + encodeURIComponent("File:" + title);
+    const api = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&iiurlwidth=1280&titles=" + encodeURIComponent("File:" + title);
     const info = await (await fetchRetry(api)).json();
     const page = Object.values(info.query.pages)[0];
     const url = page.imageinfo?.[0]?.thumburl || page.imageinfo?.[0]?.url;
@@ -56,4 +56,6 @@ async function fetchRetry(url, attempts = 5) {
   }
   fs.writeFileSync(dataPath, source);
   console.log("Downloaded " + completed + " licensed images. Deferred " + failed.length + " due to remote failures.");
+  // Fail the job so the workflow does not commit a partial result with a green check.
+  if (failed.length) process.exitCode = 1;
 })().catch(e => { console.error(e); process.exitCode = 1; });

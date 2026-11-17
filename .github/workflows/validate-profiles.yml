@@ -22,4 +22,5 @@ jobs:
       - name: Browser smoke tests
         run: |
           python3 -m http.server 8000 --bind 127.0.0.1 >/tmp/wildlife-http.log 2>&1 &
+          for i in $(seq 1 50); do curl -sf http://127.0.0.1:8000/index.html >/dev/null && break; sleep 0.2; done
           node scripts/browser-smoke.cjs

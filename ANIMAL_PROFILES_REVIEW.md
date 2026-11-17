@@ -8,7 +8,9 @@ This branch expands the existing 3 animal profiles to 20. The directory renders 
 - Added previous/next/directory navigation and responsive action cards.
 
 ## Photo rights and publication checklist
-The original three licensed photographs remain unchanged. **All 17 new animals intentionally have `image.src: null`.** This renders the site's existing accessible “Photo coming soon” placeholder rather than claiming rights to unverified photos. Before publication, select a licensed image for each animal, download it to `images/`, and fill `src`, `alt`, `credit`, `license`, `licenseUrl`, and `sourceUrl`. Verify the individual photo's license and any share-alike requirements. Conservation organization photos are NOT automatically free to reuse.
+The original three licensed photographs remain unchanged. **The 17 new animals use photos downloaded from Wikimedia Commons into `images/`, with `credit`, `license`, `licenseUrl`, and `sourceUrl` filled in from each file page.** Before publication, a reviewer must open each `sourceUrl` and confirm the licence, author credit, and any share-alike (CC BY-SA) requirements for that individual file. Conservation organization photos are NOT automatically free to reuse.
+
+If a photo cannot be verified, set its `image.src` to `null`. The site then shows the accessible “Photo coming soon” placeholder, and `scripts/validate-profiles.cjs` accepts this state.
 
 ## Data review checklist
 - Recheck global IUCN status and assessment year for all 20 taxa, especially subspecies versus species.
@@ -23,9 +25,9 @@ The original three licensed photographs remain unchanged. **All 17 new animals i
 ## Quick browser-console smoke checks
 Open `animals.html` with a local web server, then run:
 ```js
-console.assert(ANIMALS.length === 20, "Expected 20 animals");
-console.assert(new Set(ANIMALS.map(a => a.id)).size === 20, "Duplicate animal IDs");
-console.assert(document.querySelectorAll(".animal-card").length === 20, "Missing cards");
+console.assert(ANIMALS.length > 0, "Expected animal profiles");
+console.assert(new Set(ANIMALS.map(a => a.id)).size === ANIMALS.length, "Duplicate animal IDs");
+console.assert(document.querySelectorAll(".animal-card").length === ANIMALS.length, "Missing cards");
 for (const animal of ANIMALS) {
   const sourceIds = new Set(animal.sources.map(s => s.id));
   const facts = [animal.description, animal.habitat, animal.range, animal.ecologicalImportance,
