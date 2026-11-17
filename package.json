@@ -1,0 +1,18 @@
+{
+  "name": "wildlife-guardian",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wildlife Guardian static site plus a small chatbot API server.",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/server.js",
+    "start:mock": "CHATBOT_MODE=mock node --env-file-if-exists=.env server/server.js",
+    "test": "node --test \"tests/*.test.js\""
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.9.0",
+    "openai": "^7.57.0"
+  }
+}
