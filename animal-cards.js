@@ -55,7 +55,10 @@ function createAnimalCardMedia(animal) {
 
     // Swap in the placeholder if the file is missing or fails to load.
     img.addEventListener("error", function () {
+        const card = img.closest(".animal-card");
         img.replaceWith(createPlaceholder());
+        const credit = card && card.querySelector(".animal-card-credit");
+        if (credit) credit.remove();
     });
 
     return img;
@@ -63,7 +66,7 @@ function createAnimalCardMedia(animal) {
 
 // "Photo: <credit> (<license>)" with links. Required by CC licences.
 function createAnimalCardCredit(image) {
-    const credit = createCardElement("p", "animal-card-credit", "Photo: ");
+    const credit = createCardElement("p", "animal-card-credit", image.mediaType === "illustration" ? "Illustration: " : image.mediaType === "historical" ? "Historical photo: " : "Photo: ");
 
     function appendLinkOrText(text, url) {
         if (url) {

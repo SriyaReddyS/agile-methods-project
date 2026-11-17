@@ -54,7 +54,7 @@ test("mock mode: species questions, follow-ups and validation over HTTP", async 
     assert.match(data.reply, /canine distemper/);
 
     // Species missing from the dataset
-    res = await postChat(base, { messages: [{ role: "user", content: "Where do giant pandas live?" }] });
+    res = await postChat(base, { messages: [{ role: "user", content: "Where do koalas live?" }] });
     data = await res.json();
     assert.equal(res.status, 200);
     assert.equal(data.kind, "limitation");

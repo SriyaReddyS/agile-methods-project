@@ -175,7 +175,7 @@ function createImageCredit(image) {
     const caption = createTextElement("figcaption", "profile-photo-credit");
 
     if (image.credit) {
-        caption.appendChild(document.createTextNode("Photo: "));
+        caption.appendChild(document.createTextNode(image.mediaType === "illustration" ? "Illustration: " : image.mediaType === "historical" ? "Historical photo: " : "Photo: "));
         caption.appendChild(createOptionalLink(image.credit, image.sourceUrl));
         caption.appendChild(document.createTextNode(". "));
     }
@@ -382,6 +382,24 @@ function renderAnimalProfile(animal, container) {
     }
 
     article.appendChild(createSourceList(animal));
+
+    // Navigation between the twenty profiles and back to the directory.
+    const index = ANIMALS.findIndex(function (item) { return item.id === animal.id; });
+    const pagination = createTextElement("nav", "profile-pagination");
+    pagination.setAttribute("aria-label", "Animal profile navigation");
+    function addProfileLink(target, label) {
+        const link = createTextElement("a", null, label);
+        link.href = getAnimalProfileUrl(target);
+        pagination.appendChild(link);
+    }
+    if (index > 0) addProfileLink(ANIMALS[index - 1], "← Previous Animal");
+    const directoryLink = createTextElement("a", null, "All Animals");
+    directoryLink.href = "animals.html";
+    pagination.appendChild(directoryLink);
+    if (index >= 0 && index < ANIMALS.length - 1) {
+        addProfileLink(ANIMALS[index + 1], "Next Animal →");
+    }
+    article.appendChild(pagination);
 
     container.replaceChildren(article);
 }

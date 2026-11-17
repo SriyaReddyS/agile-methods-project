@@ -48,7 +48,8 @@ test("resolves species by common name, plural, scientific name and short name", 
         ["Why are hawksbill sea turtles critically endangered?", "hawksbill-sea-turtle"],
         ["Tell me about Pongo abelii", "sumatran-orangutan"],
         ["What are the biggest threats to orangutans?", "sumatran-orangutan"],
-        ["How can people help protect leopards?", "amur-leopard"]
+        ["Where do snow leopards live?", "snow-leopard"],
+        ["Where do giant pandas live?", "giant-panda"]
     ];
 
     cases.forEach(function (entry) {
@@ -72,24 +73,23 @@ test("a named species overrides the current page species", function () {
 });
 
 test("unknown species without context resolves to none", function () {
-    assert.equal(chat.resolveSpecies("Where do giant pandas live?", animals, null).type, "none");
+    assert.equal(chat.resolveSpecies("Where do koalas live?", animals, null).type, "none");
 });
 
 test("a different species sharing a short name is flagged as uncertain", function () {
-    const snow = chat.resolveSpecies("Where do snow leopards live?", animals, "amur-leopard");
-    assert.equal(snow.type, "uncertain");
-    assert.equal(snow.term, "snow leopard");
-
     const bornean = chat.resolveSpecies("Are Bornean orangutans endangered?", animals, null);
     assert.equal(bornean.type, "uncertain");
+    assert.equal(bornean.term, "bornean orangutan");
 });
 
-test("a short name shared by two species asks for clarification", function () {
+test("a short name shared by multiple species asks for clarification", function () {
     const withFixture = loadAnimalsWithExtraSpecies(FIXTURE_TURTLE);
     const result = chat.resolveSpecies("What threatens turtles?", withFixture, null);
     assert.equal(result.type, "ambiguous");
     assert.equal(result.term, "turtle");
-    assert.equal(result.animals.length, 2);
+    assert.deepEqual(result.animals.map(function (animal) { return animal.id; }).sort(), [
+        "hawksbill-sea-turtle", "kemps-ridley-sea-turtle", FIXTURE_TURTLE.id
+    ]);
 });
 
 test("a new species added to the dataset works without code changes", async function () {

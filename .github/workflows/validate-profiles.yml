@@ -1,0 +1,26 @@
+name: Validate wildlife profiles
+on:
+  push:
+    branches:
+      - feature/expand-to-20-animal-profiles
+  pull_request:
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check profile data and page dependencies
+        run: node scripts/validate-profiles.cjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Browser smoke tests
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 >/tmp/wildlife-http.log 2>&1 &
+          for i in $(seq 1 50); do curl -sf http://127.0.0.1:8000/index.html >/dev/null && break; sleep 0.2; done
+          node scripts/browser-smoke.cjs
