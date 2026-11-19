@@ -73,6 +73,33 @@
     color: #dce8dd;
 }
 
+.chatbot-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.chatbot-reset {
+    background: none;
+    border: 1px solid #dce8dd;
+    border-radius: 999px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 10px;
+    cursor: pointer;
+}
+
+.chatbot-reset:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.chatbot-reset:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
 .chatbot-close {
     background: none;
     border: none;
@@ -297,7 +324,12 @@
     background-color: #ffffff;
 }
 
+.chatbot-status--info {
+    color: #214d38;
+}
+
 /* Keep focus rings visible against the dark header */
+.chatbot-reset:focus-visible,
 .chatbot-close:focus-visible,
 .chatbot-toggle:focus-visible {
     outline-offset: 2px;

@@ -60,6 +60,10 @@
             setOpen(ui, false);
         });
 
+        ui.reset.addEventListener("click", function () {
+            resetChat(ui, state, pageAnimal, animals);
+        });
+
         ui.panel.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
                 setOpen(ui, false);
@@ -79,7 +83,7 @@
         });
 
         ui.input.addEventListener("input", function () {
-            ui.status.textContent = "";
+            setStatus(ui, "");
         });
     });
 
@@ -131,11 +135,7 @@
         const titleWrap = el("div");
         const title = el("h2", "chatbot-title", "Ask about endangered animals");
         title.id = "chatbot-title";
-        const context = el(
-            "p",
-            "chatbot-context",
-            pageAnimal ? "Asking about: " + pageAnimal.commonName : "Answers use Wildlife Guardian's species profiles"
-        );
+        const context = el("p", "chatbot-context", createContextText(pageAnimal));
         titleWrap.appendChild(title);
         titleWrap.appendChild(context);
 
@@ -143,19 +143,24 @@
         close.type = "button";
         close.setAttribute("aria-label", "Close chat");
 
+        // Clears the conversation and starts over with the opening message.
+        const reset = el("button", "chatbot-reset", "New chat");
+        reset.type = "button";
+        reset.setAttribute("aria-label", "Start a new chat");
+
+        const actions = el("div", "chatbot-header-actions");
+        actions.appendChild(reset);
+        actions.appendChild(close);
+
         header.appendChild(titleWrap);
-        header.appendChild(close);
+        header.appendChild(actions);
 
         const log = el("div", "chatbot-log");
         log.setAttribute("role", "log");
         log.setAttribute("aria-live", "polite");
         log.setAttribute("aria-label", "Chat messages");
 
-        log.appendChild(createIntroMessage(pageAnimal, animals));
-
-        if (window.location.protocol === "file:") {
-            log.appendChild(createNotice(ERROR_HINTS.offline));
-        }
+        fillInitialLog(log, pageAnimal, animals);
 
         const suggestions = el("div", "chatbot-suggestions");
         createSuggestions(pageAnimal, animals).forEach(function (question) {
@@ -206,6 +211,7 @@
             toggle: toggle,
             panel: panel,
             close: close,
+            reset: reset,
             log: log,
             suggestions: suggestions,
             form: form,
@@ -227,6 +233,21 @@
         const message = el("div", "chatbot-message chatbot-message--assistant");
         message.appendChild(el("p", null, text));
         return message;
+    }
+
+    function createContextText(pageAnimal) {
+        return pageAnimal
+            ? "Asking about: " + pageAnimal.commonName
+            : "Answers use Wildlife Guardian's species profiles";
+    }
+
+    // Opening message, plus a warning when the page was opened as a file.
+    function fillInitialLog(log, pageAnimal, animals) {
+        log.replaceChildren(createIntroMessage(pageAnimal, animals));
+
+        if (window.location.protocol === "file:") {
+            log.appendChild(createNotice(ERROR_HINTS.offline));
+        }
     }
 
     function createSuggestions(pageAnimal, animals) {
@@ -348,9 +369,35 @@
         }
     }
 
+    // Validation problems use the default (error) style; info messages are neutral.
+    function setStatus(ui, text, isInfo) {
+        ui.status.textContent = text;
+        ui.status.classList.toggle("chatbot-status--info", Boolean(text && isInfo));
+    }
+
+    // Back to the state the panel had on page load. Disabled while a request is
+    // in flight, so a late reply can never land in the new conversation.
+    function resetChat(ui, state, pageAnimal, animals) {
+        if (state.busy) {
+            return;
+        }
+
+        state.history = [];
+        state.speciesId = pageAnimal ? pageAnimal.id : null;
+
+        fillInitialLog(ui.log, pageAnimal, animals);
+        ui.context.textContent = createContextText(pageAnimal);
+        ui.suggestions.hidden = false;
+        ui.input.value = "";
+        setStatus(ui, "Started a new chat.", true);
+        scrollToEnd(ui);
+        ui.input.focus();
+    }
+
     function setBusy(ui, state, busy) {
         state.busy = busy;
         ui.send.disabled = busy;
+        ui.reset.disabled = busy;
         ui.input.setAttribute("aria-busy", String(busy));
         ui.send.textContent = busy ? "Sending…" : "Send";
         Array.prototype.forEach.call(ui.suggestions.querySelectorAll("button"), function (button) {
@@ -371,17 +418,17 @@
 
         // Empty input: no request is sent.
         if (!text) {
-            ui.status.textContent = "Please type a question first.";
+            setStatus(ui, "Please type a question first.");
             ui.input.focus();
             return;
         }
 
         if (text.length > MAX_MESSAGE_CHARS) {
-            ui.status.textContent = "Please keep questions under " + MAX_MESSAGE_CHARS + " characters.";
+            setStatus(ui, "Please keep questions under " + MAX_MESSAGE_CHARS + " characters.");
             return;
         }
 
-        ui.status.textContent = "";
+        setStatus(ui, "");
         ui.input.value = "";
         ui.suggestions.hidden = true;
 
