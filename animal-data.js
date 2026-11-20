@@ -24,7 +24,7 @@
 ================================== */
 
 const ANIMALS = [
-    {
+{
         id: "amur-leopard",
         commonName: "Amur Leopard",
         scientificName: "Panthera pardus orientalis",
@@ -60,40 +60,26 @@ const ANIMALS = [
             { text: "Disease, such as canine distemper virus", sources: ["wcs-amur-leopard"] },
             { text: "Inbreeding depression in a very small population", sources: ["wcs-amur-leopard"] }
         ],
-        ecologicalImportance: { text: "As a large predator, the Amur leopard helps shape prey populations and is part of the balance of temperate forest food webs.", sources: ["wcs-amur-leopard"] },
-        conservationMethods: [
-            { text: "Support habitat protection and wildlife corridors in the Russian Far East and Northeast China.", sources: ["wcs-amur-leopard"] },
-            { text: "Support efforts to protect natural prey populations and reduce poaching.", sources: ["wcs-amur-leopard"] },
-            { text: "Learn about conservation programs that monitor leopard populations and disease risks.", sources: ["wcs-amur-leopard"] }
+        ecologicalImportance: {
+            text: "Amur leopards are forest predators that feed on roe deer, sika deer, and wild boar. This predator–prey relationship is part of the forest food web. Protecting leopards also requires protecting their prey and the connected forests they share with other wildlife.",
+            sources: ["wcs-amur-leopard"]
+        },
+        protectionActions: [
+            {
+                text: "From Pittsburgh, donate online or organize a small school or neighborhood fundraiser for WCS. Its Amur leopard work includes removing snares that threaten prey and working with communities in the species’ range. General donations support WCS’s wider conservation work; check with WCS before describing a gift as earmarked for leopards.",
+                sources: ["wcs-amur-leopard", "wcs-support"]
+            },
+            {
+                text: "Create a short, source-linked presentation for a Pittsburgh classroom, campus club, or community group about Amur leopards and their prey. Share WCS’s conservation work and online support options so participants can help from home rather than needing to travel to leopard habitat.",
+                sources: ["wcs-amur-leopard", "wcs-support"]
+            }
         ],
         population: {
             text: "About 84 adults and subadults were estimated in 2014–2015 (published 2018). Surveys on both sides of the border suggest numbers are rising, but no newer total has been verified for this site.",
             asOf: "2014–2015",
             sources: ["wcs-amur-leopard"]
         },
-        localActions: [
-            {
-                "title": "Learn about global wildlife protection locally",
-                "text": "Explore conservation education and everyday wildlife-friendly choices through Pittsburgh Zoo & Aquarium. This is a general way to support conservation awareness, not an Amur leopard-specific local program.",
-                "url": "https://www.pittsburghzoo.org/conservation/",
-                "label": "Pittsburgh Zoo & Aquarium",
-                "sources": [
-                    "pgh-zoo-conservation"
-                ]
-            },
-            {
-                "title": "Care for Pittsburgh's green spaces",
-                "text": "Look for local habitat stewardship and cleanup opportunities through Pittsburgh Parks Conservancy. These activities benefit Pittsburgh ecosystems rather than the leopard's overseas habitat.",
-                "url": "https://pittsburghparks.org/",
-                "label": "Pittsburgh Parks Conservancy",
-                "sources": [
-                    "pgh-parks"
-                ]
-            }
-        ],
         sources: [
-            {"id":"pgh-zoo-conservation","title":"Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/conservation/","accessed":"2026-11-06"},
-            {"id":"pgh-parks","title":"Pittsburgh Parks Conservancy","publisher":"Pittsburgh Parks Conservancy","url":"https://pittsburghparks.org/","accessed":"2026-11-06"},
             {
                 id: "wcs-amur-leopard",
                 title: "Amur Leopard",
@@ -107,10 +93,17 @@ const ANIMALS = [
                 publisher: "IUCN Red List of Threatened Species",
                 url: "https://www.iucnredlist.org/search?query=Panthera%20pardus%20orientalis",
                 accessed: "2026-11-02"
+            },
+            {
+                id: "wcs-support",
+                title: "Wildlife Conservation Society — Ways to Support",
+                publisher: "Wildlife Conservation Society",
+                url: "https://www.wcs.org/",
+                accessed: "2026-11-06"
             }
         ]
     },
-    {
+{
         id: "hawksbill-sea-turtle",
         commonName: "Hawksbill Sea Turtle",
         scientificName: "Eretmochelys imbricata",
@@ -149,36 +142,26 @@ const ANIMALS = [
             { text: "Predation of eggs and hatchlings, including by introduced dogs, cats, and pigs", sources: ["noaa-hawksbill"] },
             { text: "Vessel strikes and marine debris", sources: ["noaa-hawksbill"] }
         ],
-        ecologicalImportance: { text: "Hawksbill turtles eat sponges on coral reefs. Their feeding helps influence sponge communities and contributes to reef ecosystem dynamics.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
-        conservationMethods: [
-            { text: "Never buy tortoiseshell jewelry or other products made from sea turtles.", sources: ["noaa-hawksbill", "fws-hawksbill"] },
-            { text: "Reduce plastic waste and support responsible fishing practices that lower turtle bycatch.", sources: ["noaa-hawksbill"] },
-            { text: "Support coral reef and nesting-beach protection, including turtle-friendly coastal lighting.", sources: ["noaa-hawksbill", "fws-hawksbill"] }
-        ],
-        population: null,
-        localActions: [
+        ecologicalImportance: {
+            text: "Hawksbills play an important role in marine ecosystems as sponge-eating sea turtles. Their narrow beaks let them feed in reef cracks and crevices, linking sponges and other reef organisms to the reef food web. Protecting their feeding habitat also protects the coral reef communities they depend on.",
+            sources: ["noaa-hawksbill", "fws-hawksbill"]
+        },
+        protectionActions: [
             {
-                "title": "Support sea turtle rehabilitation",
-                "text": "Learn about Pittsburgh Zoo & Aquarium's Sea Turtle Second Chance program. It supports sea turtles generally, not specifically hawksbills.",
-                "url": "https://www.pittsburghzoo.org/initiative/sea-turtles/",
-                "label": "Sea Turtle Second Chance",
-                "sources": [
-                    "pgh-zoo-turtles"
-                ]
+                text: "When shopping in Pittsburgh stores or online, refuse real tortoiseshell jewelry, combs, and ornaments. Ask what a product is made from and choose a clearly identified non-wildlife alternative if the material is uncertain; illegal hawksbill shell trade remains a threat.",
+                sources: ["noaa-hawksbill", "fws-hawksbill"]
             },
             {
-                "title": "Volunteer for river cleanups",
-                "text": "Join Allegheny CleanWays to reduce litter in Pittsburgh waterways. This helps local rivers, not directly hawksbill habitats.",
-                "url": "https://www.alleghenycleanways.org/getinvolved.html",
-                "label": "Allegheny CleanWays",
-                "sources": [
-                    "pgh-cleanways"
-                ]
+                text: "Carry reusable bags and bottles in Pittsburgh, secure trash, and avoid balloon releases. Join an Allegheny CleanWays land or river cleanup through its volunteer listings. Local cleanup prevents litter entering waterways; it is an indirect contribution to reducing ocean debris, not a local hawksbill rescue activity.",
+                sources: ["noaa-hawksbill", "allegheny-cleanways"]
+            },
+            {
+                text: "Share NOAA’s hawksbill information with a Pittsburgh school or community group, including the risks from marine debris and the shell trade. These are actions residents can take and explain from home, even though hawksbills do not live in Pittsburgh’s rivers.",
+                sources: ["noaa-hawksbill"]
             }
         ],
+        population: null,
         sources: [
-            {"id":"pgh-zoo-turtles","title":"Sea Turtle Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/initiative/sea-turtles/","accessed":"2026-11-06"},
-            {"id":"pgh-cleanways","title":"Get Involved","publisher":"Allegheny CleanWays","url":"https://www.alleghenycleanways.org/getinvolved.html","accessed":"2026-11-06"},
             {
                 id: "noaa-hawksbill",
                 title: "Hawksbill Turtle",
@@ -207,10 +190,17 @@ const ANIMALS = [
                 publisher: "IUCN Red List of Threatened Species",
                 url: "https://www.iucnredlist.org/search?query=Eretmochelys%20imbricata",
                 accessed: "2026-11-02"
+            },
+            {
+                id: "allegheny-cleanways",
+                title: "Volunteer and cleanup programs",
+                publisher: "Allegheny CleanWays",
+                url: "https://www.alleghenycleanways.org/",
+                accessed: "2026-11-06"
             }
         ]
     },
-    {
+{
         id: "sumatran-orangutan",
         commonName: "Sumatran Orangutan",
         scientificName: "Pongo abelii",
@@ -234,52 +224,43 @@ const ANIMALS = [
         },
         habitat: {
             text: "Primary tropical forest, mostly below 1,500 metres above sea level. Orangutan density declines with altitude, and few if any breeding populations live higher up.",
-            sources: ["apes-atlas-orangutan"]
+            sources: ["apes-atlas-orangutan", "adw-orangutan"]
         },
         range: {
             text: "Endemic to Sumatra, Indonesia, mainly in the north of the island. The Leuser Ecosystem holds about 95% of wild Sumatran orangutans. The species also occurs in protected areas such as Bukit Tigapuluh National Park.",
             sources: ["apes-atlas-orangutan"]
         },
         threats: [
-            { text: "Habitat loss and fragmentation from oil-palm plantations and logging", sources: ["apes-atlas-orangutan"] },
-            { text: "New roads that split up forests and give poachers access", sources: ["apes-atlas-orangutan"] },
-            { text: "Illegal pet trade and deliberate killing", sources: ["apes-atlas-orangutan"] },
-            { text: "Conflict with people, such as crop raiding", sources: ["apes-atlas-orangutan"] },
+            { text: "Habitat loss and fragmentation from oil-palm plantations and logging", sources: ["apes-atlas-orangutan", "sos-challenges", "adw-orangutan"] },
+            { text: "New roads that split up forests and give poachers access", sources: ["apes-atlas-orangutan", "sos-challenges"] },
+            { text: "Illegal pet trade and deliberate killing", sources: ["apes-atlas-orangutan", "sos-challenges", "adw-orangutan"] },
+            { text: "Conflict with people, such as crop raiding", sources: ["apes-atlas-orangutan", "sos-challenges"] },
             { text: "Land-use planning that opens habitat to plantations, timber, and mining", sources: ["apes-atlas-orangutan"] }
         ],
-        ecologicalImportance: { text: "Sumatran orangutans help tropical forests regenerate by moving through the canopy and dispersing seeds from the fruit they eat.", sources: ["apes-atlas-orangutan"] },
-        conservationMethods: [
-            { text: "Choose products from companies with credible deforestation-free sourcing commitments.", sources: ["apes-atlas-orangutan"] },
-            { text: "Support organizations protecting Sumatran forests and restoring fragmented habitats.", sources: ["apes-atlas-orangutan"] },
-            { text: "Avoid wildlife-pet trade and support responsible protection of wild orangutans.", sources: ["apes-atlas-orangutan"] }
+        ecologicalImportance: {
+            text: "Sumatran orangutans disperse seeds as they travel through the forest eating fruit. This helps maintain the diversity of rainforest trees and other woody plants. Protecting their forest habitat also shelters the many other species that share it.",
+            sources: ["adw-orangutan"]
+        },
+        protectionActions: [
+            {
+                text: "When buying groceries, cosmetics, or household products in Pittsburgh or online, look for RSPO-certified sustainable palm oil and check manufacturers’ sourcing policies. Use the Palm Oil Scan app recommended by the Sumatran Orangutan Society (SOS). SOS recommends sustainable, deforestation-free sourcing rather than a blanket palm-oil boycott.",
+                sources: ["sos-palm-oil"]
+            },
+            {
+                text: "Email brands or ask Pittsburgh retailers to stock products with certified sustainable palm oil and publish deforestation-free sourcing commitments. Share what you learn with a school or neighborhood group to help others make informed purchases.",
+                sources: ["sos-palm-oil"]
+            },
+            {
+                text: "Donate online or hold a Pittsburgh community fundraiser for SOS’s work with partners in Sumatra. Its work includes protecting and reconnecting forest habitat, restoring degraded forest, and supporting forest-edge communities; participation does not require overseas travel.",
+                sources: ["sos-palm-oil"]
+            }
         ],
         population: {
             text: "About 13,846 individuals were estimated in 2016 (Wich et al. 2016). This was higher than an earlier estimate of about 6,600 because of better survey methods, not population growth. The IUCN assessment (Singleton et al. 2023) reports that overall numbers continue to decline.",
             asOf: "2016",
             sources: ["apes-atlas-orangutan"]
         },
-        localActions: [
-            {
-                "title": "Make rainforest-conscious purchasing choices",
-                "text": "Use Pittsburgh Zoo & Aquarium conservation guidance to consider palm oil and rainforest impacts when shopping locally.",
-                "url": "https://www.pittsburghzoo.org/conservation/",
-                "label": "Pittsburgh Zoo conservation actions",
-                "sources": [
-                    "pgh-zoo-conservation"
-                ]
-            },
-            {
-                "title": "Explore local conservation education",
-                "text": "Explore Pittsburgh Zoo & Aquarium conservation programs and share what you learn about habitat loss. This indirectly supports awareness of threatened wildlife.",
-                "url": "https://www.pittsburghzoo.org/conservation/",
-                "label": "Pittsburgh Zoo & Aquarium",
-                "sources": [
-                    "pgh-zoo-conservation"
-                ]
-            }
-        ],
         sources: [
-            {"id":"pgh-zoo-conservation","title":"Conservation","publisher":"Pittsburgh Zoo & Aquarium","url":"https://www.pittsburghzoo.org/conservation/","accessed":"2026-11-06"},
             {
                 id: "apes-atlas-orangutan",
                 title: "Sumatran Orangutan",
@@ -301,10 +282,31 @@ const ANIMALS = [
                 publisher: "IUCN Red List of Threatened Species",
                 url: "https://www.iucnredlist.org/search?query=Pongo%20abelii",
                 accessed: "2026-11-02"
+            },
+            {
+                id: "adw-orangutan",
+                title: "Pongo abelii — Sumatran orangutan",
+                publisher: "Animal Diversity Web, University of Michigan Museum of Zoology",
+                url: "https://animaldiversity.org/accounts/Pongo_abelii/",
+                accessed: "2026-11-06"
+            },
+            {
+                id: "sos-palm-oil",
+                title: "About Palm Oil: The Problem, The Impact & The Solution",
+                publisher: "Sumatran Orangutan Society",
+                url: "https://www.orangutans-sos.org/learn/palm-oil/",
+                accessed: "2026-11-06"
+            },
+            {
+                id: "sos-challenges",
+                title: "Conservation Challenges",
+                publisher: "Sumatran Orangutan Society",
+                url: "https://www.orangutans-sos.org/learn/conservation-challenges/",
+                accessed: "2026-11-06"
             }
         ]
     },
-    {
+{
         "id": "african-forest-elephant",
         "commonName": "African Forest Elephant",
         "scientificName": "Loxodonta cyclotis",
@@ -417,7 +419,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "vaquita",
         "commonName": "Vaquita",
         "scientificName": "Phocoena sinus",
@@ -531,7 +533,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "javan-rhino",
         "commonName": "Javan Rhino",
         "scientificName": "Rhinoceros sondaicus",
@@ -645,7 +647,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "sumatran-rhino",
         "commonName": "Sumatran Rhino",
         "scientificName": "Dicerorhinus sumatrensis",
@@ -758,7 +760,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "saola",
         "commonName": "Saola",
         "scientificName": "Pseudoryx nghetinhensis",
@@ -871,7 +873,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "philippine-eagle",
         "commonName": "Philippine Eagle",
         "scientificName": "Pithecophaga jefferyi",
@@ -984,7 +986,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "sunda-pangolin",
         "commonName": "Sunda Pangolin",
         "scientificName": "Manis javanica",
@@ -1097,7 +1099,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "cross-river-gorilla",
         "commonName": "Cross River Gorilla",
         "scientificName": "Gorilla gorilla diehli",
@@ -1210,7 +1212,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "red-panda",
         "commonName": "Red Panda",
         "scientificName": "Ailurus fulgens",
@@ -1323,7 +1325,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "tiger",
         "commonName": "Tiger",
         "scientificName": "Panthera tigris",
@@ -1436,7 +1438,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "asian-elephant",
         "commonName": "Asian Elephant",
         "scientificName": "Elephas maximus",
@@ -1549,7 +1551,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "blue-whale",
         "commonName": "Blue Whale",
         "scientificName": "Balaenoptera musculus",
@@ -1662,7 +1664,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "whale-shark",
         "commonName": "Whale Shark",
         "scientificName": "Rhincodon typus",
@@ -1775,7 +1777,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "kemps-ridley-sea-turtle",
         "commonName": "Kemp's Ridley Sea Turtle",
         "scientificName": "Lepidochelys kempii",
@@ -1888,7 +1890,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "snow-leopard",
         "commonName": "Snow Leopard",
         "scientificName": "Panthera uncia",
@@ -2001,7 +2003,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "giant-panda",
         "commonName": "Giant Panda",
         "scientificName": "Ailuropoda melanoleuca",
@@ -2114,7 +2116,7 @@ const ANIMALS = [
             }
         ]
     },
-    {
+{
         "id": "polar-bear",
         "commonName": "Polar Bear",
         "scientificName": "Ursus maritimus",
@@ -2226,7 +2228,2558 @@ const ANIMALS = [
                 "accessed": "2026-11-10"
             }
         ]
-    }
+    },
+{
+    "id": "african-savanna-elephant",
+    "commonName": "African Savanna Elephant",
+    "scientificName": "Loxodonta africana",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-african-savanna-elephant"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "African Savanna Elephant photo placeholder"
+    },
+    "description": {
+        "text": "African Savanna Elephant is associated with african savannas and woodlands.",
+        "sources": [
+            "iucn-african-savanna-elephant"
+        ]
+    },
+    "habitat": {
+        "text": "African savannas and woodlands.",
+        "sources": [
+            "iucn-african-savanna-elephant"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-african-savanna-elephant"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Ivory poaching and habitat fragmentation.",
+            "sources": [
+                "iucn-african-savanna-elephant"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses seeds and modifies vegetation.",
+        "sources": [
+            "iucn-african-savanna-elephant"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-african-savanna-elephant"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-african-savanna-elephant",
+            "title": "IUCN Red List search for Loxodonta africana",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Loxodonta%20africana",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "african-wild-dog",
+    "commonName": "African Wild Dog",
+    "scientificName": "Lycaon pictus",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-african-wild-dog"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "African Wild Dog photo placeholder"
+    },
+    "description": {
+        "text": "African Wild Dog is associated with african grasslands and woodlands.",
+        "sources": [
+            "iucn-african-wild-dog"
+        ]
+    },
+    "habitat": {
+        "text": "African grasslands and woodlands.",
+        "sources": [
+            "iucn-african-wild-dog"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-african-wild-dog"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Fragmentation, persecution and disease.",
+            "sources": [
+                "iucn-african-wild-dog"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Predator that helps regulate prey.",
+        "sources": [
+            "iucn-african-wild-dog"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-african-wild-dog"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-african-wild-dog",
+            "title": "IUCN Red List search for Lycaon pictus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Lycaon%20pictus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "bornean-orangutan",
+    "commonName": "Bornean Orangutan",
+    "scientificName": "Pongo pygmaeus",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-bornean-orangutan"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Bornean Orangutan photo placeholder"
+    },
+    "description": {
+        "text": "Bornean Orangutan is associated with borneo tropical forests.",
+        "sources": [
+            "iucn-bornean-orangutan"
+        ]
+    },
+    "habitat": {
+        "text": "Borneo tropical forests.",
+        "sources": [
+            "iucn-bornean-orangutan"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-bornean-orangutan"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Deforestation and illegal killing.",
+            "sources": [
+                "iucn-bornean-orangutan"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses rainforest seeds.",
+        "sources": [
+            "iucn-bornean-orangutan"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-bornean-orangutan"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-bornean-orangutan",
+            "title": "IUCN Red List search for Pongo pygmaeus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Pongo%20pygmaeus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "chimpanzee",
+    "commonName": "Chimpanzee",
+    "scientificName": "Pan troglodytes",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-chimpanzee"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Chimpanzee photo placeholder"
+    },
+    "description": {
+        "text": "Chimpanzee is associated with central and western african forests.",
+        "sources": [
+            "iucn-chimpanzee"
+        ]
+    },
+    "habitat": {
+        "text": "Central and western African forests.",
+        "sources": [
+            "iucn-chimpanzee"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-chimpanzee"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Habitat loss, hunting and disease.",
+            "sources": [
+                "iucn-chimpanzee"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses forest seeds.",
+        "sources": [
+            "iucn-chimpanzee"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-chimpanzee"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-chimpanzee",
+            "title": "IUCN Red List search for Pan troglodytes",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Pan%20troglodytes",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "eastern-lowland-gorilla",
+    "commonName": "Eastern Lowland Gorilla",
+    "scientificName": "Gorilla beringei graueri",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-eastern-lowland-gorilla"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Eastern Lowland Gorilla photo placeholder"
+    },
+    "description": {
+        "text": "Eastern Lowland Gorilla is associated with eastern congo forests.",
+        "sources": [
+            "iucn-eastern-lowland-gorilla"
+        ]
+    },
+    "habitat": {
+        "text": "Eastern Congo forests.",
+        "sources": [
+            "iucn-eastern-lowland-gorilla"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-eastern-lowland-gorilla"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Hunting and habitat degradation.",
+            "sources": [
+                "iucn-eastern-lowland-gorilla"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses forest seeds.",
+        "sources": [
+            "iucn-eastern-lowland-gorilla"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-eastern-lowland-gorilla"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-eastern-lowland-gorilla",
+            "title": "IUCN Red List search for Gorilla beringei graueri",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Gorilla%20beringei%20graueri",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "fin-whale",
+    "commonName": "Fin Whale",
+    "scientificName": "Balaenoptera physalus",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-fin-whale"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Fin Whale photo placeholder"
+    },
+    "description": {
+        "text": "Fin Whale is associated with global temperate and polar seas.",
+        "sources": [
+            "iucn-fin-whale"
+        ]
+    },
+    "habitat": {
+        "text": "Global temperate and polar seas.",
+        "sources": [
+            "iucn-fin-whale"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-fin-whale"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Ship strikes and fishing entanglement.",
+            "sources": [
+                "iucn-fin-whale"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Cycles marine nutrients.",
+        "sources": [
+            "iucn-fin-whale"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-fin-whale"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-fin-whale",
+            "title": "IUCN Red List search for Balaenoptera physalus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Balaenoptera%20physalus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "giant-otter",
+    "commonName": "Giant Otter",
+    "scientificName": "Pteronura brasiliensis",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-giant-otter"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Giant Otter photo placeholder"
+    },
+    "description": {
+        "text": "Giant Otter is associated with amazon basin rivers.",
+        "sources": [
+            "iucn-giant-otter"
+        ]
+    },
+    "habitat": {
+        "text": "Amazon basin rivers.",
+        "sources": [
+            "iucn-giant-otter"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-giant-otter"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Wetland degradation and persecution.",
+            "sources": [
+                "iucn-giant-otter"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Predator of freshwater fish.",
+        "sources": [
+            "iucn-giant-otter"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-giant-otter"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-giant-otter",
+            "title": "IUCN Red List search for Pteronura brasiliensis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Pteronura%20brasiliensis",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "green-sea-turtle",
+    "commonName": "Green Sea Turtle",
+    "scientificName": "Chelonia mydas",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-green-sea-turtle"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Green Sea Turtle photo placeholder"
+    },
+    "description": {
+        "text": "Green Sea Turtle is associated with tropical coastal waters.",
+        "sources": [
+            "iucn-green-sea-turtle"
+        ]
+    },
+    "habitat": {
+        "text": "Tropical coastal waters.",
+        "sources": [
+            "iucn-green-sea-turtle"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-green-sea-turtle"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Bycatch and habitat degradation.",
+            "sources": [
+                "iucn-green-sea-turtle"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Grazes seagrass beds.",
+        "sources": [
+            "iucn-green-sea-turtle"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-green-sea-turtle"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-green-sea-turtle",
+            "title": "IUCN Red List search for Chelonia mydas",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Chelonia%20mydas",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "hector-s-dolphin",
+    "commonName": "Hector's Dolphin",
+    "scientificName": "Cephalorhynchus hectori",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-hector-s-dolphin"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Hector's Dolphin photo placeholder"
+    },
+    "description": {
+        "text": "Hector's Dolphin is associated with new zealand coastal waters.",
+        "sources": [
+            "iucn-hector-s-dolphin"
+        ]
+    },
+    "habitat": {
+        "text": "New Zealand coastal waters.",
+        "sources": [
+            "iucn-hector-s-dolphin"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-hector-s-dolphin"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Fishing net entanglement.",
+            "sources": [
+                "iucn-hector-s-dolphin"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Predator of fish and squid.",
+        "sources": [
+            "iucn-hector-s-dolphin"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-hector-s-dolphin"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-hector-s-dolphin",
+            "title": "IUCN Red List search for Cephalorhynchus hectori",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Cephalorhynchus%20hectori",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "indian-pangolin",
+    "commonName": "Indian Pangolin",
+    "scientificName": "Manis crassicaudata",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-indian-pangolin"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Indian Pangolin photo placeholder"
+    },
+    "description": {
+        "text": "Indian Pangolin is associated with south asian forests and grasslands.",
+        "sources": [
+            "iucn-indian-pangolin"
+        ]
+    },
+    "habitat": {
+        "text": "South Asian forests and grasslands.",
+        "sources": [
+            "iucn-indian-pangolin"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-indian-pangolin"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Wildlife trafficking and habitat loss.",
+            "sources": [
+                "iucn-indian-pangolin"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Eats ants and termites.",
+        "sources": [
+            "iucn-indian-pangolin"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-indian-pangolin"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-indian-pangolin",
+            "title": "IUCN Red List search for Manis crassicaudata",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Manis%20crassicaudata",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "indus-river-dolphin",
+    "commonName": "Indus River Dolphin",
+    "scientificName": "Platanista minor",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-indus-river-dolphin"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Indus River Dolphin photo placeholder"
+    },
+    "description": {
+        "text": "Indus River Dolphin is associated with indus river basin.",
+        "sources": [
+            "iucn-indus-river-dolphin"
+        ]
+    },
+    "habitat": {
+        "text": "Indus River basin.",
+        "sources": [
+            "iucn-indus-river-dolphin"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-indus-river-dolphin"
+        ]
+    },
+    "threats": [
+        {
+            "text": "River barriers and entanglement.",
+            "sources": [
+                "iucn-indus-river-dolphin"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Riverine fish predator.",
+        "sources": [
+            "iucn-indus-river-dolphin"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-indus-river-dolphin"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-indus-river-dolphin",
+            "title": "IUCN Red List search for Platanista minor",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Platanista%20minor",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "jaguar",
+    "commonName": "Jaguar",
+    "scientificName": "Panthera onca",
+    "status": {
+        "code": "NT",
+        "label": "Near Threatened",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-jaguar"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Jaguar photo placeholder"
+    },
+    "description": {
+        "text": "Jaguar is associated with american forests and wetlands.",
+        "sources": [
+            "iucn-jaguar"
+        ]
+    },
+    "habitat": {
+        "text": "American forests and wetlands.",
+        "sources": [
+            "iucn-jaguar"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-jaguar"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Deforestation and persecution.",
+            "sources": [
+                "iucn-jaguar"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Top predator.",
+        "sources": [
+            "iucn-jaguar"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-jaguar"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-jaguar",
+            "title": "IUCN Red List search for Panthera onca",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Panthera%20onca",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "mountain-gorilla",
+    "commonName": "Mountain Gorilla",
+    "scientificName": "Gorilla beringei beringei",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-mountain-gorilla"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Mountain Gorilla photo placeholder"
+    },
+    "description": {
+        "text": "Mountain Gorilla is associated with central african montane forests.",
+        "sources": [
+            "iucn-mountain-gorilla"
+        ]
+    },
+    "habitat": {
+        "text": "Central African montane forests.",
+        "sources": [
+            "iucn-mountain-gorilla"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-mountain-gorilla"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Disease and human disturbance.",
+            "sources": [
+                "iucn-mountain-gorilla"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses seeds.",
+        "sources": [
+            "iucn-mountain-gorilla"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-mountain-gorilla"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-mountain-gorilla",
+            "title": "IUCN Red List search for Gorilla beringei beringei",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Gorilla%20beringei%20beringei",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "north-atlantic-right-whale",
+    "commonName": "North Atlantic Right Whale",
+    "scientificName": "Eubalaena glacialis",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-north-atlantic-right-whale"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "North Atlantic Right Whale photo placeholder"
+    },
+    "description": {
+        "text": "North Atlantic Right Whale is associated with north atlantic ocean.",
+        "sources": [
+            "iucn-north-atlantic-right-whale"
+        ]
+    },
+    "habitat": {
+        "text": "North Atlantic Ocean.",
+        "sources": [
+            "iucn-north-atlantic-right-whale"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-north-atlantic-right-whale"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Ship strikes and fishing entanglement.",
+            "sources": [
+                "iucn-north-atlantic-right-whale"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Marine nutrient cycling.",
+        "sources": [
+            "iucn-north-atlantic-right-whale"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-north-atlantic-right-whale"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-north-atlantic-right-whale",
+            "title": "IUCN Red List search for Eubalaena glacialis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Eubalaena%20glacialis",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "southern-rockhopper-penguin",
+    "commonName": "Southern Rockhopper Penguin",
+    "scientificName": "Eudyptes chrysocome",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-southern-rockhopper-penguin"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Southern Rockhopper Penguin photo placeholder"
+    },
+    "description": {
+        "text": "Southern Rockhopper Penguin is associated with subantarctic islands.",
+        "sources": [
+            "iucn-southern-rockhopper-penguin"
+        ]
+    },
+    "habitat": {
+        "text": "Subantarctic islands.",
+        "sources": [
+            "iucn-southern-rockhopper-penguin"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-southern-rockhopper-penguin"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Climate change and fishing pressure.",
+            "sources": [
+                "iucn-southern-rockhopper-penguin"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Transfers marine nutrients to land.",
+        "sources": [
+            "iucn-southern-rockhopper-penguin"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-southern-rockhopper-penguin"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-southern-rockhopper-penguin",
+            "title": "IUCN Red List search for Eudyptes chrysocome",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Eudyptes%20chrysocome",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "sumatran-elephant",
+    "commonName": "Sumatran Elephant",
+    "scientificName": "Elephas maximus sumatranus",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-sumatran-elephant"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Sumatran Elephant photo placeholder"
+    },
+    "description": {
+        "text": "Sumatran Elephant is associated with sumatra lowland forests.",
+        "sources": [
+            "iucn-sumatran-elephant"
+        ]
+    },
+    "habitat": {
+        "text": "Sumatra lowland forests.",
+        "sources": [
+            "iucn-sumatran-elephant"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-sumatran-elephant"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Deforestation and human conflict.",
+            "sources": [
+                "iucn-sumatran-elephant"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Forest seed disperser.",
+        "sources": [
+            "iucn-sumatran-elephant"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-sumatran-elephant"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-sumatran-elephant",
+            "title": "IUCN Red List search for Elephas maximus sumatranus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Elephas%20maximus%20sumatranus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "sumatran-rhinoceros",
+    "commonName": "Sumatran Rhinoceros",
+    "scientificName": "Dicerorhinus sumatrensis",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-sumatran-rhinoceros"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Sumatran Rhinoceros photo placeholder"
+    },
+    "description": {
+        "text": "Sumatran Rhinoceros is associated with sumatran tropical forests.",
+        "sources": [
+            "iucn-sumatran-rhinoceros"
+        ]
+    },
+    "habitat": {
+        "text": "Sumatran tropical forests.",
+        "sources": [
+            "iucn-sumatran-rhinoceros"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-sumatran-rhinoceros"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Isolation and habitat loss.",
+            "sources": [
+                "iucn-sumatran-rhinoceros"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Forest browser.",
+        "sources": [
+            "iucn-sumatran-rhinoceros"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-sumatran-rhinoceros"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-sumatran-rhinoceros",
+            "title": "IUCN Red List search for Dicerorhinus sumatrensis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Dicerorhinus%20sumatrensis",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "tiger-shark",
+    "commonName": "Tiger Shark",
+    "scientificName": "Galeocerdo cuvier",
+    "status": {
+        "code": "NT",
+        "label": "Near Threatened",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-tiger-shark"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Tiger Shark photo placeholder"
+    },
+    "description": {
+        "text": "Tiger Shark is associated with warm oceans.",
+        "sources": [
+            "iucn-tiger-shark"
+        ]
+    },
+    "habitat": {
+        "text": "Warm oceans.",
+        "sources": [
+            "iucn-tiger-shark"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-tiger-shark"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Fishing pressure and bycatch.",
+            "sources": [
+                "iucn-tiger-shark"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Marine apex predator.",
+        "sources": [
+            "iucn-tiger-shark"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-tiger-shark"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-tiger-shark",
+            "title": "IUCN Red List search for Galeocerdo cuvier",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Galeocerdo%20cuvier",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "african-lion",
+    "commonName": "African Lion",
+    "scientificName": "Panthera leo",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-african-lion"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "African Lion photo placeholder"
+    },
+    "description": {
+        "text": "African Lion is associated with african savannas.",
+        "sources": [
+            "iucn-african-lion"
+        ]
+    },
+    "habitat": {
+        "text": "African savannas.",
+        "sources": [
+            "iucn-african-lion"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-african-lion"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Conflict with people and prey decline.",
+            "sources": [
+                "iucn-african-lion"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Top predator.",
+        "sources": [
+            "iucn-african-lion"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-african-lion"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-african-lion",
+            "title": "IUCN Red List search for Panthera leo",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Panthera%20leo",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "cheetah",
+    "commonName": "Cheetah",
+    "scientificName": "Acinonyx jubatus",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-cheetah"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Cheetah photo placeholder"
+    },
+    "description": {
+        "text": "Cheetah is associated with african open plains.",
+        "sources": [
+            "iucn-cheetah"
+        ]
+    },
+    "habitat": {
+        "text": "African open plains.",
+        "sources": [
+            "iucn-cheetah"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-cheetah"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Habitat loss and human conflict.",
+            "sources": [
+                "iucn-cheetah"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Predator of medium-sized herbivores.",
+        "sources": [
+            "iucn-cheetah"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-cheetah"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-cheetah",
+            "title": "IUCN Red List search for Acinonyx jubatus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Acinonyx%20jubatus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "clouded-leopard",
+    "commonName": "Clouded Leopard",
+    "scientificName": "Neofelis nebulosa",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-clouded-leopard"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Clouded Leopard photo placeholder"
+    },
+    "description": {
+        "text": "Clouded Leopard is associated with southeast asian forests.",
+        "sources": [
+            "iucn-clouded-leopard"
+        ]
+    },
+    "habitat": {
+        "text": "Southeast Asian forests.",
+        "sources": [
+            "iucn-clouded-leopard"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-clouded-leopard"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Deforestation and poaching.",
+            "sources": [
+                "iucn-clouded-leopard"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Forest predator.",
+        "sources": [
+            "iucn-clouded-leopard"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-clouded-leopard"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-clouded-leopard",
+            "title": "IUCN Red List search for Neofelis nebulosa",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Neofelis%20nebulosa",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "dhole",
+    "commonName": "Dhole",
+    "scientificName": "Cuon alpinus",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-dhole"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Dhole photo placeholder"
+    },
+    "description": {
+        "text": "Dhole is associated with asian forests.",
+        "sources": [
+            "iucn-dhole"
+        ]
+    },
+    "habitat": {
+        "text": "Asian forests.",
+        "sources": [
+            "iucn-dhole"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-dhole"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Prey loss and persecution.",
+            "sources": [
+                "iucn-dhole"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Social pack predator.",
+        "sources": [
+            "iucn-dhole"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-dhole"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-dhole",
+            "title": "IUCN Red List search for Cuon alpinus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Cuon%20alpinus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "gharial",
+    "commonName": "Gharial",
+    "scientificName": "Gavialis gangeticus",
+    "status": {
+        "code": "CR",
+        "label": "Critically Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-gharial"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Gharial photo placeholder"
+    },
+    "description": {
+        "text": "Gharial is associated with northern indian subcontinent rivers.",
+        "sources": [
+            "iucn-gharial"
+        ]
+    },
+    "habitat": {
+        "text": "Northern Indian subcontinent rivers.",
+        "sources": [
+            "iucn-gharial"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-gharial"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Fishing nets and river alteration.",
+            "sources": [
+                "iucn-gharial"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Fish-eating river predator.",
+        "sources": [
+            "iucn-gharial"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-gharial"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-gharial",
+            "title": "IUCN Red List search for Gavialis gangeticus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Gavialis%20gangeticus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "golden-lion-tamarin",
+    "commonName": "Golden Lion Tamarin",
+    "scientificName": "Leontopithecus rosalia",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-golden-lion-tamarin"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Golden Lion Tamarin photo placeholder"
+    },
+    "description": {
+        "text": "Golden Lion Tamarin is associated with brazilian atlantic forest.",
+        "sources": [
+            "iucn-golden-lion-tamarin"
+        ]
+    },
+    "habitat": {
+        "text": "Brazilian Atlantic forest.",
+        "sources": [
+            "iucn-golden-lion-tamarin"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-golden-lion-tamarin"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Forest fragmentation.",
+            "sources": [
+                "iucn-golden-lion-tamarin"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses seeds.",
+        "sources": [
+            "iucn-golden-lion-tamarin"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-golden-lion-tamarin"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-golden-lion-tamarin",
+            "title": "IUCN Red List search for Leontopithecus rosalia",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Leontopithecus%20rosalia",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "greater-one-horned-rhinoceros",
+    "commonName": "Greater One-Horned Rhinoceros",
+    "scientificName": "Rhinoceros unicornis",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-greater-one-horned-rhinoceros"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Greater One-Horned Rhinoceros photo placeholder"
+    },
+    "description": {
+        "text": "Greater One-Horned Rhinoceros is associated with northern indian and nepalese grasslands.",
+        "sources": [
+            "iucn-greater-one-horned-rhinoceros"
+        ]
+    },
+    "habitat": {
+        "text": "Northern Indian and Nepalese grasslands.",
+        "sources": [
+            "iucn-greater-one-horned-rhinoceros"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-greater-one-horned-rhinoceros"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Poaching and habitat loss.",
+            "sources": [
+                "iucn-greater-one-horned-rhinoceros"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Large grazing herbivore.",
+        "sources": [
+            "iucn-greater-one-horned-rhinoceros"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-greater-one-horned-rhinoceros"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-greater-one-horned-rhinoceros",
+            "title": "IUCN Red List search for Rhinoceros unicornis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Rhinoceros%20unicornis",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "hippopotamus",
+    "commonName": "Hippopotamus",
+    "scientificName": "Hippopotamus amphibius",
+    "status": {
+        "code": "VU",
+        "label": "Vulnerable",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-hippopotamus"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Hippopotamus photo placeholder"
+    },
+    "description": {
+        "text": "Hippopotamus is associated with sub-saharan african rivers.",
+        "sources": [
+            "iucn-hippopotamus"
+        ]
+    },
+    "habitat": {
+        "text": "Sub-Saharan African rivers.",
+        "sources": [
+            "iucn-hippopotamus"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-hippopotamus"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Habitat loss and hunting.",
+            "sources": [
+                "iucn-hippopotamus"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Transfers nutrients between land and water.",
+        "sources": [
+            "iucn-hippopotamus"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-hippopotamus"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-hippopotamus",
+            "title": "IUCN Red List search for Hippopotamus amphibius",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Hippopotamus%20amphibius",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "malayan-tapir",
+    "commonName": "Malayan Tapir",
+    "scientificName": "Tapirus indicus",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-malayan-tapir"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Malayan Tapir photo placeholder"
+    },
+    "description": {
+        "text": "Malayan Tapir is associated with southeast asian rainforests.",
+        "sources": [
+            "iucn-malayan-tapir"
+        ]
+    },
+    "habitat": {
+        "text": "Southeast Asian rainforests.",
+        "sources": [
+            "iucn-malayan-tapir"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-malayan-tapir"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Forest conversion.",
+            "sources": [
+                "iucn-malayan-tapir"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Disperses large seeds.",
+        "sources": [
+            "iucn-malayan-tapir"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-malayan-tapir"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-malayan-tapir",
+            "title": "IUCN Red List search for Tapirus indicus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Tapirus%20indicus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "monarch-butterfly",
+    "commonName": "Monarch Butterfly",
+    "scientificName": "Danaus plexippus",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-monarch-butterfly"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Monarch Butterfly photo placeholder"
+    },
+    "description": {
+        "text": "Monarch Butterfly is associated with north american grasslands and migration corridors.",
+        "sources": [
+            "iucn-monarch-butterfly"
+        ]
+    },
+    "habitat": {
+        "text": "North American grasslands and migration corridors.",
+        "sources": [
+            "iucn-monarch-butterfly"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-monarch-butterfly"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Milkweed loss and climate pressures.",
+            "sources": [
+                "iucn-monarch-butterfly"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Pollinator.",
+        "sources": [
+            "iucn-monarch-butterfly"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-monarch-butterfly"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-monarch-butterfly",
+            "title": "IUCN Red List search for Danaus plexippus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Danaus%20plexippus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "okapi",
+    "commonName": "Okapi",
+    "scientificName": "Okapia johnstoni",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-okapi"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Okapi photo placeholder"
+    },
+    "description": {
+        "text": "Okapi is associated with congo rainforests.",
+        "sources": [
+            "iucn-okapi"
+        ]
+    },
+    "habitat": {
+        "text": "Congo rainforests.",
+        "sources": [
+            "iucn-okapi"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-okapi"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Forest loss and hunting.",
+            "sources": [
+                "iucn-okapi"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Forest browsing herbivore.",
+        "sources": [
+            "iucn-okapi"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-okapi"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-okapi",
+            "title": "IUCN Red List search for Okapia johnstoni",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Okapia%20johnstoni",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+},
+{
+    "id": "pygmy-hippopotamus",
+    "commonName": "Pygmy Hippopotamus",
+    "scientificName": "Choeropsis liberiensis",
+    "status": {
+        "code": "EN",
+        "label": "Endangered",
+        "authority": "IUCN Red List",
+        "sources": [
+            "iucn-pygmy-hippopotamus"
+        ]
+    },
+    "image": {
+        "src": null,
+        "alt": "Pygmy Hippopotamus photo placeholder"
+    },
+    "description": {
+        "text": "Pygmy Hippopotamus is associated with west african swamp forests.",
+        "sources": [
+            "iucn-pygmy-hippopotamus"
+        ]
+    },
+    "habitat": {
+        "text": "West African swamp forests.",
+        "sources": [
+            "iucn-pygmy-hippopotamus"
+        ]
+    },
+    "range": {
+        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "sources": [
+            "iucn-pygmy-hippopotamus"
+        ]
+    },
+    "threats": [
+        {
+            "text": "Forest loss and hunting.",
+            "sources": [
+                "iucn-pygmy-hippopotamus"
+            ]
+        }
+    ],
+    "ecologicalImportance": {
+        "text": "Wetland herbivore.",
+        "sources": [
+            "iucn-pygmy-hippopotamus"
+        ]
+    },
+    "conservationMethods": [
+        {
+            "text": "Support habitat conservation and science-based species protection.",
+            "sources": [
+                "iucn-pygmy-hippopotamus"
+            ]
+        }
+    ],
+    "population": null,
+    "localActions": [
+        {
+            "title": "Pittsburgh conservation participation",
+            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "label": "Pittsburgh Zoo & Aquarium",
+            "sources": [
+                "pgh-zoo"
+            ]
+        }
+    ],
+    "sources": [
+        {
+            "id": "iucn-pygmy-hippopotamus",
+            "title": "IUCN Red List search for Choeropsis liberiensis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/search?query=Choeropsis%20liberiensis",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "pgh-zoo",
+            "title": "Conservation",
+            "publisher": "Pittsburgh Zoo & Aquarium",
+            "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        }
+    ]
+}
+
 ];
 
 /* ==================================
