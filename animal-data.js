@@ -2829,8 +2829,8 @@ const ANIMALS = [
     "commonName": "Green Sea Turtle",
     "scientificName": "Chelonia mydas",
     "status": {
-        "code": "EN",
-        "label": "Endangered",
+        "code": "LC",
+        "label": "Least Concern",
         "authority": "IUCN Red List",
         "sources": [
             "iucn-green-sea-turtle"
