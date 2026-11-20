@@ -3590,58 +3590,59 @@ const ANIMALS = [
     ]
 },
 {
-    "id": "sumatran-rhinoceros",
-    "commonName": "Sumatran Rhinoceros",
-    "scientificName": "Dicerorhinus sumatrensis",
+    "id": "black-rhinoceros",
+    "commonName": "Black Rhinoceros",
+    "scientificName": "Diceros bicornis",
     "status": {
         "code": "CR",
         "label": "Critically Endangered",
         "authority": "IUCN Red List",
         "sources": [
-            "iucn-sumatran-rhinoceros"
+            "iucn-black-rhino"
         ]
     },
     "image": {
         "src": null,
-        "alt": "Sumatran Rhinoceros photo placeholder"
+        "alt": "Black rhinoceros; licensed photograph pending"
     },
     "description": {
-        "text": "Sumatran Rhinoceros is associated with sumatran tropical forests.",
+        "text": "The black rhinoceros is a large browsing mammal native to parts of eastern and southern Africa.",
         "sources": [
-            "iucn-sumatran-rhinoceros"
+            "iucn-black-rhino",
+            "wwf-black-rhino"
         ]
     },
     "habitat": {
-        "text": "Sumatran tropical forests.",
+        "text": "African savannas, shrublands and arid habitats.",
         "sources": [
-            "iucn-sumatran-rhinoceros"
+            "iucn-black-rhino"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Native to parts of eastern and southern Africa; consult the IUCN assessment for the current country-level range.",
         "sources": [
-            "iucn-sumatran-rhinoceros"
+            "iucn-black-rhino"
         ]
     },
     "threats": [
         {
-            "text": "Isolation and habitat loss.",
+            "text": "Poaching for illegal horn trade and habitat pressure threaten black rhinoceros populations.",
             "sources": [
-                "iucn-sumatran-rhinoceros"
+                "wwf-black-rhino"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Forest browser.",
+        "text": "As a large browser, the black rhinoceros influences woody vegetation; protecting its habitat also benefits other wildlife.",
         "sources": [
-            "iucn-sumatran-rhinoceros"
+            "wwf-black-rhino"
         ]
     },
     "conservationMethods": [
         {
-            "text": "Support habitat conservation and science-based species protection.",
+            "text": "Support evidence-based anti-poaching efforts and protected habitat management.",
             "sources": [
-                "iucn-sumatran-rhinoceros"
+                "wwf-black-rhino"
             ]
         }
     ],
@@ -3659,10 +3660,17 @@ const ANIMALS = [
     ],
     "sources": [
         {
-            "id": "iucn-sumatran-rhinoceros",
-            "title": "IUCN Red List search for Dicerorhinus sumatrensis",
-            "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Dicerorhinus%20sumatrensis",
+            "id": "iucn-black-rhino",
+            "title": "Diceros bicornis, IUCN Red List assessment",
+            "publisher": "IUCN",
+            "url": "https://doi.org/10.2305/IUCN.UK.2020-1.RLTS.T6557A152728945.en",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "wwf-black-rhino",
+            "title": "Black rhinos",
+            "publisher": "World Wildlife Fund",
+            "url": "https://www.worldwildlife.org/species/black-rhino",
             "accessed": "2026-11-20"
         },
         {
