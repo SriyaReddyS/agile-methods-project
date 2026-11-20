@@ -12,7 +12,8 @@ for (const file of jsFiles) new vm.Script(read(file), { filename: file });
 const context = vm.createContext({});
 vm.runInContext(read("animal-data.js") + "\nthis.profiles = ANIMALS;", context);
 const animals = context.profiles;
-assert.ok(animals.length > 0, "Expected at least one profile");
+assert.equal(animals.length, 50, "Expected exactly 50 profiles");
+assert.equal(new Set(animals.map(a => a.scientificName.trim().toLowerCase())).size, 50, "Duplicate scientific names");
 assert.equal(new Set(animals.map(a => a.id)).size, animals.length, "Duplicate profile IDs");
 const ids = new Set(animals.map(a => a.id));
 for (const a of animals) {
@@ -22,21 +23,28 @@ for (const a of animals) {
   }
   assert.ok(a.status?.code && a.status?.label, a.id + " missing status");
   assert.ok(Array.isArray(a.threats) && a.threats.length, a.id + " missing threats");
-  assert.ok(Array.isArray(a.conservationMethods) && a.conservationMethods.length, a.id + " missing conservation methods");
+  const actions = a.localActions || a.protectionActions;
+  assert.ok(Array.isArray(actions) && actions.length, a.id + " missing Pittsburgh actions");
   assert.ok(Array.isArray(a.sources) && a.sources.length, a.id + " missing sources");
   const sourceIds = new Set(a.sources.map(s => s.id));
   assert.equal(sourceIds.size, a.sources.length, a.id + " duplicate source ID");
-  for (const src of a.sources) assert.match(src.url, /^https:\/\//);
-  const facts = [a.description, a.habitat, a.range, a.ecologicalImportance, a.population, a.status, ...a.threats, ...a.conservationMethods, ...(a.localActions || [])].filter(Boolean);
-  for (const fact of facts) for (const id of (fact.sources || [])) assert.ok(sourceIds.has(id), a.id + " references missing source " + id);
-  // image.src: null is the documented placeholder state until a licensed photo is chosen.
-  if (a.image?.src) {
-    assert.ok(a.image.src.startsWith("images/"), a.id + " must use a local image");
-    assert.ok(fs.existsSync(path.join(root, a.image.src)), a.id + " missing local image");
-    assert.ok(a.image.alt && a.image.credit && a.image.license && a.image.licenseUrl && a.image.sourceUrl, a.id + " incomplete image attribution");
-    assert.match(a.image.licenseUrl, /^https:\/\//);
-    assert.match(a.image.sourceUrl, /^https:\/\//);
+  for (const src of a.sources) assert.equal(new URL(src.url).protocol, "https:");
+  const assessment = a.sources.find(s => a.status.sources.includes(s.id) && s.assessed);
+  assert.match(assessment?.url || "", /^https:\/\/www\.iucnredlist\.org\/species\/\d+\/\d+$/);
+  assert.match(assessment.assessed, /^\d{4}-\d{2}-\d{2}$/);
+  assert.match(assessment.published, /^\d{4}$/);
+  const facts = [a.description, a.habitat, a.range, a.ecologicalImportance, a.population,
+    a.status, ...a.threats, ...(a.conservationMethods || []), ...actions].filter(Boolean);
+  for (const fact of facts) {
+    assert.ok(fact.sources?.length, a.id + " uncited fact");
+    for (const id of fact.sources) assert.ok(sourceIds.has(id), a.id + " references missing source " + id);
   }
+  assert.ok(a.image?.src?.startsWith("images/"), a.id + " must use a local image");
+  assert.ok(fs.statSync(path.join(root, a.image.src)).size > 0, a.id + " missing local image");
+  assert.ok(a.image.alt && a.image.credit && a.image.license && a.image.licenseUrl && a.image.sourceUrl,
+    a.id + " incomplete image attribution");
+  assert.equal(new URL(a.image.licenseUrl).protocol, "https:");
+  assert.equal(new URL(a.image.sourceUrl).protocol, "https:");
   assert.ok(!a.description.text.includes("This profile summarizes"), a.id + " placeholder prose");
   assert.equal(context.getAnimalById(a.id).id, a.id);
   assert.equal(context.getAnimalProfileUrl(a), "animal.html?id=" + encodeURIComponent(a.id));

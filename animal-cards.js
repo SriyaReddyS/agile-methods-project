@@ -167,17 +167,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const matchesStatus = selectedStatus === "all" ||
                     (animal.status && animal.status.label === selectedStatus);
 
-                const habitatText = animal.habitat.text.toLowerCase();
-
-                let matchesHabitat = selectedHabitat === "all";
-
-                if (selectedHabitat === "temperate") {
-                    matchesHabitat = habitatText.includes("temperate");
-                } else if (selectedHabitat === "marine") {
-                    matchesHabitat = habitatText.includes("coral reefs");
-                } else if (selectedHabitat === "tropical") {
-                    matchesHabitat = habitatText.includes("tropical");
-                }
+                const matchesHabitat = selectedHabitat === "all" ||
+                    animal.habitat.filters?.includes(selectedHabitat);
 
                 return matchesName && matchesStatus && matchesHabitat;
             });

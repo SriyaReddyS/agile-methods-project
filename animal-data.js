@@ -11,7 +11,8 @@
    URL: animal.html?id=<id>
 
    Field notes:
-   - status: global IUCN Red List category.
+   - status: global IUCN Red List category for the named taxon.
+   - habitat.filters: applicable directory habitat options.
    - population: optional. Always dated;
      estimates go stale, so re-check them.
    - image.src: null until a team-owned or
@@ -31,12 +32,14 @@ const ANIMALS = [
         status: {
             code: "CR",
             label: "Critically Endangered",
-            authority: "IUCN Red List",
-            sources: ["wcs-amur-leopard", "iucn-amur-leopard"]
+            authority: "IUCN Red List subspecies",
+            sources: [
+                "iucn-amur-leopard"
+            ]
         },
         image: {
             src: "images/amur-leopard.jpg",
-            alt: "Amur leopard with a pale spotted coat standing on mossy rocks in front of bamboo, mouth open",
+            alt: "Amur leopard with a spotted coat standing on rocks at Colchester Zoo",
             credit: "William Warby, Colchester Zoo",
             license: "CC BY 2.0",
             licenseUrl: "https://creativecommons.org/licenses/by/2.0/",
@@ -48,7 +51,12 @@ const ANIMALS = [
         },
         habitat: {
             text: "Temperate deciduous and mixed forests with high tree cover and plenty of hoofed prey (ungulates). Leopards use areas with heavy cattle grazing less, likely because grazing affects sika deer, one of their main prey species.",
-            sources: ["wcs-amur-leopard"]
+            sources: [
+                "wcs-amur-leopard"
+            ],
+            filters: [
+                "temperate"
+            ]
         },
         range: {
             text: "Found only in the Russian Far East and Northeast China. Some individuals use land on both sides of the Russia–China border.",
@@ -89,16 +97,18 @@ const ANIMALS = [
             },
             {
                 id: "iucn-amur-leopard",
-                title: "IUCN Red List search: Panthera pardus orientalis",
-                publisher: "IUCN Red List of Threatened Species",
-                url: "https://www.iucnredlist.org/search?query=Panthera%20pardus%20orientalis",
-                accessed: "2026-11-02"
+                title: "IUCN Red List assessment for Panthera pardus orientalis",
+                publisher: "IUCN Red List",
+                url: "https://www.iucnredlist.org/species/15957/5333757",
+                assessed: "2008-06-30",
+                published: "2008",
+                accessed: "2026-11-20"
             },
             {
                 id: "wcs-support",
-                title: "Wildlife Conservation Society — Ways to Support",
+                title: "Get Involved",
                 publisher: "Wildlife Conservation Society",
-                url: "https://www.wcs.org/",
+                url: "https://www.wcs.org/get-involved",
                 accessed: "2026-11-06"
             }
         ]
@@ -112,7 +122,11 @@ const ANIMALS = [
             label: "Critically Endangered",
             authority: "IUCN Red List",
             note: "Also listed as endangered throughout its range under the U.S. Endangered Species Act.",
-            sources: ["mtsg-hawksbill-2007", "iucn-hawksbill", "noaa-hawksbill"]
+            sources: [
+                "iucn-hawksbill",
+                "mtsg-hawksbill-2007",
+                "noaa-hawksbill"
+            ]
         },
         image: {
             src: "images/hawksbill-sea-turtle.jpg",
@@ -128,7 +142,13 @@ const ANIMALS = [
         },
         habitat: {
             text: "Mostly nearshore foraging grounds, especially healthy coral reefs, plus rocky areas, lagoons, and shallow coastal waters. Adults are seldom seen in water deeper than about 65 feet. Hatchlings spend roughly 1 to 5 years in the open ocean. Females nest on tropical sandy beaches.",
-            sources: ["noaa-hawksbill", "fws-hawksbill"]
+            sources: [
+                "noaa-hawksbill",
+                "fws-hawksbill"
+            ],
+            filters: [
+                "marine"
+            ]
         },
         range: {
             text: "Warm waters of the Atlantic, Pacific, and Indian Oceans. In U.S. waters and nearby, it is widely distributed in the Caribbean Sea and western Atlantic Ocean.",
@@ -186,16 +206,18 @@ const ANIMALS = [
             },
             {
                 id: "iucn-hawksbill",
-                title: "IUCN Red List search: Eretmochelys imbricata",
-                publisher: "IUCN Red List of Threatened Species",
-                url: "https://www.iucnredlist.org/search?query=Eretmochelys%20imbricata",
-                accessed: "2026-11-02"
+                title: "IUCN Red List assessment for Eretmochelys imbricata",
+                publisher: "IUCN Red List",
+                url: "https://www.iucnredlist.org/species/8005/12881238",
+                assessed: "2008-06-30",
+                published: "2008",
+                accessed: "2026-11-20"
             },
             {
                 id: "allegheny-cleanways",
-                title: "Volunteer and cleanup programs",
+                title: "Land-Based Cleanups",
                 publisher: "Allegheny CleanWays",
-                url: "https://www.alleghenycleanways.org/",
+                url: "https://www.alleghenycleanways.org/land-based-cleanups.html",
                 accessed: "2026-11-06"
             }
         ]
@@ -208,7 +230,9 @@ const ANIMALS = [
             code: "CR",
             label: "Critically Endangered",
             authority: "IUCN Red List",
-            sources: ["esabii-orangutan", "iucn-orangutan"]
+            sources: [
+                "iucn-orangutan"
+            ]
         },
         image: {
             src: "images/sumatran-orangutan.jpg",
@@ -224,11 +248,20 @@ const ANIMALS = [
         },
         habitat: {
             text: "Primary tropical forest, mostly below 1,500 metres above sea level. Orangutan density declines with altitude, and few if any breeding populations live higher up.",
-            sources: ["apes-atlas-orangutan", "adw-orangutan"]
+            sources: [
+                "apes-atlas-orangutan",
+                "adw-orangutan"
+            ],
+            filters: [
+                "tropical"
+            ]
         },
         range: {
-            text: "Endemic to Sumatra, Indonesia, mainly in the north of the island. The Leuser Ecosystem holds about 95% of wild Sumatran orangutans. The species also occurs in protected areas such as Bukit Tigapuluh National Park.",
-            sources: ["apes-atlas-orangutan"]
+            text: "Endemic to Sumatra, Indonesia. Most wild individuals occur in northern Sumatra, particularly the Leuser Ecosystem. Reintroduced orangutans also occur in the Bukit Tigapuluh landscape.",
+            sources: [
+                "iucn-orangutan",
+                "apes-atlas-orangutan"
+            ]
         },
         threats: [
             { text: "Habitat loss and fragmentation from oil-palm plantations and logging", sources: ["apes-atlas-orangutan", "sos-challenges", "adw-orangutan"] },
@@ -278,10 +311,12 @@ const ANIMALS = [
             },
             {
                 id: "iucn-orangutan",
-                title: "IUCN Red List search: Pongo abelii",
-                publisher: "IUCN Red List of Threatened Species",
-                url: "https://www.iucnredlist.org/search?query=Pongo%20abelii",
-                accessed: "2026-11-02"
+                title: "IUCN Red List assessment for Pongo abelii",
+                publisher: "IUCN Red List",
+                url: "https://www.iucnredlist.org/species/121097935/259045437",
+                assessed: "2017-10-16",
+                published: "2024",
+                accessed: "2026-11-20"
             },
             {
                 id: "adw-orangutan",
@@ -313,7 +348,7 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
                 "primary-african-forest-elephant"
             ]
@@ -327,7 +362,7 @@ const ANIMALS = [
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_Forest_Elephant.jpg"
         },
         "description": {
-            "text": "Central and West African tropical forests.",
+            "text": "A smaller African elephant with rounded ears and relatively straight tusks, native to tropical forests.",
             "sources": [
                 "primary-african-forest-elephant"
             ]
@@ -336,6 +371,9 @@ const ANIMALS = [
             "text": "Humid lowland rainforest, forest clearings, and connected woodland habitats.",
             "sources": [
                 "primary-african-forest-elephant"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
@@ -405,10 +443,12 @@ const ANIMALS = [
         "sources": [
             {
                 "id": "primary-african-forest-elephant",
-                "title": "IUCN Red List: African Forest Elephant",
+                "title": "IUCN Red List assessment for Loxodonta cyclotis",
                 "publisher": "IUCN Red List",
-                "url": "https://doi.org/10.2305/IUCN.UK.2026-1.RLTS.T181007989A292481365.en",
-                "accessed": "2026-11-10"
+                "url": "https://www.iucnredlist.org/species/181007989/292481365",
+                "assessed": "2026-01-09",
+                "published": "2026",
+                "accessed": "2026-11-20"
             },
             {
                 "id": "pgh-zoo-general",
@@ -426,9 +466,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-vaquita"
+                "iucn-vaquita"
             ]
         },
         "image": {
@@ -443,45 +483,55 @@ const ANIMALS = [
         "description": {
             "text": "A rare porpoise restricted to Mexico's Gulf of California.",
             "sources": [
-                "primary-vaquita"
+                "primary-vaquita",
+                "iucn-vaquita"
             ]
         },
         "habitat": {
             "text": "Shallow, productive coastal waters of the upper Gulf of California.",
             "sources": [
-                "primary-vaquita"
+                "primary-vaquita",
+                "iucn-vaquita"
+            ],
+            "filters": [
+                "marine"
             ]
         },
         "range": {
             "text": "Only the northern Gulf of California, Mexico.",
             "sources": [
-                "primary-vaquita"
+                "primary-vaquita",
+                "iucn-vaquita"
             ]
         },
         "threats": [
             {
                 "text": "Entanglement and drowning in gillnets",
                 "sources": [
-                    "primary-vaquita"
+                    "primary-vaquita",
+                    "iucn-vaquita"
                 ]
             },
             {
                 "text": "Illegal totoaba fishing",
                 "sources": [
-                    "primary-vaquita"
+                    "primary-vaquita",
+                    "iucn-vaquita"
                 ]
             },
             {
                 "text": "Extremely small surviving population",
                 "sources": [
-                    "primary-vaquita"
+                    "primary-vaquita",
+                    "iucn-vaquita"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Vaquitas are native marine predators in a highly productive coastal food web.",
             "sources": [
-                "primary-vaquita"
+                "primary-vaquita",
+                "iucn-vaquita"
             ]
         },
         "conservationMethods": [
@@ -518,6 +568,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-vaquita",
+                "title": "IUCN Red List assessment for Phocoena sinus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/17028/214541137",
+                "assessed": "2022-03-02",
+                "published": "2022",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-vaquita",
                 "title": "Vaquita",
                 "publisher": "NOAA Fisheries",
@@ -540,9 +599,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-javan-rhino"
+                "iucn-javan-rhino"
             ]
         },
         "image": {
@@ -557,45 +616,55 @@ const ANIMALS = [
         "description": {
             "text": "A rare one-horned rhinoceros surviving in one Indonesian national park.",
             "sources": [
-                "primary-javan-rhino"
+                "primary-javan-rhino",
+                "iucn-javan-rhino"
             ]
         },
         "habitat": {
             "text": "Dense tropical lowland forest, wet clearings, and freshwater habitats.",
             "sources": [
-                "primary-javan-rhino"
+                "primary-javan-rhino",
+                "iucn-javan-rhino"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Ujung Kulon National Park on Java, Indonesia.",
             "sources": [
-                "primary-javan-rhino"
+                "primary-javan-rhino",
+                "iucn-javan-rhino"
             ]
         },
         "threats": [
             {
                 "text": "Single-site population vulnerable to disasters",
                 "sources": [
-                    "primary-javan-rhino"
+                    "primary-javan-rhino",
+                    "iucn-javan-rhino"
                 ]
             },
             {
                 "text": "Poaching risk",
                 "sources": [
-                    "primary-javan-rhino"
+                    "primary-javan-rhino",
+                    "iucn-javan-rhino"
                 ]
             },
             {
                 "text": "Invasive plants reducing food habitat",
                 "sources": [
-                    "primary-javan-rhino"
+                    "primary-javan-rhino",
+                    "iucn-javan-rhino"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "As a large browser, this rhinoceros influences vegetation and forest dynamics.",
             "sources": [
-                "primary-javan-rhino"
+                "primary-javan-rhino",
+                "iucn-javan-rhino"
             ]
         },
         "conservationMethods": [
@@ -632,6 +701,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-javan-rhino",
+                "title": "IUCN Red List assessment for Rhinoceros sondaicus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/19495/18493900",
+                "assessed": "2019-05-28",
+                "published": "2020",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-javan-rhino",
                 "title": "Javan Rhinos",
                 "publisher": "World Wildlife Fund",
@@ -654,9 +732,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-sumatran-rhino"
+                "iucn-sumatran-rhino"
             ]
         },
         "image": {
@@ -670,45 +748,55 @@ const ANIMALS = [
         "description": {
             "text": "The smallest living rhinoceros, with two horns and a hairy coat.",
             "sources": [
-                "primary-sumatran-rhino"
+                "primary-sumatran-rhino",
+                "iucn-sumatran-rhino"
             ]
         },
         "habitat": {
             "text": "Dense tropical lowland and montane forests.",
             "sources": [
-                "primary-sumatran-rhino"
+                "primary-sumatran-rhino",
+                "iucn-sumatran-rhino"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Remaining isolated populations in Indonesia, principally Sumatra and Borneo.",
             "sources": [
-                "primary-sumatran-rhino"
+                "primary-sumatran-rhino",
+                "iucn-sumatran-rhino"
             ]
         },
         "threats": [
             {
                 "text": "Severely fragmented populations",
                 "sources": [
-                    "primary-sumatran-rhino"
+                    "primary-sumatran-rhino",
+                    "iucn-sumatran-rhino"
                 ]
             },
             {
                 "text": "Limited breeding opportunities",
                 "sources": [
-                    "primary-sumatran-rhino"
+                    "primary-sumatran-rhino",
+                    "iucn-sumatran-rhino"
                 ]
             },
             {
                 "text": "Poaching and forest loss",
                 "sources": [
-                    "primary-sumatran-rhino"
+                    "primary-sumatran-rhino",
+                    "iucn-sumatran-rhino"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "This forest browser helps shape vegetation and its protection also safeguards diverse forest habitats.",
             "sources": [
-                "primary-sumatran-rhino"
+                "primary-sumatran-rhino",
+                "iucn-sumatran-rhino"
             ]
         },
         "conservationMethods": [
@@ -745,6 +833,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-sumatran-rhino",
+                "title": "IUCN Red List assessment for Dicerorhinus sumatrensis",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/6553/18493355",
+                "assessed": "2019-05-29",
+                "published": "2020",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-sumatran-rhino",
                 "title": "Sumatran Rhinos",
                 "publisher": "World Wildlife Fund",
@@ -767,9 +864,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-saola"
+                "iucn-saola"
             ]
         },
         "image": {
@@ -783,45 +880,55 @@ const ANIMALS = [
         "description": {
             "text": "An elusive forest-dwelling bovine sometimes called the Asian unicorn.",
             "sources": [
-                "primary-saola"
+                "primary-saola",
+                "iucn-saola"
             ]
         },
         "habitat": {
             "text": "Evergreen forests and stream valleys in the Annamite Mountains.",
             "sources": [
-                "primary-saola"
+                "primary-saola",
+                "iucn-saola"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Annamite Mountains of Laos and Vietnam.",
             "sources": [
-                "primary-saola"
+                "primary-saola",
+                "iucn-saola"
             ]
         },
         "threats": [
             {
                 "text": "Wire snares set for other wildlife",
                 "sources": [
-                    "primary-saola"
+                    "primary-saola",
+                    "iucn-saola"
                 ]
             },
             {
                 "text": "Forest degradation",
                 "sources": [
-                    "primary-saola"
+                    "primary-saola",
+                    "iucn-saola"
                 ]
             },
             {
                 "text": "Extremely rare and poorly documented populations",
                 "sources": [
-                    "primary-saola"
+                    "primary-saola",
+                    "iucn-saola"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Protecting saola habitat benefits many other threatened Annamite forest species.",
             "sources": [
-                "primary-saola"
+                "primary-saola",
+                "iucn-saola"
             ]
         },
         "conservationMethods": [
@@ -858,11 +965,20 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-saola",
+                "title": "IUCN Red List assessment for Pseudoryx nghetinhensis",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/18597/166485696",
+                "assessed": "2015-11-27",
+                "published": "2020",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-saola",
-                "title": "Saola Status",
-                "publisher": "Saola Working Group",
-                "url": "https://www.savethesaola.org/the-saola/status/",
-                "accessed": "2026-11-10"
+                "title": "Saola",
+                "publisher": "World Wildlife Fund",
+                "url": "https://www.worldwildlife.org/species/saola/",
+                "accessed": "2026-11-20"
             },
             {
                 "id": "pgh-zoo-general",
@@ -880,9 +996,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-philippine-eagle"
+                "iucn-philippine-eagle"
             ]
         },
         "image": {
@@ -896,45 +1012,54 @@ const ANIMALS = [
         "description": {
             "text": "A large forest eagle endemic to the Philippines.",
             "sources": [
-                "primary-philippine-eagle"
+                "primary-philippine-eagle",
+                "iucn-philippine-eagle"
             ]
         },
         "habitat": {
             "text": "Old-growth and mature tropical forest with tall nesting trees.",
             "sources": [
-                "primary-philippine-eagle"
+                "primary-philippine-eagle",
+                "iucn-philippine-eagle"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
-            "text": "Several Philippine islands, especially Mindanao and Luzon.",
+            "text": "Endemic to the Philippines, with records on Luzon, Samar, Leyte and Mindanao.",
             "sources": [
-                "primary-philippine-eagle"
+                "iucn-philippine-eagle"
             ]
         },
         "threats": [
             {
                 "text": "Deforestation",
                 "sources": [
-                    "primary-philippine-eagle"
+                    "primary-philippine-eagle",
+                    "iucn-philippine-eagle"
                 ]
             },
             {
                 "text": "Hunting and persecution",
                 "sources": [
-                    "primary-philippine-eagle"
+                    "primary-philippine-eagle",
+                    "iucn-philippine-eagle"
                 ]
             },
             {
                 "text": "Small isolated breeding populations",
                 "sources": [
-                    "primary-philippine-eagle"
+                    "primary-philippine-eagle",
+                    "iucn-philippine-eagle"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "As a top predator, this eagle contributes to the balance of forest food webs.",
             "sources": [
-                "primary-philippine-eagle"
+                "primary-philippine-eagle",
+                "iucn-philippine-eagle"
             ]
         },
         "conservationMethods": [
@@ -971,11 +1096,20 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-philippine-eagle",
+                "title": "IUCN Red List assessment for Pithecophaga jefferyi",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/22696012/273773083",
+                "assessed": "2025-06-17",
+                "published": "2025",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-philippine-eagle",
-                "title": "Philippine Eagle Conservation",
+                "title": "The Philippine Eagle",
                 "publisher": "Philippine Eagle Foundation",
-                "url": "https://www.philippineeaglefoundation.org/",
-                "accessed": "2026-11-10"
+                "url": "https://www.philippineeaglefoundation.org/philippine-eagle",
+                "accessed": "2026-11-20"
             },
             {
                 "id": "pgh-zoo-general",
@@ -993,9 +1127,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-sunda-pangolin"
+                "iucn-sunda-pangolin"
             ]
         },
         "image": {
@@ -1009,45 +1143,55 @@ const ANIMALS = [
         "description": {
             "text": "A nocturnal, scale-covered mammal that feeds on ants and termites.",
             "sources": [
-                "primary-sunda-pangolin"
+                "primary-sunda-pangolin",
+                "iucn-sunda-pangolin"
             ]
         },
         "habitat": {
             "text": "Tropical forests, secondary woodland, and some modified landscapes.",
             "sources": [
-                "primary-sunda-pangolin"
+                "primary-sunda-pangolin",
+                "iucn-sunda-pangolin"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Mainland and island Southeast Asia, including parts of Malaysia and Indonesia.",
             "sources": [
-                "primary-sunda-pangolin"
+                "primary-sunda-pangolin",
+                "iucn-sunda-pangolin"
             ]
         },
         "threats": [
             {
                 "text": "Illegal trade in scales and meat",
                 "sources": [
-                    "primary-sunda-pangolin"
+                    "primary-sunda-pangolin",
+                    "iucn-sunda-pangolin"
                 ]
             },
             {
                 "text": "Habitat loss",
                 "sources": [
-                    "primary-sunda-pangolin"
+                    "primary-sunda-pangolin",
+                    "iucn-sunda-pangolin"
                 ]
             },
             {
                 "text": "Hunting and trafficking",
                 "sources": [
-                    "primary-sunda-pangolin"
+                    "primary-sunda-pangolin",
+                    "iucn-sunda-pangolin"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Pangolins consume ants and termites and are part of forest insect-control food webs.",
             "sources": [
-                "primary-sunda-pangolin"
+                "primary-sunda-pangolin",
+                "iucn-sunda-pangolin"
             ]
         },
         "conservationMethods": [
@@ -1084,6 +1228,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-sunda-pangolin",
+                "title": "IUCN Red List assessment for Manis javanica",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/12763/123584856",
+                "assessed": "2019-05-02",
+                "published": "2019",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-sunda-pangolin",
                 "title": "Pangolins",
                 "publisher": "World Wildlife Fund",
@@ -1106,9 +1259,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List subspecies",
             "sources": [
-                "primary-cross-river-gorilla"
+                "iucn-cross-river-gorilla"
             ]
         },
         "image": {
@@ -1122,45 +1275,55 @@ const ANIMALS = [
         "description": {
             "text": "A rare western gorilla subspecies in the Nigeria-Cameroon border region.",
             "sources": [
-                "primary-cross-river-gorilla"
+                "primary-cross-river-gorilla",
+                "iucn-cross-river-gorilla"
             ]
         },
         "habitat": {
             "text": "Rugged forested hills and montane tropical forest.",
             "sources": [
-                "primary-cross-river-gorilla"
+                "primary-cross-river-gorilla",
+                "iucn-cross-river-gorilla"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Small fragmented forests along the Nigeria-Cameroon border.",
             "sources": [
-                "primary-cross-river-gorilla"
+                "primary-cross-river-gorilla",
+                "iucn-cross-river-gorilla"
             ]
         },
         "threats": [
             {
                 "text": "Habitat fragmentation",
                 "sources": [
-                    "primary-cross-river-gorilla"
+                    "primary-cross-river-gorilla",
+                    "iucn-cross-river-gorilla"
                 ]
             },
             {
                 "text": "Hunting pressure",
                 "sources": [
-                    "primary-cross-river-gorilla"
+                    "primary-cross-river-gorilla",
+                    "iucn-cross-river-gorilla"
                 ]
             },
             {
                 "text": "Small isolated groups",
                 "sources": [
-                    "primary-cross-river-gorilla"
+                    "primary-cross-river-gorilla",
+                    "iucn-cross-river-gorilla"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Gorillas disperse seeds and influence the regeneration of tropical forests.",
             "sources": [
-                "primary-cross-river-gorilla"
+                "primary-cross-river-gorilla",
+                "iucn-cross-river-gorilla"
             ]
         },
         "conservationMethods": [
@@ -1197,6 +1360,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-cross-river-gorilla",
+                "title": "IUCN Red List assessment for Gorilla gorilla diehli",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/39998/102326240",
+                "assessed": "2016-01-05",
+                "published": "2016",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-cross-river-gorilla",
                 "title": "Cross River Gorillas",
                 "publisher": "World Wildlife Fund",
@@ -1219,9 +1391,9 @@ const ANIMALS = [
         "status": {
             "code": "EN",
             "label": "Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-red-panda"
+                "iucn-red-panda"
             ]
         },
         "image": {
@@ -1235,45 +1407,55 @@ const ANIMALS = [
         "description": {
             "text": "A tree-dwelling mammal adapted to cool Himalayan forests.",
             "sources": [
-                "primary-red-panda"
+                "primary-red-panda",
+                "iucn-red-panda"
             ]
         },
         "habitat": {
             "text": "Temperate mountain forests with bamboo understory and suitable nesting trees.",
             "sources": [
-                "primary-red-panda"
+                "primary-red-panda",
+                "iucn-red-panda"
+            ],
+            "filters": [
+                "temperate"
             ]
         },
         "range": {
-            "text": "Eastern Himalayas and adjacent mountain forests in Asia.",
+            "text": "Montane forests of Nepal, India, Bhutan, northern Myanmar and southwestern China under the taxon concept used by this IUCN assessment.",
             "sources": [
-                "primary-red-panda"
+                "primary-red-panda",
+                "iucn-red-panda"
             ]
         },
         "threats": [
             {
                 "text": "Loss of forest and bamboo habitat",
                 "sources": [
-                    "primary-red-panda"
+                    "primary-red-panda",
+                    "iucn-red-panda"
                 ]
             },
             {
                 "text": "Poaching and accidental trapping",
                 "sources": [
-                    "primary-red-panda"
+                    "primary-red-panda",
+                    "iucn-red-panda"
                 ]
             },
             {
                 "text": "Habitat fragmentation",
                 "sources": [
-                    "primary-red-panda"
+                    "primary-red-panda",
+                    "iucn-red-panda"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Red pandas are part of Himalayan forest food webs, and protecting them preserves bamboo-rich forests.",
             "sources": [
-                "primary-red-panda"
+                "primary-red-panda",
+                "iucn-red-panda"
             ]
         },
         "conservationMethods": [
@@ -1310,6 +1492,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-red-panda",
+                "title": "IUCN Red List assessment for Ailurus fulgens",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/714/110023718",
+                "assessed": "2015-04-11",
+                "published": "2015",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-red-panda",
                 "title": "Red Pandas",
                 "publisher": "World Wildlife Fund",
@@ -1332,9 +1523,9 @@ const ANIMALS = [
         "status": {
             "code": "EN",
             "label": "Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-tiger"
+                "iucn-tiger"
             ]
         },
         "image": {
@@ -1348,45 +1539,56 @@ const ANIMALS = [
         "description": {
             "text": "The largest wild cat and a major predator in Asian ecosystems.",
             "sources": [
-                "primary-tiger"
+                "primary-tiger",
+                "iucn-tiger"
             ]
         },
         "habitat": {
             "text": "Forests, grasslands, and mangroves with enough prey and cover.",
             "sources": [
-                "primary-tiger"
+                "primary-tiger",
+                "iucn-tiger"
+            ],
+            "filters": [
+                "temperate",
+                "tropical"
             ]
         },
         "range": {
             "text": "Fragmented habitats across parts of South, Southeast, and East Asia.",
             "sources": [
-                "primary-tiger"
+                "primary-tiger",
+                "iucn-tiger"
             ]
         },
         "threats": [
             {
                 "text": "Poaching and illegal wildlife trade",
                 "sources": [
-                    "primary-tiger"
+                    "primary-tiger",
+                    "iucn-tiger"
                 ]
             },
             {
                 "text": "Prey depletion",
                 "sources": [
-                    "primary-tiger"
+                    "primary-tiger",
+                    "iucn-tiger"
                 ]
             },
             {
                 "text": "Habitat fragmentation and conflict",
                 "sources": [
-                    "primary-tiger"
+                    "primary-tiger",
+                    "iucn-tiger"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Tigers regulate prey populations and their conservation protects extensive habitats.",
             "sources": [
-                "primary-tiger"
+                "primary-tiger",
+                "iucn-tiger"
             ]
         },
         "conservationMethods": [
@@ -1423,6 +1625,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-tiger",
+                "title": "IUCN Red List assessment for Panthera tigris",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/15955/214862019",
+                "assessed": "2021-12-15",
+                "published": "2022",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-tiger",
                 "title": "Tigers",
                 "publisher": "World Wildlife Fund",
@@ -1445,9 +1656,9 @@ const ANIMALS = [
         "status": {
             "code": "EN",
             "label": "Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-asian-elephant"
+                "iucn-asian-elephant"
             ]
         },
         "image": {
@@ -1461,45 +1672,55 @@ const ANIMALS = [
         "description": {
             "text": "A large social herbivore that travels through Asian forests and grasslands.",
             "sources": [
-                "primary-asian-elephant"
+                "primary-asian-elephant",
+                "iucn-asian-elephant"
             ]
         },
         "habitat": {
             "text": "Tropical and subtropical forests, grasslands, and forest edges.",
             "sources": [
-                "primary-asian-elephant"
+                "primary-asian-elephant",
+                "iucn-asian-elephant"
+            ],
+            "filters": [
+                "tropical"
             ]
         },
         "range": {
             "text": "Fragmented regions of South and Southeast Asia.",
             "sources": [
-                "primary-asian-elephant"
+                "primary-asian-elephant",
+                "iucn-asian-elephant"
             ]
         },
         "threats": [
             {
                 "text": "Habitat loss and blocked migration routes",
                 "sources": [
-                    "primary-asian-elephant"
+                    "primary-asian-elephant",
+                    "iucn-asian-elephant"
                 ]
             },
             {
                 "text": "Human-elephant conflict",
                 "sources": [
-                    "primary-asian-elephant"
+                    "primary-asian-elephant",
+                    "iucn-asian-elephant"
                 ]
             },
             {
                 "text": "Poaching and infrastructure",
                 "sources": [
-                    "primary-asian-elephant"
+                    "primary-asian-elephant",
+                    "iucn-asian-elephant"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Elephants spread seeds and open pathways, helping shape habitats for other species.",
             "sources": [
-                "primary-asian-elephant"
+                "primary-asian-elephant",
+                "iucn-asian-elephant"
             ]
         },
         "conservationMethods": [
@@ -1536,6 +1757,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-asian-elephant",
+                "title": "IUCN Red List assessment for Elephas maximus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/7140/45818198",
+                "assessed": "2019-09-18",
+                "published": "2020",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-asian-elephant",
                 "title": "Asian Elephants",
                 "publisher": "World Wildlife Fund",
@@ -1558,9 +1788,9 @@ const ANIMALS = [
         "status": {
             "code": "EN",
             "label": "Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-blue-whale"
+                "iucn-blue-whale"
             ]
         },
         "image": {
@@ -1574,45 +1804,55 @@ const ANIMALS = [
         "description": {
             "text": "The largest known animal, a baleen whale that feeds mainly on krill.",
             "sources": [
-                "primary-blue-whale"
+                "primary-blue-whale",
+                "iucn-blue-whale"
             ]
         },
         "habitat": {
             "text": "Open-ocean and productive feeding waters, including seasonal high-latitude areas.",
             "sources": [
-                "primary-blue-whale"
+                "primary-blue-whale",
+                "iucn-blue-whale"
+            ],
+            "filters": [
+                "marine"
             ]
         },
         "range": {
             "text": "Across the world's major oceans.",
             "sources": [
-                "primary-blue-whale"
+                "primary-blue-whale",
+                "iucn-blue-whale"
             ]
         },
         "threats": [
             {
                 "text": "Ship strikes",
                 "sources": [
-                    "primary-blue-whale"
+                    "primary-blue-whale",
+                    "iucn-blue-whale"
                 ]
             },
             {
                 "text": "Entanglement in fishing gear",
                 "sources": [
-                    "primary-blue-whale"
+                    "primary-blue-whale",
+                    "iucn-blue-whale"
                 ]
             },
             {
                 "text": "Underwater noise and changing ocean conditions",
                 "sources": [
-                    "primary-blue-whale"
+                    "primary-blue-whale",
+                    "iucn-blue-whale"
                 ]
             }
         ],
         "ecologicalImportance": {
-            "text": "Blue whales move nutrients through marine food webs and contribute to ocean nutrient cycling.",
+            "text": "Blue whales consume large quantities of krill, linking these small crustaceans with the largest consumers in marine food webs.",
             "sources": [
-                "primary-blue-whale"
+                "primary-blue-whale",
+                "iucn-blue-whale"
             ]
         },
         "conservationMethods": [
@@ -1649,6 +1889,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-blue-whale",
+                "title": "IUCN Red List assessment for Balaenoptera musculus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/2477/156923585",
+                "assessed": "2018-03-16",
+                "published": "2018",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-blue-whale",
                 "title": "Blue Whale",
                 "publisher": "NOAA Fisheries",
@@ -1671,9 +1920,9 @@ const ANIMALS = [
         "status": {
             "code": "EN",
             "label": "Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-whale-shark"
+                "iucn-whale-shark"
             ]
         },
         "image": {
@@ -1687,45 +1936,55 @@ const ANIMALS = [
         "description": {
             "text": "The world's largest fish, a gentle filter-feeding shark.",
             "sources": [
-                "primary-whale-shark"
+                "primary-whale-shark",
+                "iucn-whale-shark"
             ]
         },
         "habitat": {
             "text": "Warm tropical and subtropical seas, including coastal feeding aggregations.",
             "sources": [
-                "primary-whale-shark"
+                "primary-whale-shark",
+                "iucn-whale-shark"
+            ],
+            "filters": [
+                "marine"
             ]
         },
         "range": {
             "text": "Tropical and warm-temperate oceans worldwide.",
             "sources": [
-                "primary-whale-shark"
+                "primary-whale-shark",
+                "iucn-whale-shark"
             ]
         },
         "threats": [
             {
                 "text": "Fishing and accidental capture",
                 "sources": [
-                    "primary-whale-shark"
+                    "primary-whale-shark",
+                    "iucn-whale-shark"
                 ]
             },
             {
                 "text": "Vessel strikes",
                 "sources": [
-                    "primary-whale-shark"
+                    "primary-whale-shark",
+                    "iucn-whale-shark"
                 ]
             },
             {
                 "text": "Disturbance at feeding sites",
                 "sources": [
-                    "primary-whale-shark"
+                    "primary-whale-shark",
+                    "iucn-whale-shark"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Whale sharks feed on plankton and small organisms, connecting marine food-web processes.",
             "sources": [
-                "primary-whale-shark"
+                "primary-whale-shark",
+                "iucn-whale-shark"
             ]
         },
         "conservationMethods": [
@@ -1762,6 +2021,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-whale-shark",
+                "title": "IUCN Red List assessment for Rhincodon typus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/19488/126673248",
+                "assessed": "2025-03-31",
+                "published": "2025",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-whale-shark",
                 "title": "Whale Sharks",
                 "publisher": "World Wildlife Fund",
@@ -1784,9 +2052,9 @@ const ANIMALS = [
         "status": {
             "code": "CR",
             "label": "Critically Endangered",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-kemps-ridley-sea-turtle"
+                "iucn-kemps-ridley-sea-turtle"
             ]
         },
         "image": {
@@ -1800,45 +2068,55 @@ const ANIMALS = [
         "description": {
             "text": "A small sea turtle known for mass nesting events called arribadas.",
             "sources": [
-                "primary-kemps-ridley-sea-turtle"
+                "primary-kemps-ridley-sea-turtle",
+                "iucn-kemps-ridley-sea-turtle"
             ]
         },
         "habitat": {
             "text": "Coastal waters, shallow bays, and sandy nesting beaches.",
             "sources": [
-                "primary-kemps-ridley-sea-turtle"
+                "primary-kemps-ridley-sea-turtle",
+                "iucn-kemps-ridley-sea-turtle"
+            ],
+            "filters": [
+                "marine"
             ]
         },
         "range": {
             "text": "Mainly the Gulf of Mexico and western North Atlantic.",
             "sources": [
-                "primary-kemps-ridley-sea-turtle"
+                "primary-kemps-ridley-sea-turtle",
+                "iucn-kemps-ridley-sea-turtle"
             ]
         },
         "threats": [
             {
                 "text": "Fishing-gear bycatch",
                 "sources": [
-                    "primary-kemps-ridley-sea-turtle"
+                    "primary-kemps-ridley-sea-turtle",
+                    "iucn-kemps-ridley-sea-turtle"
                 ]
             },
             {
                 "text": "Marine debris and pollution",
                 "sources": [
-                    "primary-kemps-ridley-sea-turtle"
+                    "primary-kemps-ridley-sea-turtle",
+                    "iucn-kemps-ridley-sea-turtle"
                 ]
             },
             {
                 "text": "Damage to nesting beaches",
                 "sources": [
-                    "primary-kemps-ridley-sea-turtle"
+                    "primary-kemps-ridley-sea-turtle",
+                    "iucn-kemps-ridley-sea-turtle"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Kemp's ridley turtles feed on crabs and other invertebrates in coastal ecosystems.",
             "sources": [
-                "primary-kemps-ridley-sea-turtle"
+                "primary-kemps-ridley-sea-turtle",
+                "iucn-kemps-ridley-sea-turtle"
             ]
         },
         "conservationMethods": [
@@ -1875,6 +2153,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-kemps-ridley-sea-turtle",
+                "title": "IUCN Red List assessment for Lepidochelys kempii",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/11533/155057916",
+                "assessed": "2019-01-14",
+                "published": "2019",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-kemps-ridley-sea-turtle",
                 "title": "Kemp's Ridley Turtle",
                 "publisher": "NOAA Fisheries",
@@ -1897,9 +2184,9 @@ const ANIMALS = [
         "status": {
             "code": "VU",
             "label": "Vulnerable",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-snow-leopard"
+                "iucn-snow-leopard"
             ]
         },
         "image": {
@@ -1913,45 +2200,52 @@ const ANIMALS = [
         "description": {
             "text": "A mountain cat adapted to cold, steep landscapes.",
             "sources": [
-                "primary-snow-leopard"
+                "primary-snow-leopard",
+                "iucn-snow-leopard"
             ]
         },
         "habitat": {
             "text": "Rocky alpine and subalpine mountain slopes.",
             "sources": [
-                "primary-snow-leopard"
+                "primary-snow-leopard",
+                "iucn-snow-leopard"
             ]
         },
         "range": {
             "text": "High mountains of Central and South Asia.",
             "sources": [
-                "primary-snow-leopard"
+                "primary-snow-leopard",
+                "iucn-snow-leopard"
             ]
         },
         "threats": [
             {
                 "text": "Retaliatory killing after livestock losses",
                 "sources": [
-                    "primary-snow-leopard"
+                    "primary-snow-leopard",
+                    "iucn-snow-leopard"
                 ]
             },
             {
                 "text": "Declining wild prey",
                 "sources": [
-                    "primary-snow-leopard"
+                    "primary-snow-leopard",
+                    "iucn-snow-leopard"
                 ]
             },
             {
                 "text": "Habitat fragmentation and climate change",
                 "sources": [
-                    "primary-snow-leopard"
+                    "primary-snow-leopard",
+                    "iucn-snow-leopard"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Snow leopards are high-altitude predators that help maintain mountain food webs.",
             "sources": [
-                "primary-snow-leopard"
+                "primary-snow-leopard",
+                "iucn-snow-leopard"
             ]
         },
         "conservationMethods": [
@@ -1988,6 +2282,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-snow-leopard",
+                "title": "IUCN Red List assessment for Panthera uncia",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/22732/50664030",
+                "assessed": "2016-11-08",
+                "published": "2017",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-snow-leopard",
                 "title": "Snow Leopards",
                 "publisher": "World Wildlife Fund",
@@ -2010,15 +2313,15 @@ const ANIMALS = [
         "status": {
             "code": "VU",
             "label": "Vulnerable",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-giant-panda"
+                "iucn-giant-panda"
             ]
         },
         "image": {
             "src": "images/giant-panda.jpg",
-            "alt": "Giant panda at San Diego Zoo",
-            "credit": "Wikimedia Commons photographer (see source)",
+            "alt": "Giant panda resting among tree limbs",
+            "credit": "Clare W. (Uberkiki)",
             "license": "CC BY-SA 3.0",
             "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
             "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_panda.jpg"
@@ -2026,45 +2329,55 @@ const ANIMALS = [
         "description": {
             "text": "A bamboo-eating bear native to China's mountain forests.",
             "sources": [
-                "primary-giant-panda"
+                "primary-giant-panda",
+                "iucn-giant-panda"
             ]
         },
         "habitat": {
             "text": "Temperate mountain forests with abundant bamboo.",
             "sources": [
-                "primary-giant-panda"
+                "primary-giant-panda",
+                "iucn-giant-panda"
+            ],
+            "filters": [
+                "temperate"
             ]
         },
         "range": {
             "text": "Mountain ranges of central China, especially Sichuan, Shaanxi, and Gansu.",
             "sources": [
-                "primary-giant-panda"
+                "primary-giant-panda",
+                "iucn-giant-panda"
             ]
         },
         "threats": [
             {
                 "text": "Forest fragmentation",
                 "sources": [
-                    "primary-giant-panda"
+                    "primary-giant-panda",
+                    "iucn-giant-panda"
                 ]
             },
             {
                 "text": "Infrastructure development",
                 "sources": [
-                    "primary-giant-panda"
+                    "primary-giant-panda",
+                    "iucn-giant-panda"
                 ]
             },
             {
                 "text": "Climate-driven changes to bamboo habitat",
                 "sources": [
-                    "primary-giant-panda"
+                    "primary-giant-panda",
+                    "iucn-giant-panda"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Protecting giant panda habitat also protects other forest wildlife and watersheds.",
             "sources": [
-                "primary-giant-panda"
+                "primary-giant-panda",
+                "iucn-giant-panda"
             ]
         },
         "conservationMethods": [
@@ -2101,6 +2414,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-giant-panda",
+                "title": "IUCN Red List assessment for Ailuropoda melanoleuca",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/712/121745669",
+                "assessed": "2016-04-11",
+                "published": "2016",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-giant-panda",
                 "title": "Giant Pandas",
                 "publisher": "World Wildlife Fund",
@@ -2123,9 +2445,9 @@ const ANIMALS = [
         "status": {
             "code": "VU",
             "label": "Vulnerable",
-            "authority": "IUCN Red List (see supporting conservation source)",
+            "authority": "IUCN Red List",
             "sources": [
-                "primary-polar-bear"
+                "iucn-polar-bear"
             ]
         },
         "image": {
@@ -2139,45 +2461,54 @@ const ANIMALS = [
         "description": {
             "text": "A large Arctic marine mammal that relies on sea ice to hunt seals.",
             "sources": [
-                "primary-polar-bear"
+                "primary-polar-bear",
+                "iucn-polar-bear"
             ]
         },
         "habitat": {
             "text": "Arctic sea ice and adjacent coastal areas.",
             "sources": [
-                "primary-polar-bear"
+                "primary-polar-bear",
+                "iucn-polar-bear"
+            ],
+            "filters": [
+                "marine"
             ]
         },
         "range": {
-            "text": "Circumpolar Arctic across five range countries.",
+            "text": "Circumpolar Arctic across Alaska (United States), Canada, Greenland (Kingdom of Denmark), Norway and Russia.",
             "sources": [
-                "primary-polar-bear"
+                "iucn-polar-bear"
             ]
         },
         "threats": [
             {
                 "text": "Loss of sea ice from climate warming",
                 "sources": [
-                    "primary-polar-bear"
+                    "primary-polar-bear",
+                    "iucn-polar-bear"
                 ]
             },
             {
                 "text": "Human-bear conflict",
                 "sources": [
-                    "primary-polar-bear"
+                    "primary-polar-bear",
+                    "iucn-polar-bear"
                 ]
             },
             {
                 "text": "Industrial disturbance and pollution",
                 "sources": [
-                    "primary-polar-bear"
+                    "primary-polar-bear",
+                    "iucn-polar-bear"
                 ]
             }
         ],
         "ecologicalImportance": {
             "text": "Polar bears are top predators in Arctic marine food webs.",
             "sources": [
-                "primary-polar-bear"
+                "primary-polar-bear",
+                "iucn-polar-bear"
             ]
         },
         "conservationMethods": [
@@ -2214,6 +2545,15 @@ const ANIMALS = [
         ],
         "sources": [
             {
+                "id": "iucn-polar-bear",
+                "title": "IUCN Red List assessment for Ursus maritimus",
+                "publisher": "IUCN Red List",
+                "url": "https://www.iucnredlist.org/species/22823/14871490",
+                "assessed": "2015-08-27",
+                "published": "2015",
+                "accessed": "2026-11-20"
+            },
+            {
                 "id": "primary-polar-bear",
                 "title": "Polar Bears",
                 "publisher": "World Wildlife Fund",
@@ -2242,37 +2582,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "African Savanna Elephant photo placeholder"
+        "src": "images/african-savanna-elephant.jpg",
+        "alt": "African savanna elephant with broad ears walking across dry grass",
+        "credit": "Giles Laurent · Male African bush elephant in Etosha National Park (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:178_Male_African_bush_elephant_in_Etosha_National_Park_Photo_by_Giles_Laurent.jpg"
     },
     "description": {
-        "text": "African Savanna Elephant is associated with african savannas and woodlands.",
+        "text": "The larger of the two African elephant species, with broad ears and a concave back.",
         "sources": [
             "iucn-african-savanna-elephant"
         ]
     },
     "habitat": {
-        "text": "African savannas and woodlands.",
+        "text": "Savannas, open woodlands and grasslands, including some arid landscapes with seasonal water.",
         "sources": [
             "iucn-african-savanna-elephant"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Scattered populations in sub-Saharan Africa, primarily in eastern and southern Africa.",
         "sources": [
             "iucn-african-savanna-elephant"
         ]
     },
     "threats": [
         {
-            "text": "Ivory poaching and habitat fragmentation.",
+            "text": "Ivory poaching, habitat conversion and fragmentation, and conflict with people.",
             "sources": [
                 "iucn-african-savanna-elephant"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses seeds and modifies vegetation.",
+        "text": "A large herbivore that browses and grazes, disperses seeds and changes vegetation as it feeds.",
         "sources": [
             "iucn-african-savanna-elephant"
         ]
@@ -2300,9 +2644,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-african-savanna-elephant",
-            "title": "IUCN Red List search for Loxodonta africana",
+            "title": "IUCN Red List assessment for Loxodonta africana",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Loxodonta%20africana",
+            "url": "https://www.iucnredlist.org/species/181008073/223031019",
+            "assessed": "2020-11-13",
+            "published": "2022",
             "accessed": "2026-11-20"
         },
         {
@@ -2327,37 +2673,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "African Wild Dog photo placeholder"
+        "src": "images/african-wild-dog.jpg",
+        "alt": "African wild dog with a mottled black, tan and white coat walking on a dirt track",
+        "credit": "AfricanConservation · African Wild Dog at Working with Wildlife (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:African_Wild_Dog_at_Working_with_Wildlife.jpg"
     },
     "description": {
-        "text": "African Wild Dog is associated with african grasslands and woodlands.",
+        "text": "A social African canid that hunts cooperatively in packs.",
         "sources": [
             "iucn-african-wild-dog"
         ]
     },
     "habitat": {
-        "text": "African grasslands and woodlands.",
+        "text": "Grassland, scrub, savanna and woodland, with large areas needed for roaming and hunting.",
         "sources": [
             "iucn-african-wild-dog"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented range south of the Sahara, with strongholds in eastern and southern Africa.",
         "sources": [
             "iucn-african-wild-dog"
         ]
     },
     "threats": [
         {
-            "text": "Fragmentation, persecution and disease.",
+            "text": "Habitat fragmentation, snares, conflict with livestock owners and infectious disease.",
             "sources": [
                 "iucn-african-wild-dog"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Predator that helps regulate prey.",
+        "text": "Packs prey on ungulates such as impala and other antelopes.",
         "sources": [
             "iucn-african-wild-dog"
         ]
@@ -2385,9 +2735,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-african-wild-dog",
-            "title": "IUCN Red List search for Lycaon pictus",
+            "title": "IUCN Red List assessment for Lycaon pictus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Lycaon%20pictus",
+            "url": "https://www.iucnredlist.org/species/12436/221299510",
+            "assessed": "2025-06-10",
+            "published": "2025",
             "accessed": "2026-11-20"
         },
         {
@@ -2412,37 +2764,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Bornean Orangutan photo placeholder"
+        "src": "images/bornean-orangutan.jpg",
+        "alt": "Bornean orangutan climbing a tree in Tanjung Puting National Park",
+        "credit": "Nanosanchez · Tanjung Puting30477 (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tanjung_Puting30477.jpg"
     },
     "description": {
-        "text": "Bornean Orangutan is associated with borneo tropical forests.",
+        "text": "A tree-dwelling great ape native to Borneo.",
         "sources": [
             "iucn-bornean-orangutan"
         ]
     },
     "habitat": {
-        "text": "Borneo tropical forests.",
+        "text": "Tropical lowland forests, including peat swamp and dipterocarp forests, and some upland and selectively logged forests.",
         "sources": [
             "iucn-bornean-orangutan"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Borneo, in Indonesian Kalimantan and the Malaysian states of Sabah and Sarawak.",
         "sources": [
             "iucn-bornean-orangutan"
         ]
     },
     "threats": [
         {
-            "text": "Deforestation and illegal killing.",
+            "text": "Forest conversion and fragmentation, fires, hunting and capture.",
             "sources": [
                 "iucn-bornean-orangutan"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses rainforest seeds.",
+        "text": "Fruit feeding and movement through the canopy help disperse seeds.",
         "sources": [
             "iucn-bornean-orangutan"
         ]
@@ -2470,9 +2829,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-bornean-orangutan",
-            "title": "IUCN Red List search for Pongo pygmaeus",
+            "title": "IUCN Red List assessment for Pongo pygmaeus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Pongo%20pygmaeus",
+            "url": "https://www.iucnredlist.org/species/17975/259043172",
+            "assessed": "2016-02-08",
+            "published": "2024",
             "accessed": "2026-11-20"
         },
         {
@@ -2497,37 +2858,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Chimpanzee photo placeholder"
+        "src": "images/chimpanzee.jpg",
+        "alt": "Chimpanzee sitting on a branch in Kibale National Park",
+        "credit": "© Giles Laurent, gileslaurent.com, License CC BY-SA · 015 Chimpanzee at Kibale forest National Park Photo by Giles Laurent (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:015_Chimpanzee_at_Kibale_forest_National_Park_Photo_by_Giles_Laurent.jpg"
     },
     "description": {
-        "text": "Chimpanzee is associated with central and western african forests.",
+        "text": "A social great ape that lives in communities and uses tools to obtain some foods.",
         "sources": [
             "iucn-chimpanzee"
         ]
     },
     "habitat": {
-        "text": "Central and western African forests.",
+        "text": "Tropical forest, woodland and forest–savanna mosaics.",
         "sources": [
             "iucn-chimpanzee"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "A fragmented belt of equatorial Africa from West Africa to Uganda and western Tanzania.",
         "sources": [
             "iucn-chimpanzee"
         ]
     },
     "threats": [
         {
-            "text": "Habitat loss, hunting and disease.",
+            "text": "Hunting and capture, forest loss and fragmentation, and infectious disease.",
             "sources": [
                 "iucn-chimpanzee"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses forest seeds.",
+        "text": "Chimpanzees eat many kinds of fruit and disperse seeds across their home ranges.",
         "sources": [
             "iucn-chimpanzee"
         ]
@@ -2555,9 +2923,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-chimpanzee",
-            "title": "IUCN Red List search for Pan troglodytes",
+            "title": "IUCN Red List assessment for Pan troglodytes",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Pan%20troglodytes",
+            "url": "https://www.iucnredlist.org/species/15933/129038584",
+            "assessed": "2016-03-24",
+            "published": "2016",
             "accessed": "2026-11-20"
         },
         {
@@ -2576,43 +2946,50 @@ const ANIMALS = [
     "status": {
         "code": "CR",
         "label": "Critically Endangered",
-        "authority": "IUCN Red List",
+        "authority": "IUCN Red List subspecies",
         "sources": [
             "iucn-eastern-lowland-gorilla"
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Eastern Lowland Gorilla photo placeholder"
+        "src": "images/eastern-lowland-gorilla.jpg",
+        "alt": "Silverback Grauer’s gorilla looking through foliage",
+        "credit": "Joe McKenna from San Diego, California · Eastern lowland gorilla (web adaptation)",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Eastern_lowland_gorilla.jpg"
     },
     "description": {
-        "text": "Eastern Lowland Gorilla is associated with eastern congo forests.",
+        "text": "Grauer’s gorilla is an eastern gorilla subspecies endemic to the Democratic Republic of the Congo.",
         "sources": [
             "iucn-eastern-lowland-gorilla"
         ]
     },
     "habitat": {
-        "text": "Eastern Congo forests.",
+        "text": "Tropical forest from lowland rainforest to montane forest.",
         "sources": [
             "iucn-eastern-lowland-gorilla"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Eastern Democratic Republic of the Congo, including Kahuzi-Biega and Maiko national parks.",
         "sources": [
             "iucn-eastern-lowland-gorilla"
         ]
     },
     "threats": [
         {
-            "text": "Hunting and habitat degradation.",
+            "text": "Hunting, conflict and insecurity, mining, and agricultural encroachment.",
             "sources": [
                 "iucn-eastern-lowland-gorilla"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses forest seeds.",
+        "text": "It eats leaves, stems and fruit, and can disperse the seeds of fruits it consumes.",
         "sources": [
             "iucn-eastern-lowland-gorilla"
         ]
@@ -2640,9 +3017,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-eastern-lowland-gorilla",
-            "title": "IUCN Red List search for Gorilla beringei graueri",
+            "title": "IUCN Red List assessment for Gorilla beringei graueri",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Gorilla%20beringei%20graueri",
+            "url": "https://www.iucnredlist.org/species/39995/102328430",
+            "assessed": "2016-03-01",
+            "published": "2016",
             "accessed": "2026-11-20"
         },
         {
@@ -2667,39 +3046,51 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Fin Whale photo placeholder"
+        "src": "images/fin-whale.jpg",
+        "alt": "Fin whale surfacing and exhaling above blue water",
+        "credit": "Aqqa Rosing-Asvid - Visit Greenland · Finhval (1) (web adaptation)",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Finhval_(1).jpg"
     },
     "description": {
-        "text": "Fin Whale is associated with global temperate and polar seas.",
+        "text": "A large, fast-swimming baleen whale with an asymmetrically colored lower jaw.",
         "sources": [
-            "iucn-fin-whale"
+            "iucn-fin-whale",
+            "noaa-fin-whale"
         ]
     },
     "habitat": {
-        "text": "Global temperate and polar seas.",
+        "text": "Continental shelf and open-ocean waters, including productive high-latitude feeding areas.",
         "sources": [
-            "iucn-fin-whale"
+            "iucn-fin-whale",
+            "noaa-fin-whale"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Most oceans, with separate populations in the Northern and Southern hemispheres and the Mediterranean Sea.",
         "sources": [
-            "iucn-fin-whale"
+            "iucn-fin-whale",
+            "noaa-fin-whale"
         ]
     },
     "threats": [
         {
-            "text": "Ship strikes and fishing entanglement.",
+            "text": "Historical commercial whaling, and ongoing vessel strikes and entanglement in fishing gear.",
             "sources": [
-                "iucn-fin-whale"
+                "iucn-fin-whale",
+                "noaa-fin-whale"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Cycles marine nutrients.",
+        "text": "It filters krill, schooling fish and other small prey, linking these organisms to the larger marine food web.",
         "sources": [
-            "iucn-fin-whale"
+            "iucn-fin-whale",
+            "noaa-fin-whale"
         ]
     },
     "conservationMethods": [
@@ -2725,9 +3116,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-fin-whale",
-            "title": "IUCN Red List search for Balaenoptera physalus",
+            "title": "IUCN Red List assessment for Balaenoptera physalus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Balaenoptera%20physalus",
+            "url": "https://www.iucnredlist.org/species/2478/50349982",
+            "assessed": "2018-02-04",
+            "published": "2018",
             "accessed": "2026-11-20"
         },
         {
@@ -2735,6 +3128,13 @@ const ANIMALS = [
             "title": "Conservation",
             "publisher": "Pittsburgh Zoo & Aquarium",
             "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "noaa-fin-whale",
+            "title": "Fin Whale",
+            "publisher": "NOAA Fisheries",
+            "url": "https://www.fisheries.noaa.gov/species/fin-whale",
             "accessed": "2026-11-20"
         }
     ]
@@ -2752,37 +3152,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Giant Otter photo placeholder"
+        "src": "images/giant-otter.jpg",
+        "alt": "Two giant otters resting together on a riverbank",
+        "credit": "Charles J. Sharp · Giant otters (Pteronura brasiliensis) (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giant_otters_(Pteronura_brasiliensis).jpg"
     },
     "description": {
-        "text": "Giant Otter is associated with amazon basin rivers.",
+        "text": "A large, highly social South American otter that typically lives in family groups.",
         "sources": [
             "iucn-giant-otter"
         ]
     },
     "habitat": {
-        "text": "Amazon basin rivers.",
+        "text": "Freshwater rivers, creeks, lakes and seasonally flooded wetlands with banks suitable for dens.",
         "sources": [
             "iucn-giant-otter"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented populations in tropical South America east of the Andes, including the Amazon and Orinoco basins and the Pantanal.",
         "sources": [
             "iucn-giant-otter"
         ]
     },
     "threats": [
         {
-            "text": "Wetland degradation and persecution.",
+            "text": "Wetland degradation, mining pollution, and conflict with fisheries.",
             "sources": [
                 "iucn-giant-otter"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Predator of freshwater fish.",
+        "text": "Family groups forage for fish and are freshwater predators.",
         "sources": [
             "iucn-giant-otter"
         ]
@@ -2810,9 +3214,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-giant-otter",
-            "title": "IUCN Red List search for Pteronura brasiliensis",
+            "title": "IUCN Red List assessment for Pteronura brasiliensis",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Pteronura%20brasiliensis",
+            "url": "https://www.iucnredlist.org/species/18711/244867206",
+            "assessed": "2020-03-07",
+            "published": "2023",
             "accessed": "2026-11-20"
         },
         {
@@ -2837,39 +3243,51 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Green Sea Turtle photo placeholder"
+        "src": "images/green-sea-turtle.jpg",
+        "alt": "Green sea turtle seen from above swimming over the seabed",
+        "credit": "Charles J. Sharp · Green sea turtle (Chelonia mydas) Moorea (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_sea_turtle_(Chelonia_mydas)_Moorea.jpg"
     },
     "description": {
-        "text": "Green Sea Turtle is associated with tropical coastal waters.",
+        "text": "A large sea turtle whose adults frequently feed on seagrass and algae.",
         "sources": [
-            "iucn-green-sea-turtle"
+            "iucn-green-sea-turtle",
+            "noaa-green-turtle"
         ]
     },
     "habitat": {
-        "text": "Tropical coastal waters.",
+        "text": "Coastal seagrass beds and reefs used for foraging, sandy nesting beaches, and oceanic waters used by young turtles.",
         "sources": [
-            "iucn-green-sea-turtle"
+            "iucn-green-sea-turtle",
+            "noaa-green-turtle"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Tropical and subtropical seas around the world, with major nesting populations in the Atlantic, Indian and Pacific oceans.",
         "sources": [
-            "iucn-green-sea-turtle"
+            "iucn-green-sea-turtle",
+            "noaa-green-turtle"
         ]
     },
     "threats": [
         {
-            "text": "Bycatch and habitat degradation.",
+            "text": "Fishing bycatch, egg and turtle harvest, and degradation of nesting and foraging habitat.",
             "sources": [
-                "iucn-green-sea-turtle"
+                "iucn-green-sea-turtle",
+                "noaa-green-turtle"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Grazes seagrass beds.",
+        "text": "Adults graze seagrass and algae, linking these plants and algae to coastal food webs.",
         "sources": [
-            "iucn-green-sea-turtle"
+            "iucn-green-sea-turtle",
+            "noaa-green-turtle"
         ]
     },
     "conservationMethods": [
@@ -2895,9 +3313,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-green-sea-turtle",
-            "title": "IUCN Red List search for Chelonia mydas",
+            "title": "IUCN Red List assessment for Chelonia mydas",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Chelonia%20mydas",
+            "url": "https://www.iucnredlist.org/species/4615/285108125",
+            "assessed": "2024-12-09",
+            "published": "2025",
             "accessed": "2026-11-20"
         },
         {
@@ -2905,6 +3325,13 @@ const ANIMALS = [
             "title": "Conservation",
             "publisher": "Pittsburgh Zoo & Aquarium",
             "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "noaa-green-turtle",
+            "title": "Green Turtle",
+            "publisher": "NOAA Fisheries",
+            "url": "https://www.fisheries.noaa.gov/species/green-turtle",
             "accessed": "2026-11-20"
         }
     ]
@@ -2922,39 +3349,51 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Hector's Dolphin photo placeholder"
+        "src": "images/hector-s-dolphin.jpg",
+        "alt": "Two Hector’s dolphins swimming just below the surface",
+        "credit": "Avenue · Hector's Dolphins at Porpoise Bay 1999 a cropped (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hector%27s_Dolphins_at_Porpoise_Bay_1999_a_cropped.jpg"
     },
     "description": {
-        "text": "Hector's Dolphin is associated with new zealand coastal waters.",
+        "text": "A small New Zealand dolphin with a rounded dorsal fin. The species includes the Māui dolphin subspecies.",
         "sources": [
-            "iucn-hector-s-dolphin"
+            "iucn-hector-s-dolphin",
+            "doc-hectors-dolphin"
         ]
     },
     "habitat": {
-        "text": "New Zealand coastal waters.",
+        "text": "Shallow coastal and shelf waters, typically close to shore.",
         "sources": [
-            "iucn-hector-s-dolphin"
+            "iucn-hector-s-dolphin",
+            "doc-hectors-dolphin"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Endemic to New Zealand. Hector’s dolphins occur around the South Island, and Māui dolphins occur off the west coast of the North Island.",
         "sources": [
-            "iucn-hector-s-dolphin"
+            "iucn-hector-s-dolphin",
+            "doc-hectors-dolphin"
         ]
     },
     "threats": [
         {
-            "text": "Fishing net entanglement.",
+            "text": "Bycatch, especially in set nets and trawls, and disease such as toxoplasmosis.",
             "sources": [
-                "iucn-hector-s-dolphin"
+                "iucn-hector-s-dolphin",
+                "doc-hectors-dolphin"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Predator of fish and squid.",
+        "text": "It feeds on small fish and squid in coastal food webs.",
         "sources": [
-            "iucn-hector-s-dolphin"
+            "iucn-hector-s-dolphin",
+            "doc-hectors-dolphin"
         ]
     },
     "conservationMethods": [
@@ -2980,9 +3419,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-hector-s-dolphin",
-            "title": "IUCN Red List search for Cephalorhynchus hectori",
+            "title": "IUCN Red List assessment for Cephalorhynchus hectori",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Cephalorhynchus%20hectori",
+            "url": "https://www.iucnredlist.org/species/4162/44199757",
+            "assessed": "2008-07-01",
+            "published": "2013",
             "accessed": "2026-11-20"
         },
         {
@@ -2990,6 +3431,13 @@ const ANIMALS = [
             "title": "Conservation",
             "publisher": "Pittsburgh Zoo & Aquarium",
             "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "doc-hectors-dolphin",
+            "title": "Hector’s dolphin",
+            "publisher": "New Zealand Department of Conservation",
+            "url": "https://www.doc.govt.nz/nature/native-animals/marine-mammals/dolphins/hectors-dolphin/",
             "accessed": "2026-11-20"
         }
     ]
@@ -3007,37 +3455,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Indian Pangolin photo placeholder"
+        "src": "images/indian-pangolin.jpg",
+        "alt": "Indian pangolin walking with its head lowered and its scaled tail extended",
+        "credit": "Dushy Ranetunge · Scaly ant eater by Dushy Ranetunge 2 (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scaly_ant_eater_by_Dushy_Ranetunge_2.jpg"
     },
     "description": {
-        "text": "Indian Pangolin is associated with south asian forests and grasslands.",
+        "text": "A mostly nocturnal scaly mammal that digs for ants and termites.",
         "sources": [
             "iucn-indian-pangolin"
         ]
     },
     "habitat": {
-        "text": "South Asian forests and grasslands.",
+        "text": "Forests, scrub, grasslands and some cultivated areas where it can find shelter and prey.",
         "sources": [
             "iucn-indian-pangolin"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "South Asia, including India, Pakistan, Nepal and Sri Lanka.",
         "sources": [
             "iucn-indian-pangolin"
         ]
     },
     "threats": [
         {
-            "text": "Wildlife trafficking and habitat loss.",
+            "text": "Hunting and trafficking for meat and scales, and habitat loss.",
             "sources": [
                 "iucn-indian-pangolin"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Eats ants and termites.",
+        "text": "Its specialized diet links it to ant and termite communities.",
         "sources": [
             "iucn-indian-pangolin"
         ]
@@ -3065,9 +3517,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-indian-pangolin",
-            "title": "IUCN Red List search for Manis crassicaudata",
+            "title": "IUCN Red List assessment for Manis crassicaudata",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Manis%20crassicaudata",
+            "url": "https://www.iucnredlist.org/species/12761/123583998",
+            "assessed": "2019-05-10",
+            "published": "2019",
             "accessed": "2026-11-20"
         },
         {
@@ -3092,37 +3546,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Indus River Dolphin photo placeholder"
+        "src": "images/indus-river-dolphin.jpg",
+        "alt": "Back of an Indus river dolphin breaking the surface of the Beas River",
+        "credit": "Navdeepsood · Indus River Dolphin (Platanista gangetica minor) (web adaptation)",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Indus_River_Dolphin_(Platanista_gangetica_minor).jpg"
     },
     "description": {
-        "text": "Indus River Dolphin is associated with indus river basin.",
+        "text": "A freshwater dolphin with very poor vision that uses echolocation to find fish and other prey.",
         "sources": [
             "iucn-indus-river-dolphin"
         ]
     },
     "habitat": {
-        "text": "Indus River basin.",
+        "text": "Deep channels and pools in large, turbid rivers.",
         "sources": [
             "iucn-indus-river-dolphin"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "The Indus river system in Pakistan and the Beas River in India.",
         "sources": [
             "iucn-indus-river-dolphin"
         ]
     },
     "threats": [
         {
-            "text": "River barriers and entanglement.",
+            "text": "Barrages fragment its range, water withdrawals reduce flows, and dolphins can be caught in fishing gear or stranded in canals.",
             "sources": [
                 "iucn-indus-river-dolphin"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Riverine fish predator.",
+        "text": "It is a freshwater predator that feeds on fish and aquatic invertebrates.",
         "sources": [
             "iucn-indus-river-dolphin"
         ]
@@ -3150,9 +3608,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-indus-river-dolphin",
-            "title": "IUCN Red List search for Platanista minor",
+            "title": "IUCN Red List assessment for Platanista minor",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Platanista%20minor",
+            "url": "https://www.iucnredlist.org/species/41757/243168232",
+            "assessed": "2021-08-01",
+            "published": "2022",
             "accessed": "2026-11-20"
         },
         {
@@ -3177,37 +3637,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Jaguar photo placeholder"
+        "src": "images/jaguar.jpg",
+        "alt": "Jaguar with dark rosettes standing on a log",
+        "credit": "USFWS · Standing jaguar (web adaptation)",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FWS",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Standing_jaguar.jpg"
     },
     "description": {
-        "text": "Jaguar is associated with american forests and wetlands.",
+        "text": "The largest cat in the Americas, with a powerful build and a rosette-patterned coat.",
         "sources": [
             "iucn-jaguar"
         ]
     },
     "habitat": {
-        "text": "American forests and wetlands.",
+        "text": "Tropical and subtropical forests, wetlands, scrub and other habitats with prey and cover.",
         "sources": [
             "iucn-jaguar"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Patchily from Mexico through Central America and much of tropical South America to northern Argentina, with occasional records in the southwestern United States.",
         "sources": [
             "iucn-jaguar"
         ]
     },
     "threats": [
         {
-            "text": "Deforestation and persecution.",
+            "text": "Habitat conversion and fragmentation, prey depletion, and retaliatory killing.",
             "sources": [
                 "iucn-jaguar"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Top predator.",
+        "text": "It hunts a wide range of prey, including mammals and reptiles, and is an apex predator.",
         "sources": [
             "iucn-jaguar"
         ]
@@ -3235,9 +3702,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-jaguar",
-            "title": "IUCN Red List search for Panthera onca",
+            "title": "IUCN Red List assessment for Panthera onca",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Panthera%20onca",
+            "url": "https://www.iucnredlist.org/species/15953/123791436",
+            "assessed": "2016-08-05",
+            "published": "2017",
             "accessed": "2026-11-20"
         },
         {
@@ -3256,43 +3725,50 @@ const ANIMALS = [
     "status": {
         "code": "EN",
         "label": "Endangered",
-        "authority": "IUCN Red List",
+        "authority": "IUCN Red List subspecies",
         "sources": [
             "iucn-mountain-gorilla"
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Mountain Gorilla photo placeholder"
+        "src": "images/mountain-gorilla.jpg",
+        "alt": "Adult male mountain gorilla sitting among leafy plants",
+        "credit": "Dave Proffer (d_proffer) · Susa group, mountain gorilla (web adaptation)",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Susa_group,_mountain_gorilla.jpg"
     },
     "description": {
-        "text": "Mountain Gorilla is associated with central african montane forests.",
+        "text": "A montane subspecies of the eastern gorilla with two geographically separate populations.",
         "sources": [
             "iucn-mountain-gorilla"
         ]
     },
     "habitat": {
-        "text": "Central African montane forests.",
+        "text": "High-elevation forest, including bamboo and montane vegetation.",
         "sources": [
             "iucn-mountain-gorilla"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "The Virunga Massif across Rwanda, Uganda and the Democratic Republic of the Congo, and the Bwindi–Sarambwe area of Uganda and the Democratic Republic of the Congo.",
         "sources": [
             "iucn-mountain-gorilla"
         ]
     },
     "threats": [
         {
-            "text": "Disease and human disturbance.",
+            "text": "Disease, snares, habitat pressure and regional insecurity.",
             "sources": [
                 "iucn-mountain-gorilla"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses seeds.",
+        "text": "It feeds largely on herbaceous plants and also eats fruit where available.",
         "sources": [
             "iucn-mountain-gorilla"
         ]
@@ -3320,9 +3796,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-mountain-gorilla",
-            "title": "IUCN Red List search for Gorilla beringei beringei",
+            "title": "IUCN Red List assessment for Gorilla beringei beringei",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Gorilla%20beringei%20beringei",
+            "url": "https://www.iucnredlist.org/species/39999/176396749",
+            "assessed": "2018-07-31",
+            "published": "2020",
             "accessed": "2026-11-20"
         },
         {
@@ -3347,39 +3825,51 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "North Atlantic Right Whale photo placeholder"
+        "src": "images/north-atlantic-right-whale.jpg",
+        "alt": "Two North Atlantic right whales seen from above",
+        "credit": "National Marine Sanctuaries · GRNMS - Right Whales (31361234602) (web adaptation)",
+        "license": "Public domain",
+        "licenseUrl": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NOAA",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:GRNMS_-_Right_Whales_(31361234602).jpg"
     },
     "description": {
-        "text": "North Atlantic Right Whale is associated with north atlantic ocean.",
+        "text": "A baleen whale that filters zooplankton and is recognizable by callosities on its head.",
         "sources": [
-            "iucn-north-atlantic-right-whale"
+            "iucn-north-atlantic-right-whale",
+            "noaa-right-whale"
         ]
     },
     "habitat": {
-        "text": "North Atlantic Ocean.",
+        "text": "Coastal and shelf waters where zooplankton concentrate, with migrations between feeding and calving areas.",
         "sources": [
-            "iucn-north-atlantic-right-whale"
+            "iucn-north-atlantic-right-whale",
+            "noaa-right-whale"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Mainly the western North Atlantic, from Canadian and northeastern U.S. feeding waters to calving waters off the southeastern United States.",
         "sources": [
-            "iucn-north-atlantic-right-whale"
+            "iucn-north-atlantic-right-whale",
+            "noaa-right-whale"
         ]
     },
     "threats": [
         {
-            "text": "Ship strikes and fishing entanglement.",
+            "text": "Fishing-gear entanglement and vessel strikes, with changing prey distribution affecting habitat use.",
             "sources": [
-                "iucn-north-atlantic-right-whale"
+                "iucn-north-atlantic-right-whale",
+                "noaa-right-whale"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Marine nutrient cycling.",
+        "text": "It consumes dense patches of copepods and other zooplankton in the North Atlantic food web.",
         "sources": [
-            "iucn-north-atlantic-right-whale"
+            "iucn-north-atlantic-right-whale",
+            "noaa-right-whale"
         ]
     },
     "conservationMethods": [
@@ -3405,9 +3895,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-north-atlantic-right-whale",
-            "title": "IUCN Red List search for Eubalaena glacialis",
+            "title": "IUCN Red List assessment for Eubalaena glacialis",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Eubalaena%20glacialis",
+            "url": "https://www.iucnredlist.org/species/41712/178589687",
+            "assessed": "2020-01-01",
+            "published": "2020",
             "accessed": "2026-11-20"
         },
         {
@@ -3415,6 +3907,13 @@ const ANIMALS = [
             "title": "Conservation",
             "publisher": "Pittsburgh Zoo & Aquarium",
             "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "noaa-right-whale",
+            "title": "North Atlantic Right Whale",
+            "publisher": "NOAA Fisheries",
+            "url": "https://www.fisheries.noaa.gov/species/north-atlantic-right-whale",
             "accessed": "2026-11-20"
         }
     ]
@@ -3432,37 +3931,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Southern Rockhopper Penguin photo placeholder"
+        "src": "images/southern-rockhopper-penguin.jpg",
+        "alt": "Southern rockhopper penguin with a yellow crest standing on rocky ground",
+        "credit": "Liam Quinn from Canada · Rockhopper Penguin on Saunders Island (5586446214) (web adaptation)",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rockhopper_Penguin_on_Saunders_Island_(5586446214).jpg"
     },
     "description": {
-        "text": "Southern Rockhopper Penguin is associated with subantarctic islands.",
+        "text": "A small crested penguin that moves over rocky shores with short hops.",
         "sources": [
             "iucn-southern-rockhopper-penguin"
         ]
     },
     "habitat": {
-        "text": "Subantarctic islands.",
+        "text": "Rocky island breeding colonies and surrounding marine waters used for feeding.",
         "sources": [
             "iucn-southern-rockhopper-penguin"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Southern South America and islands in the South Atlantic, including the Falkland Islands, with other breeding populations on southern Indian and Pacific islands under the IUCN taxon scope.",
         "sources": [
             "iucn-southern-rockhopper-penguin"
         ]
     },
     "threats": [
         {
-            "text": "Climate change and fishing pressure.",
+            "text": "Changes in marine conditions and prey availability, fisheries interactions, and invasive predators at some colonies.",
             "sources": [
                 "iucn-southern-rockhopper-penguin"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Transfers marine nutrients to land.",
+        "text": "It feeds on crustaceans, fish and squid and is prey for some larger marine animals.",
         "sources": [
             "iucn-southern-rockhopper-penguin"
         ]
@@ -3490,9 +3996,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-southern-rockhopper-penguin",
-            "title": "IUCN Red List search for Eudyptes chrysocome",
+            "title": "IUCN Red List assessment for Eudyptes chrysocome",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Eudyptes%20chrysocome",
+            "url": "https://www.iucnredlist.org/species/22735250/182762377",
+            "assessed": "2020-08-24",
+            "published": "2020",
             "accessed": "2026-11-20"
         },
         {
@@ -3511,43 +4019,50 @@ const ANIMALS = [
     "status": {
         "code": "CR",
         "label": "Critically Endangered",
-        "authority": "IUCN Red List",
+        "authority": "IUCN Red List subspecies",
         "sources": [
             "iucn-sumatran-elephant"
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Sumatran Elephant photo placeholder"
+        "src": "images/sumatran-elephant.jpg",
+        "alt": "Sumatran elephant standing in shallow water in Aceh",
+        "credit": "Léodras · Elephant Sumatra ProfilG (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elephant_Sumatra_ProfilG.jpg"
     },
     "description": {
-        "text": "Sumatran Elephant is associated with sumatra lowland forests.",
+        "text": "The Asian elephant subspecies native to Sumatra.",
         "sources": [
             "iucn-sumatran-elephant"
         ]
     },
     "habitat": {
-        "text": "Sumatra lowland forests.",
+        "text": "Tropical lowland forests and nearby mosaics of forest and open vegetation.",
         "sources": [
             "iucn-sumatran-elephant"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented populations on Sumatra, Indonesia.",
         "sources": [
             "iucn-sumatran-elephant"
         ]
     },
     "threats": [
         {
-            "text": "Deforestation and human conflict.",
+            "text": "Forest conversion and fragmentation, conflict with people, and poaching.",
             "sources": [
                 "iucn-sumatran-elephant"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Forest seed disperser.",
+        "text": "It browses and grazes in lowland forests. Like other Asian elephants, it can move seeds as it travels and feeds.",
         "sources": [
             "iucn-sumatran-elephant"
         ]
@@ -3575,9 +4090,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-sumatran-elephant",
-            "title": "IUCN Red List search for Elephas maximus sumatranus",
+            "title": "IUCN Red List assessment for Elephas maximus sumatranus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Elephas%20maximus%20sumatranus",
+            "url": "https://www.iucnredlist.org/species/199856/9129626",
+            "assessed": "2011-08-01",
+            "published": "2011",
             "accessed": "2026-11-20"
         },
         {
@@ -3602,40 +4119,43 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Black rhinoceros; licensed photograph pending"
+        "src": "images/black-rhinoceros.jpg",
+        "alt": "Black rhinoceros standing in profile with its two horns visible",
+        "credit": "AfricanConservation · Black Rhino at Working with Wildlife (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_Rhino_at_Working_with_Wildlife.jpg"
     },
     "description": {
-        "text": "The black rhinoceros is a large browsing mammal native to parts of eastern and southern Africa.",
+        "text": "An African rhinoceros with a pointed upper lip adapted to browsing woody plants.",
         "sources": [
-            "iucn-black-rhino",
-            "wwf-black-rhino"
+            "iucn-black-rhino"
         ]
     },
     "habitat": {
-        "text": "African savannas, shrublands and arid habitats.",
+        "text": "Savanna, shrubland, woodland and some arid habitats.",
         "sources": [
             "iucn-black-rhino"
         ]
     },
     "range": {
-        "text": "Native to parts of eastern and southern Africa; consult the IUCN assessment for the current country-level range.",
+        "text": "Scattered populations in eastern and southern Africa, including Kenya, Tanzania, Namibia, Zimbabwe and South Africa.",
         "sources": [
             "iucn-black-rhino"
         ]
     },
     "threats": [
         {
-            "text": "Poaching for illegal horn trade and habitat pressure threaten black rhinoceros populations.",
+            "text": "Poaching for horn and small, isolated populations, with habitat loss in parts of the range.",
             "sources": [
-                "wwf-black-rhino"
+                "iucn-black-rhino"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "As a large browser, the black rhinoceros influences woody vegetation; protecting its habitat also benefits other wildlife.",
+        "text": "It browses woody vegetation and forms part of savanna and shrubland food webs.",
         "sources": [
-            "wwf-black-rhino"
+            "iucn-black-rhino"
         ]
     },
     "conservationMethods": [
@@ -3661,9 +4181,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-black-rhino",
-            "title": "Diceros bicornis, IUCN Red List assessment",
-            "publisher": "IUCN",
-            "url": "https://doi.org/10.2305/IUCN.UK.2020-1.RLTS.T6557A152728945.en",
+            "title": "IUCN Red List assessment for Diceros bicornis",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/species/6557/152728945",
+            "assessed": "2020-01-14",
+            "published": "2020",
             "accessed": "2026-11-20"
         },
         {
@@ -3695,37 +4217,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Tiger Shark photo placeholder"
+        "src": "images/tiger-shark.jpg",
+        "alt": "Tiger shark swimming over the sandy seabed",
+        "credit": "Albert kok · Tiger shark (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tiger_shark.jpg"
     },
     "description": {
-        "text": "Tiger Shark is associated with warm oceans.",
+        "text": "A large shark named for the dark stripes that are most prominent on younger individuals.",
         "sources": [
             "iucn-tiger-shark"
         ]
     },
     "habitat": {
-        "text": "Warm oceans.",
+        "text": "Coastal and offshore marine waters, from shallow reefs and bays to open ocean.",
         "sources": [
             "iucn-tiger-shark"
+        ],
+        "filters": [
+            "marine"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Circumglobal in tropical, subtropical and some warm-temperate seas.",
         "sources": [
             "iucn-tiger-shark"
         ]
     },
     "threats": [
         {
-            "text": "Fishing pressure and bycatch.",
+            "text": "Targeted capture and bycatch in commercial fisheries, and capture in some shark-control programs.",
             "sources": [
                 "iucn-tiger-shark"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Marine apex predator.",
+        "text": "It eats a broad range of prey, including fish and sea turtles, and also scavenges.",
         "sources": [
             "iucn-tiger-shark"
         ]
@@ -3753,9 +4282,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-tiger-shark",
-            "title": "IUCN Red List search for Galeocerdo cuvier",
+            "title": "IUCN Red List assessment for Galeocerdo cuvier",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Galeocerdo%20cuvier",
+            "url": "https://www.iucnredlist.org/species/39378/2913541",
+            "assessed": "2018-08-10",
+            "published": "2019",
             "accessed": "2026-11-20"
         },
         {
@@ -3780,37 +4311,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "African Lion photo placeholder"
+        "src": "images/african-lion.jpg",
+        "alt": "Male lion with a dark mane resting on a rock in the Serengeti",
+        "credit": "© Giles Laurent, gileslaurent.com, License CC BY-SA · 020 The lion king Snyggve in the Serengeti National Park Photo by Giles Laurent (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg"
     },
     "description": {
-        "text": "African Lion is associated with african savannas.",
+        "text": "A social big cat that typically lives in prides. The global assessment also covers the Asian population.",
         "sources": [
             "iucn-african-lion"
         ]
     },
     "habitat": {
-        "text": "African savannas.",
+        "text": "Savanna, grassland, open woodland and scrub, including some semi-arid landscapes.",
         "sources": [
             "iucn-african-lion"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented range in sub-Saharan Africa. The species also survives in and around India’s Gir landscape.",
         "sources": [
             "iucn-african-lion"
         ]
     },
     "threats": [
         {
-            "text": "Conflict with people and prey decline.",
+            "text": "Prey depletion, habitat loss and fragmentation, and killing in conflict with people.",
             "sources": [
                 "iucn-african-lion"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Top predator.",
+        "text": "Lions are large predators of ungulates and leave carcasses that scavengers can use.",
         "sources": [
             "iucn-african-lion"
         ]
@@ -3838,9 +4373,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-african-lion",
-            "title": "IUCN Red List search for Panthera leo",
+            "title": "IUCN Red List assessment for Panthera leo",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Panthera%20leo",
+            "url": "https://www.iucnredlist.org/species/15951/280792135",
+            "assessed": "2025-05-06",
+            "published": "2025",
             "accessed": "2026-11-20"
         },
         {
@@ -3865,37 +4402,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Cheetah photo placeholder"
+        "src": "images/cheetah.jpg",
+        "alt": "Spotted cheetah standing on a low mound",
+        "credit": "AfricanConservation · Male cheetah facing left in South Africa (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Male_cheetah_facing_left_in_South_Africa.jpg"
     },
     "description": {
-        "text": "Cheetah is associated with african open plains.",
+        "text": "A long-legged cat specialized for short, high-speed pursuits.",
         "sources": [
             "iucn-cheetah"
         ]
     },
     "habitat": {
-        "text": "African open plains.",
+        "text": "Grasslands, savannas, dry shrublands and other open habitats with prey and cover.",
         "sources": [
             "iucn-cheetah"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Scattered populations mainly in eastern and southern Africa, with smaller populations elsewhere in Africa and a remnant in Iran.",
         "sources": [
             "iucn-cheetah"
         ]
     },
     "threats": [
         {
-            "text": "Habitat loss and human conflict.",
+            "text": "Habitat loss and fragmentation, prey depletion, conflict with people, and illegal trade.",
             "sources": [
                 "iucn-cheetah"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Predator of medium-sized herbivores.",
+        "text": "It hunts mostly small to medium-sized ungulates and is part of open-country predator communities.",
         "sources": [
             "iucn-cheetah"
         ]
@@ -3923,9 +4464,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-cheetah",
-            "title": "IUCN Red List search for Acinonyx jubatus",
+            "title": "IUCN Red List assessment for Acinonyx jubatus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Acinonyx%20jubatus",
+            "url": "https://www.iucnredlist.org/species/219/259025524",
+            "assessed": "2021-05-17",
+            "published": "2024",
             "accessed": "2026-11-20"
         },
         {
@@ -3950,37 +4493,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Clouded Leopard photo placeholder"
+        "src": "images/clouded-leopard.jpg",
+        "alt": "Clouded leopard looking out from dense forest vegetation",
+        "credit": "Rushenb · Neofelis nebulosa, Clouded leopard (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Neofelis_nebulosa,_Clouded_leopard.jpg"
     },
     "description": {
-        "text": "Clouded Leopard is associated with southeast asian forests.",
+        "text": "A forest cat named for its large cloud-shaped markings and adapted for climbing.",
         "sources": [
             "iucn-clouded-leopard"
         ]
     },
     "habitat": {
-        "text": "Southeast Asian forests.",
+        "text": "Tropical and subtropical forests, including evergreen forest and some secondary forest.",
         "sources": [
             "iucn-clouded-leopard"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "From the Himalayan foothills and southern China through mainland Southeast Asia to Peninsular Malaysia.",
         "sources": [
             "iucn-clouded-leopard"
         ]
     },
     "threats": [
         {
-            "text": "Deforestation and poaching.",
+            "text": "Deforestation, forest fragmentation, and hunting or snaring, including for trade.",
             "sources": [
                 "iucn-clouded-leopard"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Forest predator.",
+        "text": "It preys on forest animals including small to medium-sized mammals.",
         "sources": [
             "iucn-clouded-leopard"
         ]
@@ -4008,9 +4558,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-clouded-leopard",
-            "title": "IUCN Red List search for Neofelis nebulosa",
+            "title": "IUCN Red List assessment for Neofelis nebulosa",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Neofelis%20nebulosa",
+            "url": "https://www.iucnredlist.org/species/14519/198843258",
+            "assessed": "2020-11-01",
+            "published": "2021",
             "accessed": "2026-11-20"
         },
         {
@@ -4035,37 +4587,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Dhole photo placeholder"
+        "src": "images/dhole.jpg",
+        "alt": "Reddish dhole standing in grass",
+        "credit": "Davidvraju · Dhole (Asiatic wild dog) cropped (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dhole_(Asiatic_wild_dog)_cropped.jpg"
     },
     "description": {
-        "text": "Dhole is associated with asian forests.",
+        "text": "An Asian wild canid that usually hunts in packs.",
         "sources": [
             "iucn-dhole"
         ]
     },
     "habitat": {
-        "text": "Asian forests.",
+        "text": "Forest, scrub and grassland mosaics with sufficient wild prey.",
         "sources": [
             "iucn-dhole"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented range in South, Southeast and parts of East Asia, with strongholds in India and parts of mainland Southeast Asia.",
         "sources": [
             "iucn-dhole"
         ]
     },
     "threats": [
         {
-            "text": "Prey loss and persecution.",
+            "text": "Declining wild prey, habitat loss, persecution and disease from domestic dogs.",
             "sources": [
                 "iucn-dhole"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Social pack predator.",
+        "text": "Packs hunt deer and other ungulates.",
         "sources": [
             "iucn-dhole"
         ]
@@ -4093,9 +4652,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-dhole",
-            "title": "IUCN Red List search for Cuon alpinus",
+            "title": "IUCN Red List assessment for Cuon alpinus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Cuon%20alpinus",
+            "url": "https://www.iucnredlist.org/species/5953/72477893",
+            "assessed": "2015-05-07",
+            "published": "2015",
             "accessed": "2026-11-20"
         },
         {
@@ -4120,37 +4681,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Gharial photo placeholder"
+        "src": "images/gharial.jpg",
+        "alt": "Male gharial with its long snout above the Chambal River",
+        "credit": "Charles J. Sharp · Gharial (Gavialis gangeticus) male (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gharial_(Gavialis_gangeticus)_male.jpg"
     },
     "description": {
-        "text": "Gharial is associated with northern indian subcontinent rivers.",
+        "text": "A long-snouted crocodilian that feeds mainly on fish.",
         "sources": [
             "iucn-gharial"
         ]
     },
     "habitat": {
-        "text": "Northern Indian subcontinent rivers.",
+        "text": "Deep freshwater river channels with open sandbanks used for basking and nesting.",
         "sources": [
             "iucn-gharial"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "A few river systems in India and Nepal, including the Chambal and tributaries in the Ganges system.",
         "sources": [
             "iucn-gharial"
         ]
     },
     "threats": [
         {
-            "text": "Fishing nets and river alteration.",
+            "text": "Fishing-net entanglement, dams and water extraction, and loss of nesting sandbanks to disturbance and mining.",
             "sources": [
                 "iucn-gharial"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Fish-eating river predator.",
+        "text": "Its fish-based diet makes it a specialist river predator.",
         "sources": [
             "iucn-gharial"
         ]
@@ -4178,9 +4743,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-gharial",
-            "title": "IUCN Red List search for Gavialis gangeticus",
+            "title": "IUCN Red List assessment for Gavialis gangeticus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Gavialis%20gangeticus",
+            "url": "https://www.iucnredlist.org/species/8966/149227430",
+            "assessed": "2017-12-30",
+            "published": "2019",
             "accessed": "2026-11-20"
         },
         {
@@ -4205,37 +4772,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Golden Lion Tamarin photo placeholder"
+        "src": "images/golden-lion-tamarin.jpg",
+        "alt": "Golden lion tamarin crouching on a branch, with its long tail hanging down",
+        "credit": "Daderot · Leontopithecus rosalia - Copenhagen Zoo - DSC09082 (web adaptation)",
+        "license": "CC0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leontopithecus_rosalia_-_Copenhagen_Zoo_-_DSC09082.JPG"
     },
     "description": {
-        "text": "Golden Lion Tamarin is associated with brazilian atlantic forest.",
+        "text": "A small Brazilian primate with a golden-orange mane that lives in family groups.",
         "sources": [
             "iucn-golden-lion-tamarin"
         ]
     },
     "habitat": {
-        "text": "Brazilian Atlantic forest.",
+        "text": "Lowland Atlantic Forest, where it uses tree cavities and dense vegetation.",
         "sources": [
             "iucn-golden-lion-tamarin"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "A small portion of the Atlantic Forest in Rio de Janeiro state, Brazil.",
         "sources": [
             "iucn-golden-lion-tamarin"
         ]
     },
     "threats": [
         {
-            "text": "Forest fragmentation.",
+            "text": "Forest loss and fragmentation, with disease outbreaks also affecting small populations.",
             "sources": [
                 "iucn-golden-lion-tamarin"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses seeds.",
+        "text": "It eats fruit and can disperse seeds while moving through the forest.",
         "sources": [
             "iucn-golden-lion-tamarin"
         ]
@@ -4263,9 +4837,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-golden-lion-tamarin",
-            "title": "IUCN Red List search for Leontopithecus rosalia",
+            "title": "IUCN Red List assessment for Leontopithecus rosalia",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Leontopithecus%20rosalia",
+            "url": "https://www.iucnredlist.org/species/11506/192327291",
+            "assessed": "2015-01-26",
+            "published": "2021",
             "accessed": "2026-11-20"
         },
         {
@@ -4290,37 +4866,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Greater One-Horned Rhinoceros photo placeholder"
+        "src": "images/greater-one-horned-rhinoceros.jpg",
+        "alt": "Greater one-horned rhinoceros with folded skin standing on grass",
+        "credit": "Mayank1704 · Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Great-Indian-one-horned-rhinoceros-at-Kaziranga-national-park-in-Assam-India.jpg"
     },
     "description": {
-        "text": "Greater One-Horned Rhinoceros is associated with northern indian and nepalese grasslands.",
+        "text": "A heavily built Asian rhinoceros with one horn and prominent folds of skin.",
         "sources": [
             "iucn-greater-one-horned-rhinoceros"
         ]
     },
     "habitat": {
-        "text": "Northern Indian and Nepalese grasslands.",
+        "text": "Alluvial floodplain grasslands, marshes, and riverine woodland.",
         "sources": [
             "iucn-greater-one-horned-rhinoceros"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Protected areas and adjoining landscapes in northern India and southern Nepal, including Assam and the Terai.",
         "sources": [
             "iucn-greater-one-horned-rhinoceros"
         ]
     },
     "threats": [
         {
-            "text": "Poaching and habitat loss.",
+            "text": "Poaching and the loss or degradation of floodplain habitat, including invasive plants at some sites.",
             "sources": [
                 "iucn-greater-one-horned-rhinoceros"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Large grazing herbivore.",
+        "text": "It grazes floodplain grasses and also browses leaves and other plants.",
         "sources": [
             "iucn-greater-one-horned-rhinoceros"
         ]
@@ -4348,9 +4928,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-greater-one-horned-rhinoceros",
-            "title": "IUCN Red List search for Rhinoceros unicornis",
+            "title": "IUCN Red List assessment for Rhinoceros unicornis",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Rhinoceros%20unicornis",
+            "url": "https://www.iucnredlist.org/species/19496/18494149",
+            "assessed": "2018-12-06",
+            "published": "2019",
             "accessed": "2026-11-20"
         },
         {
@@ -4375,37 +4957,41 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Hippopotamus photo placeholder"
+        "src": "images/hippopotamus.jpg",
+        "alt": "Common hippopotamus standing in shallow water",
+        "credit": "Muhammad Mahdi Karim · Portrait Hippopotamus in the water (web adaptation)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portrait_Hippopotamus_in_the_water.jpg"
     },
     "description": {
-        "text": "Hippopotamus is associated with sub-saharan african rivers.",
+        "text": "A large semi-aquatic mammal that commonly rests in water by day and grazes on land at night.",
         "sources": [
             "iucn-hippopotamus"
         ]
     },
     "habitat": {
-        "text": "Sub-Saharan African rivers.",
+        "text": "Rivers, lakes and wetlands with adjacent terrestrial grazing areas.",
         "sources": [
             "iucn-hippopotamus"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Patchily across sub-Saharan Africa, with major populations in eastern and southern Africa.",
         "sources": [
             "iucn-hippopotamus"
         ]
     },
     "threats": [
         {
-            "text": "Habitat loss and hunting.",
+            "text": "Habitat loss and alteration, and hunting for meat and ivory.",
             "sources": [
                 "iucn-hippopotamus"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Transfers nutrients between land and water.",
+        "text": "It consumes grass on land and transfers organic matter to rivers and lakes through dung.",
         "sources": [
             "iucn-hippopotamus"
         ]
@@ -4433,9 +5019,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-hippopotamus",
-            "title": "IUCN Red List search for Hippopotamus amphibius",
+            "title": "IUCN Red List assessment for Hippopotamus amphibius",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Hippopotamus%20amphibius",
+            "url": "https://www.iucnredlist.org/species/10103/18567364",
+            "assessed": "2016-06-16",
+            "published": "2017",
             "accessed": "2026-11-20"
         },
         {
@@ -4460,37 +5048,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Malayan Tapir photo placeholder"
+        "src": "images/malayan-tapir.jpg",
+        "alt": "Black-and-white Malayan tapir walking with its head lowered",
+        "credit": "Rufus46 · Schabrackentapir Tapirus indicus Tiergarten-Nuernberg-1 (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schabrackentapir_Tapirus_indicus_Tiergarten-Nuernberg-1.jpg"
     },
     "description": {
-        "text": "Malayan Tapir is associated with southeast asian rainforests.",
+        "text": "A large forest mammal with a black-and-white coat and a short, flexible snout.",
         "sources": [
             "iucn-malayan-tapir"
         ]
     },
     "habitat": {
-        "text": "Southeast Asian rainforests.",
+        "text": "Tropical rainforest, including primary and some secondary lowland and hill forest.",
         "sources": [
             "iucn-malayan-tapir"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Sumatra and parts of mainland Southeast Asia, primarily the Malay Peninsula, Thailand and southern Myanmar.",
         "sources": [
             "iucn-malayan-tapir"
         ]
     },
     "threats": [
         {
-            "text": "Forest conversion.",
+            "text": "Forest conversion and fragmentation, hunting and incidental snaring.",
             "sources": [
                 "iucn-malayan-tapir"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Disperses large seeds.",
+        "text": "As a forest browser it consumes leaves, shoots and fruit, sometimes breaking branches to reach foliage.",
         "sources": [
             "iucn-malayan-tapir"
         ]
@@ -4518,9 +5113,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-malayan-tapir",
-            "title": "IUCN Red List search for Tapirus indicus",
+            "title": "IUCN Red List assessment for Tapirus indicus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Tapirus%20indicus",
+            "url": "https://www.iucnredlist.org/species/21472/45173636",
+            "assessed": "2014-11-17",
+            "published": "2016",
             "accessed": "2026-11-20"
         },
         {
@@ -4537,47 +5134,58 @@ const ANIMALS = [
     "commonName": "Monarch Butterfly",
     "scientificName": "Danaus plexippus",
     "status": {
-        "code": "EN",
-        "label": "Endangered",
-        "authority": "IUCN Red List",
+        "code": "LC",
+        "label": "Least Concern",
+        "authority": "IUCN Red List global species",
         "sources": [
-            "iucn-monarch-butterfly"
-        ]
+            "iucn-monarch-butterfly",
+            "iucn-migratory-monarch"
+        ],
+        "note": "The global species assessment is Least Concern. The North American migratory subspecies has a separate IUCN assessment."
     },
     "image": {
-        "src": null,
-        "alt": "Monarch Butterfly photo placeholder"
+        "src": "images/monarch-butterfly.jpg",
+        "alt": "Monarch butterfly with orange-and-black wings spread among flowers",
+        "credit": "Kenneth Dwain Harrelson · Monarch In May (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Monarch_In_May.jpg"
     },
     "description": {
-        "text": "Monarch Butterfly is associated with north american grasslands and migration corridors.",
+        "text": "An orange-and-black butterfly whose caterpillars feed on milkweeds. Some North American populations migrate long distances.",
         "sources": [
-            "iucn-monarch-butterfly"
+            "iucn-monarch-butterfly",
+            "fws-monarch"
         ]
     },
     "habitat": {
-        "text": "North American grasslands and migration corridors.",
+        "text": "Open habitats with larval host plants and nectar sources, and wooded overwintering sites for migratory populations.",
         "sources": [
-            "iucn-monarch-butterfly"
+            "iucn-monarch-butterfly",
+            "fws-monarch"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Native from southern Canada to northern South America and the Caribbean, with established breeding populations elsewhere, including Australia, New Zealand and some oceanic islands.",
         "sources": [
-            "iucn-monarch-butterfly"
+            "iucn-monarch-butterfly",
+            "fws-monarch"
         ]
     },
     "threats": [
         {
-            "text": "Milkweed loss and climate pressures.",
+            "text": "In North America, loss of milkweed and nectar habitat, pesticide exposure, and drought and severe weather threaten migratory populations.",
             "sources": [
-                "iucn-monarch-butterfly"
+                "iucn-monarch-butterfly",
+                "fws-monarch"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Pollinator.",
+        "text": "Caterpillars eat milkweed and adults visit nectar-producing flowers, where they can transfer pollen.",
         "sources": [
-            "iucn-monarch-butterfly"
+            "iucn-monarch-butterfly",
+            "fws-monarch"
         ]
     },
     "conservationMethods": [
@@ -4591,21 +5199,23 @@ const ANIMALS = [
     "population": null,
     "localActions": [
         {
-            "title": "Pittsburgh conservation participation",
-            "text": "Learn about wildlife conservation through Pittsburgh Zoo & Aquarium. This is general education, not a species-specific local rescue activity.",
-            "url": "https://www.pittsburghzoo.org/conservation/",
-            "label": "Pittsburgh Zoo & Aquarium",
+            "title": "Plant for monarchs in Pittsburgh",
+            "text": "Plant regionally native milkweed for caterpillars and native nectar flowers for adults. Choose plants suited to your site and avoid insecticide use on them.",
+            "url": "https://www.fws.gov/species/monarch-danaus-plexippus",
+            "label": "U.S. Fish and Wildlife Service monarch guidance",
             "sources": [
-                "pgh-zoo"
+                "fws-monarch"
             ]
         }
     ],
     "sources": [
         {
             "id": "iucn-monarch-butterfly",
-            "title": "IUCN Red List search for Danaus plexippus",
+            "title": "IUCN Red List assessment for Danaus plexippus",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Danaus%20plexippus",
+            "url": "https://www.iucnredlist.org/species/159971/219149911",
+            "assessed": "2021-08-19",
+            "published": "2022",
             "accessed": "2026-11-20"
         },
         {
@@ -4613,6 +5223,22 @@ const ANIMALS = [
             "title": "Conservation",
             "publisher": "Pittsburgh Zoo & Aquarium",
             "url": "https://www.pittsburghzoo.org/conservation/",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "fws-monarch",
+            "title": "Monarch",
+            "publisher": "U.S. Fish and Wildlife Service",
+            "url": "https://www.fws.gov/species/monarch-danaus-plexippus",
+            "accessed": "2026-11-20"
+        },
+        {
+            "id": "iucn-migratory-monarch",
+            "title": "IUCN Red List assessment for Danaus plexippus plexippus",
+            "publisher": "IUCN Red List",
+            "url": "https://www.iucnredlist.org/species/194052138/246096271",
+            "assessed": "2023-09-27",
+            "published": "2023",
             "accessed": "2026-11-20"
         }
     ]
@@ -4630,37 +5256,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Okapi photo placeholder"
+        "src": "images/okapi.jpg",
+        "alt": "Okapi standing on grass with its striped legs visible",
+        "credit": "Daniel Jolivet · Saint-Aignan (Loir-et-Cher). Okapi (web adaptation)",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint-Aignan_(Loir-et-Cher)._Okapi.jpg"
     },
     "description": {
-        "text": "Okapi is associated with congo rainforests.",
+        "text": "A forest-dwelling relative of the giraffe with striped legs and a long tongue used to browse foliage.",
         "sources": [
             "iucn-okapi"
         ]
     },
     "habitat": {
-        "text": "Congo rainforests.",
+        "text": "Dense tropical forest, generally with understory vegetation and access to forest gaps and streams.",
         "sources": [
             "iucn-okapi"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Endemic to the Democratic Republic of the Congo, primarily in northern and northeastern forests, including the Ituri Forest.",
         "sources": [
             "iucn-okapi"
         ]
     },
     "threats": [
         {
-            "text": "Forest loss and hunting.",
+            "text": "Hunting, forest loss and degradation, mining, and insecurity that restricts conservation work.",
             "sources": [
                 "iucn-okapi"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Forest browsing herbivore.",
+        "text": "It browses leaves, shoots and other understory plants in the Congo rainforest.",
         "sources": [
             "iucn-okapi"
         ]
@@ -4688,9 +5321,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-okapi",
-            "title": "IUCN Red List search for Okapia johnstoni",
+            "title": "IUCN Red List assessment for Okapia johnstoni",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Okapia%20johnstoni",
+            "url": "https://www.iucnredlist.org/species/15188/51140517",
+            "assessed": "2015-07-25",
+            "published": "2015",
             "accessed": "2026-11-20"
         },
         {
@@ -4715,37 +5350,44 @@ const ANIMALS = [
         ]
     },
     "image": {
-        "src": null,
-        "alt": "Pygmy Hippopotamus photo placeholder"
+        "src": "images/pygmy-hippopotamus.jpg",
+        "alt": "Pygmy hippopotamus grazing with its head lowered",
+        "credit": "Bardrock · Hexaprotodon liberiensis in Edinburgh Zoo (web adaptation)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hexaprotodon_liberiensis_in_Edinburgh_Zoo.JPG"
     },
     "description": {
-        "text": "Pygmy Hippopotamus is associated with west african swamp forests.",
+        "text": "A small, mostly solitary forest hippopotamus native to West Africa.",
         "sources": [
             "iucn-pygmy-hippopotamus"
         ]
     },
     "habitat": {
-        "text": "West African swamp forests.",
+        "text": "Humid tropical forest, particularly near forest streams, swamps and riverbanks.",
         "sources": [
             "iucn-pygmy-hippopotamus"
+        ],
+        "filters": [
+            "tropical"
         ]
     },
     "range": {
-        "text": "Consult the IUCN Red List species assessment for its latest mapped distribution.",
+        "text": "Fragmented Upper Guinean forests in Liberia, Sierra Leone, Guinea and Côte d’Ivoire.",
         "sources": [
             "iucn-pygmy-hippopotamus"
         ]
     },
     "threats": [
         {
-            "text": "Forest loss and hunting.",
+            "text": "Forest conversion and degradation, and hunting.",
             "sources": [
                 "iucn-pygmy-hippopotamus"
             ]
         }
     ],
     "ecologicalImportance": {
-        "text": "Wetland herbivore.",
+        "text": "It consumes leaves, ferns, fruit and other forest vegetation.",
         "sources": [
             "iucn-pygmy-hippopotamus"
         ]
@@ -4773,9 +5415,11 @@ const ANIMALS = [
     "sources": [
         {
             "id": "iucn-pygmy-hippopotamus",
-            "title": "IUCN Red List search for Choeropsis liberiensis",
+            "title": "IUCN Red List assessment for Choeropsis liberiensis",
             "publisher": "IUCN Red List",
-            "url": "https://www.iucnredlist.org/search?query=Choeropsis%20liberiensis",
+            "url": "https://www.iucnredlist.org/species/10032/18567171",
+            "assessed": "2015-02-23",
+            "published": "2015",
             "accessed": "2026-11-20"
         },
         {

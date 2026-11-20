@@ -225,6 +225,12 @@ function createSourceList(animal) {
         item.id = "source-" + source.id;
         link.href = source.url;
 
+        if (source.assessed) {
+            details.push("assessed " + source.assessed);
+        }
+        if (source.published) {
+            details.push("published " + source.published);
+        }
         if (source.updated) {
             details.push("updated " + source.updated);
         }
@@ -339,16 +345,19 @@ function renderAnimalProfile(animal, container) {
     }
 
     // Optional Pittsburgh actions: local participation, not species habitat claims.
-    if (animal.localActions && animal.localActions.length) {
+    const localActions = animal.localActions || animal.protectionActions || [];
+    if (localActions.length) {
         const local = createSection(animal.id, "local", "How You Can Help in Pittsburgh");
         local.appendChild(createTextElement(
             "p", "local-intro",
             "These are Pittsburgh-based ways to learn or take action. They do not mean this species lives locally or that every program directly protects it."
         ));
         const cards = createTextElement("div", "local-action-grid");
-        animal.localActions.forEach(function (action) {
+        localActions.forEach(function (action) {
             const card = createTextElement("div", "local-action-card");
-            card.appendChild(createTextElement("h3", null, action.title));
+            if (action.title) {
+                card.appendChild(createTextElement("h3", null, action.title));
+            }
             card.appendChild(createCitedParagraph(action, null, citationTools));
             if (action.url) {
                 const link = createTextElement("a", "local-action-link", action.label || "Explore local action");
@@ -383,7 +392,7 @@ function renderAnimalProfile(animal, container) {
 
     article.appendChild(createSourceList(animal));
 
-    // Navigation between the twenty profiles and back to the directory.
+    // Navigation between profiles and back to the directory.
     const index = ANIMALS.findIndex(function (item) { return item.id === animal.id; });
     const pagination = createTextElement("nav", "profile-pagination");
     pagination.setAttribute("aria-label", "Animal profile navigation");
