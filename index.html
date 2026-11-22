@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wildlife Guardian | Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="chatbot.css">
     <script src="script.js" defer></script>
     <script src="animal-data.js" defer></script>
     <script src="animal-cards.js" defer></script>
     <script src="home-animals.js" defer></script>
+    <script src="chatbot.js" defer></script>
 
 
     <script src="organization-data.js" defer></script>
@@ -54,6 +56,11 @@
                         About Us
                     </a>
                 </li>
+                <li>
+                    <a href="#chatbot-panel" data-open-chatbot>
+                        Ask AI
+                    </a>
+                </li>
             </ul>
 
         </nav>
@@ -71,6 +78,15 @@
                 <a class="button" href="animals.html">
                     Explore Animals →
                 </a>
+                <a class="button" href="#chatbot-panel" data-open-chatbot>
+                    Ask AI →
+                </a>
+                <p class="home-ask-hint">
+                    Try asking:
+                    <button type="button" class="chatbot-chip" data-open-chatbot data-question="Why is the Amur leopard endangered?">Why is the Amur leopard endangered?</button>
+                    <button type="button" class="chatbot-chip" data-open-chatbot data-question="What threatens the blue whale?">What threatens the blue whale?</button>
+                    <button type="button" class="chatbot-chip" data-open-chatbot data-question="Where can I volunteer with animals in Pittsburgh?">Where can I volunteer with animals in Pittsburgh?</button>
+                </p>
             </div>
         </section>
 

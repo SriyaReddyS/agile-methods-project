@@ -307,6 +307,14 @@ button:focus-visible {
     background: #669039;
 }
 
+.home-ask-hint {
+    margin-top: 18px;
+}
+
+.home-ask-hint .chatbot-chip {
+    margin: 4px 4px 4px 0;
+}
+
 /* Featured Animals */
 
 .animals {

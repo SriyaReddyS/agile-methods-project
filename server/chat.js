@@ -71,6 +71,41 @@ class ChatError extends Error {
     }
 }
 
+// Words showing the visitor wants Pittsburgh-area help: volunteering,
+// visiting, donating, or acting locally. Matched against normalized text.
+const LOCAL_PATTERN = /\b(pittsburgh|allegheny|near me|nearby|local|locally|volunteer\w*|visit\w*|donat\w*|rescue center|shelter)\b/;
+
+function wantsLocalHelp(text) {
+    return LOCAL_PATTERN.test(normalizeText(text));
+}
+
+// Public display shape for directory entries. Websites come from the
+// verified organization-data.js directory, never from the model.
+function publicOrgList(organizations) {
+    return (Array.isArray(organizations) ? organizations : [])
+        .filter(function (org) { return org && org.name && org.website; })
+        .map(function (org) {
+            return {
+                id: org.id,
+                name: org.name,
+                category: org.category || "",
+                description: org.description || "",
+                services: Array.isArray(org.services) ? org.services : [],
+                website: org.website
+            };
+        });
+}
+
+// Source ids behind one species' Pittsburgh actions, for citations.
+function localActionSourceIds(animal) {
+    const ids = new Set();
+    const actions = (animal && (animal.localActions || animal.protectionActions)) || [];
+    actions.forEach(function (action) {
+        (action.sources || []).forEach(function (id) { ids.add(id); });
+    });
+    return ids;
+}
+
 /* ==================================
    Request validation
 ================================== */
@@ -400,7 +435,28 @@ function getCatalog(animals) {
     });
 }
 
-function buildSystemPrompt(animals) {
+function buildOrgDirectoryBlock(organizations) {
+    const orgs = publicOrgList(organizations);
+
+    if (!orgs.length) {
+        return "";
+    }
+
+    const lines = orgs.map(function (org) {
+        const services = org.services.length ? " Services: " + org.services.join(", ") + "." : "";
+        const category = org.category ? " (" + org.category + ")" : "";
+        return "- " + org.name + category + "." + services + " Website: " + org.website;
+    }).join("\n");
+
+    return [
+        "",
+        "Verified Pittsburgh-area organizations from the site's own directory. Name them when the visitor asks about local help, volunteering, visiting, or donating.",
+        "Never call them Wildlife Guardian partners. Do not write their URLs; the website shows the links under your reply.",
+        lines
+    ].join("\n");
+}
+
+function buildSystemPrompt(animals, organizations) {
     const names = getCatalog(animals).map(function (entry) {
         return "- " + entry.commonName + " (" + entry.scientificName + ")";
     }).join("\n");
@@ -410,6 +466,7 @@ function buildSystemPrompt(animals) {
         "",
         "Wildlife Guardian has verified profiles for these species only:",
         names,
+        buildOrgDirectoryBlock(organizations),
         "",
         "How to answer:",
         "- Answer only from the species data supplied in the <species_data> block. It comes from the website's sourced profiles.",
@@ -532,6 +589,18 @@ function buildMockAnswer(animal, question) {
             } else {
                 missing("conservation actions");
             }
+
+            // The profile's Pittsburgh actions are the verified local answer.
+            const localActions = Array.isArray(animal.localActions)
+                ? animal.localActions.filter(factText)
+                : (Array.isArray(animal.protectionActions) ? animal.protectionActions.filter(factText) : []);
+            if (localActions.length) {
+                lines.push("In Pittsburgh:");
+                localActions.forEach(function (action) {
+                    lines.push("- " + factText(action));
+                    use(action);
+                });
+            }
         }
 
         if (intent === "ecology") {
@@ -568,6 +637,18 @@ function buildMockAnswer(animal, question) {
     return { text: lines.join("\n"), sourceIds: sourceIds };
 }
 
+// Deterministic directory answer: names, services, and websites all come
+// from organization-data.js. The widget renders the links under the reply.
+function buildLocalDirectoryAnswer(organizations) {
+    const lines = ["Verified Pittsburgh-area organizations where you can help animals:"];
+    publicOrgList(organizations).forEach(function (org) {
+        const services = org.services.length ? " " + org.services.join(", ") + "." : "";
+        lines.push("- " + org.name + "." + services + " Website: " + org.website);
+    });
+    lines.push("Call ahead before visiting: hours and intake rules change.");
+    return lines.join("\n");
+}
+
 function createMockResponder() {
     return {
         mode: "mock",
@@ -575,6 +656,11 @@ function createMockResponder() {
             const question = request.messages[request.messages.length - 1].content;
 
             if (!request.animals.length) {
+                // Pittsburgh help without a named species: answer from the
+                // verified organization directory instead of refusing.
+                if (wantsLocalHelp(question) && publicOrgList(request.organizations).length) {
+                    return { text: buildLocalDirectoryAnswer(request.organizations), sourceIds: new Set() };
+                }
                 return { text: unsupportedMessage(request.allAnimals) };
             }
 
@@ -759,12 +845,14 @@ function speciesSummary(animal) {
     };
 }
 
-// deps: { animals, responder, Anthropic? }
+// deps: { animals, organizations, responder, Anthropic? }
 async function handleChat(body, deps) {
     const request = validateChatRequest(body);
     const animals = deps.animals;
+    const organizations = Array.isArray(deps.organizations) ? deps.organizations : [];
     const question = request.messages[request.messages.length - 1].content;
     const resolution = resolveSpecies(question, animals, request.speciesId);
+    const local = wantsLocalHelp(question);
 
     if (resolution.type === "ambiguous" || resolution.type === "uncertain") {
         return {
@@ -774,7 +862,8 @@ async function handleChat(body, deps) {
             speciesId: request.speciesId,
             species: [],
             options: resolution.animals.map(speciesSummary),
-            sources: []
+            sources: [],
+            organizations: []
         };
     }
 
@@ -794,7 +883,8 @@ async function handleChat(body, deps) {
         answer = await deps.responder.respond({
             messages: request.messages,
             animals: matchedAnimals,
-            allAnimals: animals
+            allAnimals: animals,
+            organizations: organizations
         });
     } catch (error) {
         throw toChatError(error, deps.sdk || deps.Anthropic);
@@ -810,29 +900,46 @@ async function handleChat(body, deps) {
             kind: "limitation",
             speciesId: request.speciesId,
             species: [],
-            sources: []
+            sources: [],
+            organizations: []
         };
     }
 
     // Sources shown to the visitor come from the dataset only.
     const sources = [];
+    const cited = answer.sourceIds instanceof Set ? new Set(answer.sourceIds) : null;
+
+    // Pittsburgh questions cite the species' local actions too.
+    if (local && !answer.refused) {
+        matchedAnimals.forEach(function (animal) {
+            localActionSourceIds(animal).forEach(function (id) {
+                if (cited) {
+                    cited.add(id);
+                }
+            });
+        });
+    }
+
     matchedAnimals.forEach(function (animal) {
-        const ids = answer.sourceIds instanceof Set ? answer.sourceIds : null;
-        getSourceList(animal, ids).forEach(function (source) {
+        getSourceList(animal, cited).forEach(function (source) {
             if (!sources.some(function (existing) { return existing.url === source.url; })) {
                 sources.push(source);
             }
         });
     });
 
+    // Verified org directory links shown under local-help answers.
+    const orgs = local && !answer.refused ? publicOrgList(organizations) : [];
+
     return {
         reply: answer.text,
         mode: deps.responder.mode,
-        kind: matchedAnimals.length ? "answer" : "limitation",
+        kind: matchedAnimals.length || orgs.length ? "answer" : "limitation",
         // Remember the species for follow-up questions (single species only).
         speciesId: matchedAnimals.length === 1 ? matchedAnimals[0].id : request.speciesId,
         species: matchedAnimals.map(speciesSummary),
-        sources: answer.refused ? [] : sources
+        sources: answer.refused ? [] : sources,
+        organizations: orgs
     };
 }
 

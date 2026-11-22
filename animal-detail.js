@@ -289,6 +289,12 @@ function renderAnimalProfile(animal, container) {
         createCitedParagraph(animal.description, "profile-description", citationTools)
     );
 
+    // Opens the chatbot with this species as context (handled in chatbot.js).
+    const askAi = createTextElement("a", "button profile-ask-ai", "Ask AI about the " + animal.commonName);
+    askAi.href = "#chatbot-panel";
+    askAi.setAttribute("data-open-chatbot", "");
+    intro.appendChild(askAi);
+
     header.appendChild(createAnimalMedia(animal));
     header.appendChild(intro);
     article.appendChild(header);

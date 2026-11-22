@@ -83,6 +83,22 @@
     cursor: pointer;
 }
 
+.chatbot-reset {
+    background: none;
+    border: 1px solid #dce8dd;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 5px 10px;
+    margin-left: auto;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.chatbot-reset:hover {
+    background-color: #2d6649;
+}
+
 .chatbot-log {
     flex: 1;
     overflow-y: auto;
@@ -184,7 +200,8 @@
 }
 
 .chatbot-profile-links,
-.chatbot-sources {
+.chatbot-sources,
+.chatbot-orgs {
     margin-top: 8px;
     font-size: 14px;
 }
@@ -200,13 +217,21 @@
     color: #4a5c50;
 }
 
-.chatbot-sources-title {
+.chatbot-sources-title,
+.chatbot-orgs-title {
     font-weight: bold;
 }
 
-.chatbot-sources ul {
+.chatbot-sources ul,
+.chatbot-orgs ul {
     margin: 4px 0 0;
     padding-left: 18px;
+}
+
+.chatbot-orgs {
+    border-top: 1px solid #e1ebe2;
+    padding-top: 8px;
+    color: #4a5c50;
 }
 
 .chatbot-badge {
@@ -299,6 +324,7 @@
 
 /* Keep focus rings visible against the dark header */
 .chatbot-close:focus-visible,
+.chatbot-reset:focus-visible,
 .chatbot-toggle:focus-visible {
     outline-offset: 2px;
 }

@@ -17,6 +17,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const { loadAnimals } = require("./animals");
+const { loadOrganizations } = require("./organizations");
 const chat = require("./chat");
 
 const SITE_ROOT = path.join(__dirname, "..");
@@ -272,17 +273,18 @@ function loadSdk(provider) {
 // Build dependencies from environment variables.
 function createDepsFromEnv(env) {
     const animals = loadAnimals();
+    const organizations = loadOrganizations();
     const mode = (env.CHATBOT_MODE || "live").toLowerCase();
 
     if (mode === "mock") {
-        return { animals: animals, responder: chat.createMockResponder(), mode: "mock" };
+        return { animals: animals, organizations: organizations, responder: chat.createMockResponder(), mode: "mock" };
     }
 
     const choice = chooseProvider(env);
     const SDK = loadSdk(choice.provider);
 
     if (!choice.key) {
-        return { animals: animals, responder: null, sdk: SDK, mode: "unconfigured", provider: choice.provider };
+        return { animals: animals, organizations: organizations, responder: null, sdk: SDK, mode: "unconfigured", provider: choice.provider };
     }
 
     const clientOptions = { apiKey: choice.key, timeout: 20 * 1000, maxRetries: 1 };
@@ -290,7 +292,7 @@ function createDepsFromEnv(env) {
         ? chat.createOpenAIResponder(new SDK(clientOptions), { model: env.OPENAI_MODEL || chat.DEFAULT_MODELS.openai })
         : chat.createLiveResponder(new SDK(clientOptions), { model: env.ANTHROPIC_MODEL || chat.DEFAULT_MODELS.anthropic });
 
-    return { animals: animals, responder: responder, sdk: SDK, mode: "live", provider: choice.provider };
+    return { animals: animals, organizations: organizations, responder: responder, sdk: SDK, mode: "live", provider: choice.provider };
 }
 
 if (require.main === module) {
@@ -301,7 +303,8 @@ if (require.main === module) {
         console.log("Wildlife Guardian running at http://localhost:" + port + "/");
         console.log("Chatbot mode: " + deps.mode +
             (deps.mode === "live" ? " (" + deps.provider + ", model " + deps.responder.model + ")" : "") +
-            " | species loaded: " + deps.animals.length);
+            " | species loaded: " + deps.animals.length +
+            " | organizations loaded: " + deps.organizations.length);
 
         if (deps.mode === "unconfigured") {
             console.log("No AI API key set (OPENAI_API_KEY or ANTHROPIC_API_KEY): /api/chat will return a configuration error.");
