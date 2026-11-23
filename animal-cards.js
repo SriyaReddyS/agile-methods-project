@@ -49,7 +49,10 @@ function createAnimalCardMedia(animal) {
 
     const img = document.createElement("img");
 
-    img.src = image.src;
+    img.src = image.cardSrc || image.src;
+    if (image.cardPosition) {
+        img.style.objectPosition = image.cardPosition;
+    }
     img.alt = altText;
     img.loading = "lazy";
 
@@ -167,17 +170,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 const matchesStatus = selectedStatus === "all" ||
                     (animal.status && animal.status.label === selectedStatus);
 
-                const habitatText = animal.habitat.text.toLowerCase();
-
-                let matchesHabitat = selectedHabitat === "all";
-
-                if (selectedHabitat === "temperate") {
-                    matchesHabitat = habitatText.includes("temperate");
-                } else if (selectedHabitat === "marine") {
-                    matchesHabitat = habitatText.includes("coral reefs");
-                } else if (selectedHabitat === "tropical") {
-                    matchesHabitat = habitatText.includes("tropical");
-                }
+                const matchesHabitat = selectedHabitat === "all" ||
+                    animal.habitat.filters?.includes(selectedHabitat);
 
                 return matchesName && matchesStatus && matchesHabitat;
             });

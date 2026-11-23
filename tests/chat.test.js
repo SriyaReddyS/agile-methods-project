@@ -47,7 +47,8 @@ test("resolves species by common name, plural, scientific name and short name", 
         ["Where do Amur leopards live?", "amur-leopard"],
         ["Why are hawksbill sea turtles critically endangered?", "hawksbill-sea-turtle"],
         ["Tell me about Pongo abelii", "sumatran-orangutan"],
-        ["What are the biggest threats to orangutans?", "sumatran-orangutan"],
+        ["What are the biggest threats to Sumatran orangutans?", "sumatran-orangutan"],
+        ["Are Bornean orangutans endangered?", "bornean-orangutan"],
         ["Where do snow leopards live?", "snow-leopard"],
         ["Where do giant pandas live?", "giant-panda"]
     ];
@@ -76,10 +77,12 @@ test("unknown species without context resolves to none", function () {
     assert.equal(chat.resolveSpecies("Where do koalas live?", animals, null).type, "none");
 });
 
-test("a different species sharing a short name is flagged as uncertain", function () {
-    const bornean = chat.resolveSpecies("Are Bornean orangutans endangered?", animals, null);
-    assert.equal(bornean.type, "uncertain");
-    assert.equal(bornean.term, "bornean orangutan");
+test("orangutans without a qualifier asks for clarification", function () {
+    const result = chat.resolveSpecies("What are the biggest threats to orangutans?", animals, null);
+    assert.equal(result.type, "ambiguous");
+    assert.deepEqual(result.animals.map(function (animal) { return animal.id; }).sort(), [
+        "bornean-orangutan", "sumatran-orangutan"
+    ]);
 });
 
 test("a short name shared by multiple species asks for clarification", function () {
@@ -88,7 +91,7 @@ test("a short name shared by multiple species asks for clarification", function 
     assert.equal(result.type, "ambiguous");
     assert.equal(result.term, "turtle");
     assert.deepEqual(result.animals.map(function (animal) { return animal.id; }).sort(), [
-        "hawksbill-sea-turtle", "kemps-ridley-sea-turtle", FIXTURE_TURTLE.id
+        "green-sea-turtle", "hawksbill-sea-turtle", "kemps-ridley-sea-turtle", FIXTURE_TURTLE.id
     ]);
 });
 
