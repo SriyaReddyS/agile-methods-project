@@ -39,8 +39,11 @@ for (const a of animals) {
     assert.ok(fact.sources?.length, a.id + " uncited fact");
     for (const id of fact.sources) assert.ok(sourceIds.has(id), a.id + " references missing source " + id);
   }
-  assert.ok(a.image?.src?.startsWith("images/"), a.id + " must use a local image");
-  assert.ok(fs.statSync(path.join(root, a.image.src)).size > 0, a.id + " missing local image");
+  assert.ok(a.image?.src, a.id + " missing image");
+  for (const src of [a.image.src, a.image.cardSrc].filter(Boolean)) {
+    assert.ok(src.startsWith("images/"), a.id + " must use a local image");
+    assert.ok(fs.statSync(path.join(root, src)).size > 0, a.id + " missing local image");
+  }
   assert.ok(a.image.alt && a.image.credit && a.image.license && a.image.licenseUrl && a.image.sourceUrl,
     a.id + " incomplete image attribution");
   assert.equal(new URL(a.image.licenseUrl).protocol, "https:");

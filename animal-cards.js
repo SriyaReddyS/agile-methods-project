@@ -49,7 +49,10 @@ function createAnimalCardMedia(animal) {
 
     const img = document.createElement("img");
 
-    img.src = image.src;
+    img.src = image.cardSrc || image.src;
+    if (image.cardPosition) {
+        img.style.objectPosition = image.cardPosition;
+    }
     img.alt = altText;
     img.loading = "lazy";
 

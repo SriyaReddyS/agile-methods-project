@@ -3547,6 +3547,7 @@ const ANIMALS = [
     },
     "image": {
         "src": "images/indus-river-dolphin.jpg",
+        "cardSrc": "images/indus-river-dolphin-card.jpg",
         "alt": "Back of an Indus river dolphin breaking the surface of the Beas River",
         "credit": "Navdeepsood · Indus River Dolphin (Platanista gangetica minor) (web adaptation)",
         "license": "CC BY 4.0",
@@ -4773,6 +4774,7 @@ const ANIMALS = [
     },
     "image": {
         "src": "images/golden-lion-tamarin.jpg",
+        "cardPosition": "50% 15%",
         "alt": "Golden lion tamarin crouching on a branch, with its long tail hanging down",
         "credit": "Daderot · Leontopithecus rosalia - Copenhagen Zoo - DSC09082 (web adaptation)",
         "license": "CC0",
