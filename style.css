@@ -307,14 +307,6 @@ button:focus-visible {
     background: #669039;
 }
 
-.home-ask-hint {
-    margin-top: 18px;
-}
-
-.home-ask-hint .chatbot-chip {
-    margin: 4px 4px 4px 0;
-}
-
 /* Featured Animals */
 
 .animals {
@@ -770,6 +762,21 @@ a.animal-card:hover {
 .organization-phone {
     font-size: 14px;
     color: #4a5c50;
+}
+
+
+/* Distance from user's ZIP Code */
+.organization-card p.organization-distance {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background: #e1ebe2;
+    color: #214d38;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
 }
 
 .organization-notes {
