@@ -38,27 +38,36 @@ files directly (`file://`), the chat shows a "start the server" message instead.
 4. Type a question and press Enter, for example "Where does it live?", then ask a
    follow-up such as "What threatens them?"
 
-The chat button also appears on **Explore Animals** (`animals.html`) and on every animal
-profile page. It does not appear on the homepage.
+The chat button also appears on **Explore Animals** (`animals.html`), on every animal
+profile page, and on the homepage (`index.html`), which has an **Ask AI** nav link, a hero
+**Ask AI** button, and three example questions.
 
 Press `Ctrl+C` in the terminal to stop the server. To try the chat without using API
 credits, run `npm run start:mock` instead. Mock answers are labelled "Demo mode".
 
 ## AI chatbot
 
-The chat widget (`chatbot.js`, `chatbot.css`) is on `animal.html` and `animals.html`.
-On a profile page it starts with that species selected, so follow-up questions such as
-"What is its conservation status?" work.
+The chat widget (`chatbot.js`, `chatbot.css`) is on `index.html`, `animal.html`, and
+`animals.html`. Any element with `data-open-chatbot` opens it; `data-question` also submits
+that question. On a profile page it starts with that species selected, so follow-up questions such as
+"What is its conservation status?" work, and each profile has an **Ask AI about the …** button.
 
 How it works:
 
 1. The browser sends the question and recent chat history to `POST /api/chat`.
 2. `server/chat.js` works out which species the question is about, using names from the
-   shared `ANIMALS` data in `animal-data.js` (loaded by `server/animals.js`).
+   shared `ANIMALS` data in `animal-data.js` (loaded by `server/animals.js`). The verified
+   Pittsburgh organization directory (`organization-data.js`, loaded by
+   `server/organizations.js`) is attached to local-help answers.
 3. The server sends the species' profile data to the configured AI provider (OpenAI
    `gpt-5.4-mini` by default, or Anthropic Claude `claude-sonnet-5-5`) with rules to answer
    only from that data and to say when information is missing.
 4. Source links shown under each answer come from the species record, never from the model.
+   Pittsburgh answers also list organizations from the verified directory, never partners.
+
+The widget shows a loading message while waiting, keeps suggested questions visible, has a
+**New chat** button that clears history and context, and shows a friendly message (keeping
+your text for retry) when the API fails or is unreachable.
 
 ### Configuration
 

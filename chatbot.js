@@ -46,7 +46,8 @@
         const state = {
             history: [],
             speciesId: pageAnimal ? pageAnimal.id : null,
-            busy: false
+            busy: false,
+            epoch: 0
         };
 
         const ui = buildWidget(pageAnimal, animals);
@@ -59,6 +60,28 @@
         ui.close.addEventListener("click", function () {
             setOpen(ui, false);
         });
+
+        ui.reset.addEventListener("click", function () {
+            resetChat(ui, state, pageAnimal, animals);
+        });
+
+        // Any [data-open-chatbot] element (nav link, hero button, profile
+        // button, example question) opens this widget. data-question presets
+        // and submits that question.
+        document.addEventListener("click", function (event) {
+            const opener = event.target.closest("[data-open-chatbot]");
+            if (!opener) {
+                return;
+            }
+            event.preventDefault();
+            openChatbot(ui, state, opener.getAttribute("data-question"));
+        });
+
+        window.WildlifeGuardianChat = {
+            open: function (question) {
+                openChatbot(ui, state, question);
+            }
+        };
 
         ui.panel.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
@@ -143,7 +166,12 @@
         close.type = "button";
         close.setAttribute("aria-label", "Close chat");
 
+        const reset = el("button", "chatbot-reset", "New chat");
+        reset.type = "button";
+        reset.setAttribute("aria-label", "Start a new chat");
+
         header.appendChild(titleWrap);
+        header.appendChild(reset);
         header.appendChild(close);
 
         const log = el("div", "chatbot-log");
@@ -158,12 +186,7 @@
         }
 
         const suggestions = el("div", "chatbot-suggestions");
-        createSuggestions(pageAnimal, animals).forEach(function (question) {
-            const chip = el("button", "chatbot-chip", question);
-            chip.type = "button";
-            chip.setAttribute("data-question", question);
-            suggestions.appendChild(chip);
-        });
+        fillSuggestions(suggestions, pageAnimal, animals);
 
         const form = el("form", "chatbot-form");
         form.noValidate = true;
@@ -206,6 +229,7 @@
             toggle: toggle,
             panel: panel,
             close: close,
+            reset: reset,
             log: log,
             suggestions: suggestions,
             form: form,
@@ -214,6 +238,17 @@
             status: status,
             context: context
         };
+    }
+
+    function fillSuggestions(container, pageAnimal, animals) {
+        container.replaceChildren();
+        createSuggestions(pageAnimal, animals).forEach(function (question) {
+            const chip = el("button", "chatbot-chip", question);
+            chip.type = "button";
+            chip.setAttribute("data-question", question);
+            container.appendChild(chip);
+        });
+        container.hidden = false;
     }
 
     function createIntroMessage(pageAnimal, animals) {
@@ -320,6 +355,28 @@
             message.appendChild(sources);
         }
 
+        if (Array.isArray(result.organizations) && result.organizations.length) {
+            const orgs = el("div", "chatbot-orgs");
+            orgs.appendChild(el("p", "chatbot-orgs-title", "Pittsburgh organizations from our verified directory:"));
+            const list = el("ul", "chatbot-list");
+
+            result.organizations.forEach(function (org) {
+                const item = el("li");
+                const link = el("a", null, org.name);
+                link.href = org.website;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                item.appendChild(link);
+                if (org.services && org.services.length) {
+                    item.appendChild(document.createTextNode(" — " + org.services.join(", ")));
+                }
+                list.appendChild(item);
+            });
+
+            orgs.appendChild(list);
+            message.appendChild(orgs);
+        }
+
         if (MODE_LABELS[result.mode]) {
             const badge = el(
                 "p",
@@ -362,6 +419,36 @@
         ui.log.scrollTop = ui.log.scrollHeight;
     }
 
+    function openChatbot(ui, state, question) {
+        if (ui.panel.hidden) {
+            setOpen(ui, true);
+        } else {
+            ui.input.focus();
+        }
+
+        if (question) {
+            submitQuestion(question, ui, state);
+        }
+    }
+
+    // Clear history, page context, and the log so a new topic starts fresh.
+    // A reply that arrives late for the previous chat is dropped.
+    function resetChat(ui, state, pageAnimal, animals) {
+        state.epoch = (state.epoch || 0) + 1;
+        state.history = [];
+        state.speciesId = pageAnimal ? pageAnimal.id : null;
+        ui.input.value = "";
+        ui.status.textContent = "";
+        ui.log.replaceChildren(createIntroMessage(pageAnimal, animals));
+        ui.context.textContent = pageAnimal
+            ? "Asking about: " + pageAnimal.commonName
+            : "Answers use Wildlife Guardian's species profiles";
+        fillSuggestions(ui.suggestions, pageAnimal, animals);
+        setBusy(ui, state, false);
+        scrollToEnd(ui);
+        ui.input.focus();
+    }
+
     async function submitQuestion(rawText, ui, state) {
         if (state.busy) {
             return;
@@ -397,9 +484,15 @@
         setBusy(ui, state, true);
 
         const messages = trimHistory(state.history).concat([{ role: "user", content: text }]);
+        const epoch = state.epoch || 0;
 
         try {
             const result = await postChat({ messages: messages, speciesId: state.speciesId });
+
+            // A reset started a new chat while this reply was loading.
+            if (epoch !== state.epoch) {
+                return;
+            }
 
             loading.remove();
             ui.log.appendChild(createAssistantMessage(result));
@@ -414,15 +507,23 @@
                     ui.context.textContent = "Asking about: " + current.commonName;
                 }
             }
+
+            // Suggested questions stay available for the next question.
+            ui.suggestions.hidden = false;
         } catch (error) {
+            if (epoch !== state.epoch) {
+                return;
+            }
             loading.remove();
             ui.log.appendChild(createNotice(error.message));
             // Let the visitor retry without retyping.
             ui.input.value = text;
         } finally {
-            setBusy(ui, state, false);
-            scrollToEnd(ui);
-            ui.input.focus();
+            if (epoch === state.epoch) {
+                setBusy(ui, state, false);
+                scrollToEnd(ui);
+                ui.input.focus();
+            }
         }
     }
 

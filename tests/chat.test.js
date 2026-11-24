@@ -6,6 +6,7 @@ const os = require("node:os");
 const path = require("node:path");
 
 const { loadAnimals } = require("../server/animals");
+const { loadOrganizations } = require("../server/organizations");
 const chat = require("../server/chat");
 
 const animals = loadAnimals();
@@ -292,6 +293,68 @@ test("OpenAI responder handles refusals, truncation and empty output", async fun
     assert.match(truncated.reply, /Answer shortened/);
 
     await assert.rejects(ask({ finish_reason: "length", message: { content: "", refusal: null } }), { code: "provider_error" });
+});
+
+test("loads the verified Pittsburgh organization directory", function () {
+    const orgs = loadOrganizations();
+    assert.ok(orgs.length >= 1, "expected at least one organization");
+    orgs.forEach(function (org) {
+        assert.ok(org.id, "org missing id");
+        assert.ok(org.name, "org missing name");
+        assert.equal(new URL(org.website).protocol, "https:", org.id + " website must be https");
+    });
+});
+
+test("resolves every dataset species by its full common name", function () {
+    const failures = [];
+
+    animals.forEach(function (animal) {
+        const result = chat.resolveSpecies("Why is the " + animal.commonName + " endangered?", animals, null);
+        const ok = result.type === "species" && result.animals.some(function (a) { return a.id === animal.id; });
+        if (!ok) {
+            failures.push(animal.id + " -> " + result.type);
+        }
+    });
+
+    assert.deepEqual(failures, []);
+});
+
+test("mock help answers connect Pittsburgh actions and the verified org directory", async function () {
+    const organizations = loadOrganizations();
+    const deps = { animals: animals, organizations: organizations, responder: chat.createMockResponder() };
+    const amur = animals.find(function (a) { return a.id === "amur-leopard"; });
+
+    const result = await chat.handleChat({
+        messages: [user("How can I help Amur leopards in Pittsburgh?")],
+        speciesId: "amur-leopard"
+    }, deps);
+
+    assert.equal(result.kind, "answer");
+    assert.match(result.reply, /Pittsburgh/);
+    assert.ok(Array.isArray(result.organizations) && result.organizations.length > 0);
+    assert.ok(result.organizations.every(function (o) {
+        return o.name && String(o.website).startsWith("https://");
+    }), "org entries need a name and https website");
+
+    const localIds = new Set();
+    (amur.localActions || amur.protectionActions || []).forEach(function (action) {
+        (action.sources || []).forEach(function (id) { localIds.add(id); });
+    });
+    assert.ok(result.sources.some(function (s) { return localIds.has(s.id); }), "expected a local-action source");
+});
+
+test("Pittsburgh volunteering without a named species still answers from the org directory", async function () {
+    const organizations = loadOrganizations();
+    const deps = { animals: animals, organizations: organizations, responder: chat.createMockResponder() };
+
+    const result = await chat.handleChat({
+        messages: [user("Where can I volunteer with animals in Pittsburgh?")]
+    }, deps);
+
+    assert.equal(result.kind, "answer");
+    assert.deepEqual(result.species, []);
+    assert.ok(result.organizations.length > 0);
+    assert.match(result.reply, /Pittsburgh/);
 });
 
 test("a model reply marked as no-data drops the page species' sources", async function () {
