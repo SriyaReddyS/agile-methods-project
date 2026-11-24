@@ -148,6 +148,28 @@
                     </select>
                 </div>
 
+                <div class="organization-filter">
+                    <label for="organization-zip">Your ZIP Code</label>
+                    <input
+                        type="text"
+                        id="organization-zip"
+                        placeholder="e.g. 15213"
+                        maxlength="5"
+                        inputmode="numeric"
+                    >
+                </div>
+
+                <div class="organization-filter">
+                    <label for="organization-distance">Distance</label>
+                    <select id="organization-distance">
+                        <option value="all">Any Distance</option>
+                        <option value="5">Within 5 miles</option>
+                        <option value="10">Within 10 miles</option>
+                        <option value="25">Within 25 miles</option>
+                        <option value="50">Within 50 miles</option>
+                    </select>
+                </div>
+
                 <button type="button" id="reset-organization-filters">
                     Reset Filters
                 </button>
